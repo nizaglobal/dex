@@ -86,7 +86,7 @@ const baseMenuItem = style([
 export const menuItem = style([
   baseMenuItem,
   sprinkles({
-    color: 'neutral2',
+    color: 'white',
   }),
 ])
 
@@ -94,6 +94,6 @@ export const activeMenuItem = style([
   baseMenuItem,
   sprinkles({
     color: 'neutral1',
-    background: 'none',
+    backgroundColor: 'border1',
   }),
 ])

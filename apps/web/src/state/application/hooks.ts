@@ -129,21 +129,21 @@ export function useToggleSelfClaimModal(): () => void {
   return useToggleModal(ApplicationModal.SELF_CLAIM)
 }
 
-export function useToggleDelegateModal(): () => void {
-  return useToggleModal(ApplicationModal.DELEGATE)
-}
+// function useToggleDelegateModal(): () => void {
+//   return useToggleModal(ApplicationModal.DELEGATE)
+// }
 
-export function useToggleVoteModal(): () => void {
-  return useToggleModal(ApplicationModal.VOTE)
-}
+// function useToggleVoteModal(): () => void {
+//   return useToggleModal(ApplicationModal.VOTE)
+// }
 
-export function useToggleQueueModal(): () => void {
-  return useToggleModal(ApplicationModal.QUEUE)
-}
+// function useToggleQueueModal(): () => void {
+//   return useToggleModal(ApplicationModal.QUEUE)
+// }
 
-export function useToggleExecuteModal(): () => void {
-  return useToggleModal(ApplicationModal.EXECUTE)
-}
+// function useToggleExecuteModal(): () => void {
+//   return useToggleModal(ApplicationModal.EXECUTE)
+// }
 
 export function useTogglePrivacyPolicy(): () => void {
   return useToggleModal(ApplicationModal.PRIVACY_POLICY)

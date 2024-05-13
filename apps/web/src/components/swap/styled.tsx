@@ -142,9 +142,9 @@ export const SwapSection = styled.div`
   color: ${({ theme }) => theme.neutral2};
   font-size: 14px;
   font-weight: 500;
-  height: 120px;
-  line-height: 20px;
-  padding: 16px;
+  min-height: 130px;
+  /* line-height: 20px; */
+  padding: 24px;
   position: relative;
   &:before {
     box-sizing: border-box;

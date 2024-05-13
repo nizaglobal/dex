@@ -90,7 +90,7 @@ export default function DevFlagsBox() {
           </MouseoverTooltip>
         </RowBetween>
       ) : (
-        <Flag />
+        <Flag color="white" />
       )}
 
       {isOpen && (hasOverrides ? overrides : <ThemedText.LabelSmall>No overrides</ThemedText.LabelSmall>)}

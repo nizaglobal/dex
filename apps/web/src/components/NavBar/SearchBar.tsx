@@ -162,11 +162,12 @@ export const SearchBar = () => {
             !isOpen && !isMobile && magicalGradientOnHover,
             isMobileOrTablet && (isOpen ? styles.visible : styles.hidden)
           )}
-          borderRadius={isOpen || isMobileOrTablet ? undefined : '16'}
-          borderTopRightRadius={isOpen && !isMobile ? '16' : undefined}
-          borderTopLeftRadius={isOpen && !isMobile ? '16' : undefined}
+          borderRadius={isOpen || isMobileOrTablet ? undefined : '8'}
+          borderTopRightRadius={isOpen && !isMobile ? '8' : undefined}
+          borderTopLeftRadius={isOpen && !isMobile ? '8' : undefined}
           borderBottomWidth={isOpen || isMobileOrTablet ? '0px' : '1px'}
           backgroundColor={isOpen ? 'surface1' : 'surface1'}
+          borderColor="border1"
           onClick={() => !isOpen && toggleOpen()}
           gap="12"
         >
@@ -193,6 +194,7 @@ export const SearchBar = () => {
                 setSearchValue(event.target.value)
               }}
               onBlur={() => sendAnalyticsEvent(InterfaceEventName.NAVBAR_SEARCH_EXITED, navbarSearchEventProperties)}
+              // backgroundColor={"surface1"}
               className={`${styles.searchBarInput} ${styles.searchContentLeftAlign}`}
               value={searchValue}
               ref={inputRef}

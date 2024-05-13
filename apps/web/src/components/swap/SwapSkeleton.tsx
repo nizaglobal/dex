@@ -21,7 +21,7 @@ const LoadingWrapper = styled.div`
   padding: 8px;
   border: ${({ theme }) => `1px solid ${theme.surface3}`};
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.surface1};
+  background-color: ${({ theme }) => theme.surface2};
 `
 
 const Blob = styled.div<{ width?: number; radius?: number }>`

@@ -36,25 +36,29 @@ export const RiseIn = styled.span<{ delay?: number }>`
   ${RiseInStyles}
 `
 
-const hoverAnimation = keyframes`
- 0% { transform: translateY(-4px); opacity: 0.5; }
- 50% { transform: translateY(4px); opacity: 1; }
- 100% { transform: translateY(-4px); opacity: 0.5; }
-`
+// const hoverAnimation = keyframes`
+//  0% { transform: translateY(-4px); opacity: 0.5; }
+//  50% { transform: translateY(4px); opacity: 1; }
+//  100% { transform: translateY(-4px); opacity: 0.5; }
+// `;
 
-export const Hover = styled.div`
-  position: relative;
-  display: inline-block;
-  animation-name: ${hoverAnimation};
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-`
+// const Hover = styled.div`
+//   position: relative;
+//   display: inline-block;
+//   animation-name: ${hoverAnimation};
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+//   animation-timing-function: ease-in-out;
+// `
 
 export function Wiggle({ ...props }) {
   const variants = {
     initial: { rotate: 0, scale: 1 },
-    animate: { rotate: [20, 0], scale: 1.2, transition: { type: 'spring', stiffness: 200 } },
+    animate: {
+      rotate: [20, 0],
+      scale: 1.2,
+      transition: { type: 'spring', stiffness: 200 },
+    },
   }
   return <motion.div {...props} whileHover="animate" initial="initial" variants={variants} />
 }

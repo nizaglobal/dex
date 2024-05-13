@@ -5,10 +5,15 @@ import styled from 'styled-components'
 import { escapeRegExp } from 'utils'
 import { useFormatterLocales } from 'utils/formatNumbers'
 
-const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: string; disabled?: boolean }>`
+const StyledInput = styled.input<{
+  error?: boolean
+  fontSize?: string
+  align?: string
+  disabled?: boolean
+}>`
   color: ${({ error, theme }) => (error ? theme.critical : theme.neutral1)};
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'auto')};
-  width: 0;
+  width: 100%;
   position: relative;
   font-weight: 485;
   outline: none;
@@ -112,6 +117,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         placeholder={placeholder || '0'}
         minLength={1}
         maxLength={79}
+        width="100%"
         spellCheck="false"
       />
     )
@@ -124,10 +130,15 @@ const MemoizedInput = React.memo(Input)
 export { MemoizedInput as Input }
 // const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
-export const StyledNumericalInput = styled(MemoizedInput)<{ $loading: boolean }>`
+export const StyledNumericalInput = styled(MemoizedInput)<{
+  $loading: boolean
+}>`
   ${loadingOpacityMixin};
   text-align: left;
   font-size: 36px;
   font-weight: 485;
   max-height: 44px;
+  &::placeholder {
+    color: ${({ theme }) => theme.placeholder};
+  }
 `

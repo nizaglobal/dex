@@ -50,17 +50,16 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
 const Web3StatusConnectWrapper = styled.div`
   ${flexRowNoWrap};
   align-items: center;
-  background-color: ${({ theme }) => theme.accent2};
-  border-radius: ${FULL_BORDER_RADIUS}px;
+  background-color: ${({ theme }) => theme.accent1};
+  border-radius: 8px;
   border: none;
   padding: 0;
   height: 40px;
+  transition: all 0.3s ease;
 
-  color: ${({ theme }) => theme.accent1};
+  color: ${({ theme }) => theme.black};
   :hover {
-    color: ${({ theme }) => theme.accent1};
-    stroke: ${({ theme }) => theme.accent2};
-    background-color: ${({ theme }) => darken(0.015, theme.accent2)};
+    background-color: ${({ theme }) => theme.accent1}bb;
   }
 
   transition: ${({
@@ -176,7 +175,12 @@ function Web3StatusInner() {
     if (account || ENSName) {
       const { rdns } = connection.getProviderInfo()
       dispatch(
-        updateRecentConnectionMeta({ type: connection.type, address: account, ENSName: ENSName ?? undefined, rdns })
+        updateRecentConnectionMeta({
+          type: connection.type,
+          address: account,
+          ENSName: ENSName ?? undefined,
+          rdns,
+        })
       )
     }
   }, [ENSName, account, connection, dispatch])

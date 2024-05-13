@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import { t, Trans } from 'i18n'
-import styled, { useTheme } from 'styled-components'
-import { useIsDarkMode } from 'theme/components/ThemeToggle'
+import styled from 'styled-components'
 
 import { PillButton } from '../components/cards/PillButton'
-import { Box, H2, H3 } from '../components/Generics'
+import { Box, H2, H4 } from '../components/Generics'
 import { BookOpen, ChatBubbles, HelpCircle } from '../components/Icons'
 
 const SectionLayout = styled.div`
@@ -110,12 +109,12 @@ const RectCard = motion(styled(Card)`
   }
 `)
 
-const helpPrimary = '#FF4D00'
-const blogPrimary = '#8E8767'
+const helpPrimary = '#F04438'
+const helpSecondary = '#B42318'
+const blogPrimary = '#ACAC22'
+const messagePrimary = '#BA24D5'
 
 export function NewsletterEtc() {
-  const theme = useTheme()
-  const isDarkMode = useIsDarkMode()
   return (
     <SectionLayout>
       <Box direction="row" maxWidth="1328px" gap="24px" width="100%">
@@ -127,41 +126,45 @@ export function NewsletterEtc() {
             <HelpCenterCard
               initial="initial"
               whileHover="hover"
-              href="https://help.uniswap.org/"
+              href="https://help.niza.io/hc/en-us"
               target="_blank"
               rel="noopener noreferrer"
-              backgroundColor={isDarkMode ? 'rgba(255, 77, 0, 0.08)' : 'rgba(255, 77, 0, 0.04)'}
+              backgroundColor="#7A271A66"
             >
-              <PillButton icon={<HelpCircle fill={helpPrimary} />} color={helpPrimary} label={t`Help Center`} />
-              <H3 color={helpPrimary}>
+              <PillButton icon={<HelpCircle fill={helpSecondary} />} color={helpSecondary} label={t`Help Center`} />
+              <H4 color={helpPrimary} style={{ fontWeight: '600' }}>
                 <Trans>Get support</Trans>
-              </H3>
+              </H4>
             </HelpCenterCard>
             <BlogCard
               initial="initial"
               whileHover="hover"
-              href="https://blog.uniswap.org/"
+              href="https://www.niza.io/"
               target="_blank"
               rel="noopener noreferrer"
-              backgroundColor={isDarkMode ? 'rgba(98, 84, 50, 0.16)' : 'rgba(98, 84, 50, 0.04)'}
+              backgroundColor="#66661466"
             >
               <PillButton icon={<BookOpen fill={blogPrimary} />} color={blogPrimary} label={t`Blog`} />
-              <H3 color={blogPrimary}>
+              <H4 color={blogPrimary} style={{ fontWeight: '600' }}>
                 <Trans>Insights and news from the team</Trans>
-              </H3>
+              </H4>
             </BlogCard>
             <RectCard
-              backgroundColor={theme.accent2}
+              backgroundColor="#6F187766"
               initial="initial"
               whileHover="hover"
-              href="https://twitter.com/Uniswap/"
+              href="https://twitter.com/nizacoin"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <PillButton icon={<ChatBubbles fill={theme.accent1} />} color={theme.accent1} label={t`Stay connected`} />
-              <H3 color={theme.accent1}>
-                <Trans>Follow @Uniswap on X for the latest updates</Trans>
-              </H3>
+              <PillButton
+                icon={<ChatBubbles fill={messagePrimary} />}
+                color={messagePrimary}
+                label={t`Stay connected`}
+              />
+              <H4 color={messagePrimary} style={{ fontWeight: '600' }}>
+                <Trans>Follow @Niza on X and Instagram for the latest updates</Trans>
+              </H4>
             </RectCard>
           </Layout>
         </SectionCol>

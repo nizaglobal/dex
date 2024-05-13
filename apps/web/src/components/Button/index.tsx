@@ -31,7 +31,7 @@ type BaseButtonProps = {
 } & ButtonProps
 
 export const BaseButton = styled(RebassButton)<BaseButtonProps>`
-  padding: ${({ padding }) => padding ?? '16px'};
+  padding: ${({ padding }) => padding ?? '12px'};
   width: ${({ width }) => width ?? '100%'};
   line-height: 24px;
   font-weight: 535;
@@ -105,17 +105,18 @@ export const SmallButtonPrimary = styled(ButtonPrimary)`
 `
 
 const BaseButtonLight = styled(BaseButton)`
-  background-color: ${({ theme }) => theme.accent2};
-  color: ${({ theme }) => theme.accent1};
-  font-size: 20px;
-  font-weight: 535;
+  background-color: ${({ theme }) => theme.accent1};
+  color: ${({ theme }) => theme.black};
+  font-size: 16px;
+  transition: all 0.3s ease;
+  /* font-weight: 535; */
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && theme.accent2};
     background-color: ${({ theme, disabled }) => !disabled && theme.accent2};
   }
   &:hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.accent2};
+    background-color: ${({ theme, disabled }) => !disabled && theme.accent1}bb;
   }
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && theme.accent2};
@@ -307,16 +308,16 @@ export function ButtonError({ error, ...rest }: { error?: boolean } & BaseButton
   }
 }
 
-export function ButtonDropdown({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) {
-  return (
-    <ButtonPrimary {...rest} disabled={disabled}>
-      <RowBetween>
-        <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
-        <ChevronDown size={24} />
-      </RowBetween>
-    </ButtonPrimary>
-  )
-}
+// export function ButtonDropdown({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) {
+//   return (
+//     <ButtonPrimary {...rest} disabled={disabled}>
+//       <RowBetween>
+//         <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
+//         <ChevronDown size={24} />
+//       </RowBetween>
+//     </ButtonPrimary>
+//   )
+// }
 
 export function ButtonDropdownLight({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) {
   return (

@@ -116,7 +116,7 @@ export const ChainSelector = ({ leftAlign }: { leftAlign?: boolean }) => {
         !isSupported ? (
           <AlertTriangle size={20} color={theme.neutral2} />
         ) : (
-          <ChainLogo chainId={chainId} size={20} testId="chain-selector-logo" />
+          <ChainLogo chainId={chainId} size={28} testId="chain-selector-logo" borderRadius={4} />
         )
       }
       tooltipText={isSupported ? undefined : t`Your wallet's current network is unsupported.`}

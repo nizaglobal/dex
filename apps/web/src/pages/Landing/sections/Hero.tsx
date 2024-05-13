@@ -1,22 +1,35 @@
-import { ColumnCenter } from 'components/Column'
 import { useCurrency } from 'hooks/Tokens'
 import { Trans } from 'i18n'
 import { Swap } from 'pages/Swap'
 import { useEffect, useState } from 'react'
-import { ChevronDown } from 'react-feather'
 import styled, { css, keyframes } from 'styled-components'
 
-import { BREAKPOINTS } from 'theme'
+import LightGradient from 'components/Common/LightGradient'
 import { Text } from 'ui/src'
-import { heightBreakpoints } from 'ui/src/theme'
 import { Box, H1 } from '../components/Generics'
-import { TokenCloud } from '../components/TokenCloud/index'
-import { Hover, RiseIn, RiseInText } from '../components/animations'
+import { RiseIn, RiseInText } from '../components/animations'
+
+const PrimaryText = styled(H1)`
+  color: ${({ theme }) => theme.accent1};
+`
 
 const Container = styled(Box)`
   min-width: 100%;
   padding-top: 72px;
 `
+
+const StarsContainer = styled.div`
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+`
+
 const LandingSwapContainer = styled(Box)`
   width: 480px;
   padding: 8px;
@@ -75,29 +88,19 @@ const Center = styled(Box)<{ transition?: boolean }>`
       animation: ${shrinkAndFade} 1s ease-in-out forwards;
     `};
 `
-const LearnMoreContainer = styled(Box)`
-  bottom: 48px;
-  @media (max-width: ${BREAKPOINTS.md}px) {
-    bottom: 64px;
-  }
-
-  @media (max-height: ${heightBreakpoints.short}px) {
-    display: none;
-  }
-`
 
 interface HeroProps {
   scrollToRef: () => void
   transition?: boolean
 }
 
-export function Hero({ scrollToRef, transition }: HeroProps) {
+export function Hero({ transition }: HeroProps) {
   const [scrollPosition, setScrollPosition] = useState(0)
   const handleScroll = () => {
     const position = window.scrollY
     setScrollPosition(position)
   }
-  const initialInputCurrency = useCurrency('ETH')
+  const initialInputCurrency = useCurrency('Niza')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -115,28 +118,50 @@ export function Hero({ scrollToRef, transition }: HeroProps) {
       position="relative"
       height="100vh"
       justify="center"
-      style={{ transform: `translate(0px, ${translateY}px)`, opacity: opacityY }}
+      style={{
+        transform: `translate(0px, ${translateY}px)`,
+        opacity: opacityY,
+        overflow: 'hidden',
+      }}
     >
-      <TokenCloud transition={transition} />
+      <LightGradient size="200px" left="15%" top="22%" />
+      <LightGradient size="200px" left="30%" top="40%" />
+      <LightGradient size="200px" left="5%" top="70%" />
+      <LightGradient size="200px" left="45%" top="80%" />
+      <LightGradient size="200px" left="40%" top="15%" />
+      <LightGradient size="200px" left="85%" top="15%" />
+      <LightGradient size="200px" left="93%" top="90%" />
+      <LightGradient size="200px" left="93%" top="50%" />
+      <StarsContainer>
+        <img src="/images/stars.png" alt="" />
+      </StarsContainer>
+      <StarsContainer>
+        <img src="/images/lights.png" alt="" style={{ opacity: 0.05 }} />
+      </StarsContainer>
+      <StarsContainer>
+        <img src="/images/brighterStars.png" alt="" style={{ opacity: 0.2 }} />
+      </StarsContainer>
       <Center
         direction="column"
         align="center"
         maxWidth="85vw"
         transition={transition}
-        style={{ transform: `translate(0px, ${translateY}px)`, opacity: opacityY }}
+        style={{
+          transform: `translate(0px, ${translateY}px)`,
+          opacity: opacityY,
+        }}
       >
         <Box maxWidth="920px" direction="column" align="center">
           <StyledH1>
             <RiseInText delay={0.0}>
-              <Trans>Swap</Trans>
+              <Trans>Swap has never</Trans>
             </RiseInText>{' '}
-            <RiseInText delay={0.1}>
-              <Trans>anytime,</Trans>
-            </RiseInText>
           </StyledH1>
           <RiseIn delay={0.2}>
             <StyledH1>
-              <Trans>anywhere.</Trans>
+              <Trans>
+                been so <PrimaryText>easy</PrimaryText>
+              </Trans>
             </StyledH1>
           </RiseIn>
         </Box>
@@ -151,44 +176,19 @@ export function Hero({ scrollToRef, transition }: HeroProps) {
           <Text
             variant="body1"
             textAlign="center"
-            maxWidth={430}
+            maxWidth={572}
             color="$neutral2"
             $short={{
               variant: 'body2',
             }}
           >
-            <Trans>The largest onchain marketplace. Buy and sell crypto on Ethereum and 7+ other chains.</Trans>
+            <Trans>
+              Unlock the world of cryptocurrency trading. Experience the freedom to trade over 400 tokens instantly, no
+              registration needed.
+            </Trans>
           </Text>
         </RiseIn>
       </Center>
-      <LearnMoreContainer
-        position="absolute"
-        width="100%"
-        align="center"
-        justify="center"
-        pointerEvents="none"
-        style={{ transform: `translate(0px, ${translateY}px)`, opacity: opacityY }}
-      >
-        <RiseIn delay={0.3}>
-          <Box
-            direction="column"
-            align="center"
-            justify="flex-start"
-            onClick={() => scrollToRef()}
-            style={{ cursor: 'pointer' }}
-            width="500px"
-          >
-            <Hover>
-              <ColumnCenter>
-                <Text variant="body2">
-                  <Trans>Scroll to learn more</Trans>
-                </Text>
-                <ChevronDown />
-              </ColumnCenter>
-            </Hover>
-          </Box>
-        </RiseIn>
-      </LearnMoreContainer>
     </Container>
   )
 }

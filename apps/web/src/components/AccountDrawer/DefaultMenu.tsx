@@ -61,7 +61,9 @@ function DefaultMenu({ drawerOpen }: { drawerOpen: boolean }) {
         return isAuthenticated ? (
           <AuthenticatedHeader account={account} openSettings={openSettings} />
         ) : (
-          <WalletModal openSettings={openSettings} />
+          <WalletModal
+          // openSettings={openSettings}
+          />
         )
       case MenuState.SETTINGS:
         return (

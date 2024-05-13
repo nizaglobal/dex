@@ -21,7 +21,7 @@ const OptionCardLeft = styled.div`
 
 const OptionCardClickable = styled.button<{ selected: boolean }>`
   align-items: center;
-  background-color: unset;
+  background-color: ${({ theme }) => theme.surface1};
   border: none;
   cursor: pointer;
   display: flex;

@@ -47,6 +47,19 @@ export const H3 = styled.h3`
   line-height: 32px; /* 133.333% */
   color: ${(props) => props.color || props.theme.neutral1};
 `
+
+export const H4 = styled.h3`
+  padding: 0;
+  margin: 0;
+  font-family: Basel;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 32px; /* 133.333% */
+  color: ${(props) => props.color || props.theme.neutral1};
+`
+
 export const Body1 = styled.p`
   padding: 0;
   margin: 0;
@@ -61,7 +74,21 @@ export const Body1 = styled.p`
   letter-spacing: -0.01em;
 `
 
-export type BoxProps = {
+export const Body2 = styled.p`
+  padding: 0;
+  margin: 0;
+  color: ${(props) => props.color || props.theme.neutral1};
+  font-feature-settings: 'ss07' on;
+  /* Body/1 */
+  font-family: Basel;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: -0.01em;
+`
+
+type BoxProps = {
   position?: 'relative' | 'absolute' | 'fixed'
   top?: string
   left?: string

@@ -16,6 +16,7 @@ import { GrayCard } from 'components/Card'
 import { AutoColumn } from 'components/Column'
 import { ConfirmSwapModal } from 'components/ConfirmSwapModal'
 import SwapCurrencyInputPanel from 'components/CurrencyInputPanel/SwapCurrencyInputPanel'
+import { AutoRow } from 'components/Row'
 import TokenSafetyModal from 'components/TokenSafety/TokenSafetyModal'
 import PriceImpactModal from 'components/swap/PriceImpactModal'
 import PriceImpactWarning from 'components/swap/PriceImpactWarning'
@@ -40,7 +41,6 @@ import { Trans } from 'i18n'
 import JSBI from 'jsbi'
 import { formatSwapQuoteReceivedEventProperties } from 'lib/utils/analytics'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowDown } from 'react-feather'
 import { useNavigate } from 'react-router-dom'
 import { Text } from 'rebass'
 import { useAppSelector } from 'state/hooks'
@@ -68,6 +68,12 @@ import { SafetyLevel } from 'uniswap/src/data/graphql/uniswap-data-api/__generat
 import { CurrencyInfo } from 'uniswap/src/features/dataApi/types'
 import { getIsReviewableQuote } from '.'
 import { OutputTaxTooltipBody } from './TaxTooltipBody'
+
+import { Box } from 'nft/components/Box'
+import { Body1 } from 'pages/Landing/components/Generics'
+import OptionsImage from '../../assets/images/options.png'
+import ChangePlaceSVG from '../../assets/svg/change_place.svg'
+import OptionModal from './Options'
 
 const SWAP_FORM_CURRENCY_SEARCH_FILTERS = {
   showCommonBases: true,
@@ -98,6 +104,7 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
 
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false)
   const [showPriceImpactModal, setShowPriceImpactModal] = useState<boolean>(false)
+  const [openOptions, setOpenOptions] = useState<boolean>(false)
 
   const handleConfirmTokenWarning = useCallback(() => {
     setDismissTokenWarning(true)
@@ -141,6 +148,8 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
     inputTax,
     outputTax,
   } = derivedSwapInfo
+
+  console.log(currencies)
 
   const [inputTokenHasTax, outputTokenHasTax] = useMemo(
     () => [!inputTax.equalTo(0), !outputTax.equalTo(0)],
@@ -321,7 +330,11 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
   )
   const showMaxButton = Boolean(maxInputAmount?.greaterThan(0) && !parsedAmounts[Field.INPUT]?.equalTo(maxInputAmount))
   const swapFiatValues = useMemo(() => {
-    return { amountIn: fiatValueTradeInput.data, amountOut: fiatValueTradeOutput.data, feeUsd: outputFeeFiatValue }
+    return {
+      amountIn: fiatValueTradeInput.data,
+      amountOut: fiatValueTradeOutput.data,
+      feeUsd: outputFeeFiatValue,
+    }
   }, [fiatValueTradeInput.data, fiatValueTradeOutput.data, outputFeeFiatValue])
 
   // the callback to execute the swap
@@ -408,11 +421,17 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
 
     const marketPriceImpact = trade?.priceImpact ? computeRealizedPriceImpact(trade) : undefined
     const largerPriceImpact = largerPercentValue(marketPriceImpact, preTaxStablecoinPriceImpact)
-    return { priceImpactSeverity: warningSeverity(largerPriceImpact), largerPriceImpact }
+    return {
+      priceImpactSeverity: warningSeverity(largerPriceImpact),
+      largerPriceImpact,
+    }
   }, [preTaxStablecoinPriceImpact, trade])
 
   const handleConfirmDismiss = useCallback(() => {
-    setSwapFormState((currentState) => ({ ...currentState, showConfirm: false }))
+    setSwapFormState((currentState) => ({
+      ...currentState,
+      showConfirm: false,
+    }))
     // If there was a swap, we want to clear the input
     if (swapResult) {
       onUserInput(Field.INPUT, '')
@@ -420,7 +439,10 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
   }, [onUserInput, swapResult])
 
   const handleAcceptChanges = useCallback(() => {
-    setSwapFormState((currentState) => ({ ...currentState, tradeToConfirm: trade }))
+    setSwapFormState((currentState) => ({
+      ...currentState,
+      tradeToConfirm: trade,
+    }))
   }, [trade])
 
   const handleInputSelect = useCallback(
@@ -475,6 +497,13 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
 
   return (
     <>
+      {openOptions ? <OptionModal setOpenOptions={setOpenOptions} /> : null}
+      <Box paddingX="24" paddingY="12">
+        <AutoRow justify="space-between">
+          <Body1>Swap</Body1>
+          <img src={OptionsImage} alt="options" style={{ cursor: 'pointer' }} onClick={() => setOpenOptions(true)} />
+        </AutoRow>
+      </Box>
       <TokenSafetyModal
         isOpen={urlTokensNotInDefault.length > 0 && !dismissTokenWarning}
         tokenAddress={urlTokensNotInDefault[0]?.address}
@@ -550,12 +579,12 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
               }}
               color={theme.neutral1}
             >
-              <ArrowDown size="16" color={theme.neutral1} />
+              <img src={ChangePlaceSVG} alt="Change Place" width={16} style={{ cursor: 'pointer' }} />
             </ArrowContainer>
           </TraceEvent>
         </ArrowWrapper>
       </div>
-      <AutoColumn gap="xs">
+      <AutoColumn gap="md">
         <div>
           <OutputSwapSection>
             <Trace section={InterfaceSectionName.CURRENCY_OUTPUT_PANEL}>
@@ -606,7 +635,9 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
             <TraceEvent
               events={[BrowserEvent.onClick]}
               name={InterfaceEventName.CONNECT_WALLET_BUTTON_CLICKED}
-              properties={{ received_swap_quote: getIsReviewableQuote(trade, tradeState, swapInputError) }}
+              properties={{
+                received_swap_quote: getIsReviewableQuote(trade, tradeState, swapInputError),
+              }}
               element={InterfaceElementName.CONNECT_WALLET_BUTTON}
             >
               <ButtonLight onClick={toggleWalletDrawer} fontWeight={535} $borderRadius="16px">

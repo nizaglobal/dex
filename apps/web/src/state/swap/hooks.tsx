@@ -41,6 +41,7 @@ export function useSwapActionHandlers(): {
   onUserInput: (field: Field, typedValue: string) => void
 } {
   const { swapState, setSwapState } = useSwapContext()
+
   const { currencyState, setCurrencyState } = useSwapAndLimitContext()
 
   const onCurrencySelection = useCallback(

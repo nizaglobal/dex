@@ -26,6 +26,7 @@
     "analyze": "source-map-explorer 'build/static/js/*.js' --no-border-checks --gzip",
     "serve": "serve build -s -l 3000",
     "lint": "yarn eslint --ignore-path .gitignore --cache --cache-location node_modules/.cache/eslint/ .",
+    "lint:fix": "yarn eslint . --fix",
     "typecheck": "tsc && yarn typecheck:cloud && yarn typecheck:cypress",
     "typecheck:cloud": "tsc -p functions/tsconfig.json",
     "typecheck:cypress": "tsc -p cypress/tsconfig.json",

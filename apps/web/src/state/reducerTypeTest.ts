@@ -60,7 +60,6 @@ type ExpectedAppState = CombinedState<{
   burn: BurnState
   burnV3: BurnV3State
   multicall: ReturnType<typeof multicall.reducer>
-  logs: LogsState
   [routingApi.reducerPath]: ReturnType<typeof routingApi.reducer>
   [quickRouteApi.reducerPath]: ReturnType<typeof quickRouteApi.reducer>
 }>

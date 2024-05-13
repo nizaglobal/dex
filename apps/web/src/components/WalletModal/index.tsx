@@ -1,8 +1,6 @@
 import { useWeb3React } from '@web3-react/core'
-import IconButton from 'components/AccountDrawer/IconButton'
 import { useShowMoonpayText } from 'components/AccountDrawer/MiniPortfolio/hooks'
 import Column from 'components/Column'
-import { Settings } from 'components/Icons/Settings'
 import Row, { AutoRow } from 'components/Row'
 import { networkConnection } from 'connection'
 import { ActivationStatus, useActivationState } from 'connection/activate'
@@ -22,7 +20,7 @@ import { useOrderedConnections } from './useOrderedConnections'
 
 const Wrapper = styled.div`
   ${flexColumnNoWrap};
-  background-color: ${({ theme }) => theme.surface1};
+  background-color: ${({ theme }) => theme.background};
   width: 100%;
   padding: 14px 16px 16px;
   flex: 1;
@@ -34,6 +32,7 @@ const OptionGrid = styled.div`
   flex: 1;
   grid-gap: 2px;
   border-radius: 12px;
+  border: 1px solid ${({ theme }) => theme.border1};
   overflow: hidden;
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
     grid-template-columns: 1fr;
@@ -50,7 +49,7 @@ const Line = styled.div`
   background: ${({ theme }) => theme.surface3};
 `
 
-export default function WalletModal({ openSettings }: { openSettings: () => void }) {
+export default function WalletModal() {
   const { connector, chainId } = useWeb3React()
   const showMoonpayText = useShowMoonpayText()
 
@@ -67,9 +66,8 @@ export default function WalletModal({ openSettings }: { openSettings: () => void
 
   return (
     <Wrapper data-testid="wallet-modal">
-      <AutoRow justify="space-between" width="100%">
-        <ThemedText.SubHeader>Connect a wallet</ThemedText.SubHeader>
-        <IconButton Icon={Settings} onClick={openSettings} data-testid="wallet-settings" />
+      <AutoRow justify="space-between" width="100%" marginY={18}>
+        <ThemedText.H1Medium style={{ fontWeight: '600' }}>Connect a wallet</ThemedText.H1Medium>
       </AutoRow>
       {showUniswapWalletOptions && (
         <>

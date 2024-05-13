@@ -72,10 +72,12 @@ import { Dots } from '../Pool/styled'
 import { Review } from './Review'
 import { DynamicSection, MediumOnly, ResponsiveTwoColumns, ScrollablePage, StyledInput, Wrapper } from './styled'
 
-const DEFAULT_ADD_IN_RANGE_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
+export const DEFAULT_ADD_IN_RANGE_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 const blastRebasingAlertAtom = atomWithStorage<boolean>('shouldShowBlastRebasingAlert', true)
 
-const StyledBodyWrapper = styled(BodyWrapper)<{ $hasExistingPosition: boolean }>`
+const StyledBodyWrapper = styled(BodyWrapper)<{
+  $hasExistingPosition: boolean
+}>`
   padding: ${({ $hasExistingPosition }) => ($hasExistingPosition ? '10px' : 0)};
   max-width: 640px;
 `

@@ -1,0 +1,7 @@
+{
+    "prettier.jsxSingleQuote": true,
+    "prettier.arrowParens": "avoid",
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

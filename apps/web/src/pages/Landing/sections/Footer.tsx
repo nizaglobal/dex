@@ -7,7 +7,12 @@ import { ExternalLink } from 'theme/components'
 
 import { Wiggle } from '../components/animations'
 import { Body1, Box, H3 } from '../components/Generics'
-import { Discord, Github, Twitter } from '../components/Icons'
+import { Discord, Telegram, Twitter } from '../components/Icons'
+
+const FooterBox = styled(Box)`
+  background-color: 'transparent';
+  background-image: linear-gradient(#0e141c, #0e1c24);
+`
 
 const SocialIcon = styled(Wiggle)`
   flex: 0;
@@ -15,8 +20,14 @@ const SocialIcon = styled(Wiggle)`
   cursor: pointer;
   transition: fill;
   transition-duration: 0.2s;
+  background-color: ${({ theme }) => theme.background3};
+  padding: 14px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
   &:hover {
-    fill: ${(props) => props.$hoverColor};
+    /* fill: ${(props) => props.$hoverColor}; */
   }
 `
 const RowToCol = styled(Box)`
@@ -49,6 +60,7 @@ const MenuItemStyles = css`
   stroke: none;
   transition: color 0.1s ease-in-out;
   text-decoration: none;
+  /* background-color: ${({ theme }) => theme.background3}; */
   &:hover {
     color: ${({ theme }) => theme.neutral1};
     opacity: 1;
@@ -70,20 +82,20 @@ const ModalItem = styled.div`
 `
 export function Socials({ iconSize }: { iconSize?: string }) {
   return (
-    <Box gap="24px">
-      <SocialIcon $hoverColor="#00C32B">
+    <Box gap="12px">
+      <SocialIcon>
         <StyledExternalLink href="https://github.com/Uniswap">
-          <Github size={iconSize} fill="inherit" />
+          <Telegram size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
-      <SocialIcon $hoverColor="#20BAFF">
+      <SocialIcon style={{ paddingTop: '16px' }}>
         <StyledExternalLink href="https://twitter.com/Uniswap">
-          <Twitter size={iconSize} fill="inherit" />
+          <Twitter size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
-      <SocialIcon $hoverColor="#5F51FF">
+      <SocialIcon style={{ paddingTop: '18px' }}>
         <StyledExternalLink href="https://discord.com/invite/uniswap">
-          <Discord size={iconSize} fill="inherit" />
+          <Discord size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
     </Box>
@@ -95,13 +107,13 @@ export function Footer() {
   const togglePrivacyPolicy = useTogglePrivacyPolicy()
 
   return (
-    <Box as="footer" direction="column" align="center" padding={screenIsLarge ? '0 40px' : '0 48px'}>
+    <FooterBox as="footer" direction="column" align="center" padding={screenIsLarge ? '80px 40px' : '40px 48px'}>
       <Box direction="row" maxWidth="1280px" gap="24px">
         <RowToCol direction="row" justify-content="space-between" gap="32px">
           <Box direction="column" height="100%" gap="64px">
             <Box direction="column" gap="10px">
               <H3>© 2024</H3>
-              <H3>Uniswap Labs</H3>
+              <H3>Niza Swap</H3>
             </Box>
             <HideWhenSmall>
               <Socials />
@@ -175,6 +187,6 @@ export function Footer() {
           </HideWhenLarge>
         </RowToCol>
       </Box>
-    </Box>
+    </FooterBox>
   )
 }

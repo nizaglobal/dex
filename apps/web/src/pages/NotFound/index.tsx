@@ -6,10 +6,7 @@ import { useIsMobile } from 'nft/hooks'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemedText } from 'theme/components'
-import { useIsDarkMode } from 'theme/components/ThemeToggle'
-
-import darkImage from '../../assets/images/404-page-dark.png'
-import lightImage from '../../assets/images/404-page-light.png'
+import NizaIcon from '../../assets/images/NizaIcon.png'
 
 const Image = styled.img`
   max-width: 510px;
@@ -39,7 +36,6 @@ const PageWrapper = styled(Container)`
 `
 
 export default function NotFound() {
-  const isDarkMode = useIsDarkMode()
   const isMobile = useIsMobile()
 
   const Title = isMobile ? ThemedText.LargeHeader : ThemedText.Hero
@@ -55,7 +51,8 @@ export default function NotFound() {
               <Trans>Page not found!</Trans>
             </Paragraph>
           </Container>
-          <Image src={isDarkMode ? darkImage : lightImage} alt="Liluni" />
+          {/* <Image src={isDarkMode ? darkImage : lightImage} alt="Liluni" /> */}
+          <Image src={NizaIcon} alt="Liluni" />
         </Header>
         <SmallButtonPrimary as={Link} to="/">
           <Trans>Oops, take me back to Swap</Trans>

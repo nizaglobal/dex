@@ -34,9 +34,11 @@ import { formatCurrencySymbol } from './utils'
 export const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${flexColumnNoWrap};
   position: relative;
-  border-radius: ${({ hideInput }) => (hideInput ? '16px' : '20px')};
+  border-radius: '20px';
+  /* border-radius: ${({ hideInput }) => (hideInput ? '16px' : '20px')}; */
   z-index: 1;
-  width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
+  /* width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')}; */
+  width: 'initial';
   transition: height 1s ease;
   will-change: height;
 `
@@ -53,7 +55,7 @@ const FixedContainer = styled.div`
 `
 
 const Container = styled.div<{ hideInput: boolean }>`
-  min-height: 44px;
+  /* min-height: 90px; */
   border-radius: ${({ hideInput }) => (hideInput ? '16px' : '20px')};
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
 `
@@ -68,7 +70,7 @@ interface CurrencySelectProps {
 
 export const CurrencySelect = styled(ButtonGray)<CurrencySelectProps>`
   align-items: center;
-  background-color: ${({ selected, theme }) => (selected ? theme.surface1 : theme.accent1)};
+  background-color: ${({ theme }) => theme.surface1};
   opacity: ${({ disabled }) => (!disabled ? 1 : 0.4)};
   color: ${({ selected, theme }) => (selected ? theme.neutral1 : theme.neutralContrast)};
   cursor: pointer;
@@ -76,7 +78,7 @@ export const CurrencySelect = styled(ButtonGray)<CurrencySelectProps>`
   border-radius: 18px;
   outline: none;
   user-select: none;
-  border: 1px solid ${({ selected, theme }) => (selected ? theme.surface3 : theme.accent1)};
+  border: 1px solid ${({ theme }) => theme.surface3};
   font-size: 24px;
   font-weight: 485;
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
@@ -88,7 +90,7 @@ export const CurrencySelect = styled(ButtonGray)<CurrencySelectProps>`
 
   &:hover,
   &:active {
-    background-color: ${({ theme, selected }) => (selected ? theme.surface2 : theme.accent1)};
+    background-color: ${({ theme }) => theme.surface2};
   }
 
   &:before {
@@ -147,7 +149,7 @@ const InputRow = styled.div`
   ${flexRowNoWrap};
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
+  /* margin-top: 4px; */
 `
 
 const LabelRow = styled.div`
@@ -165,8 +167,12 @@ const LabelRow = styled.div`
 
 const FiatRow = styled(LabelRow)`
   justify-content: flex-end;
-  min-height: 24px;
-  padding: 8px 0px 0px 0px;
+  /* min-height: 24px; */
+  /* padding: 8px 0px 0px 0px; */
+  /* position: absolute; */
+  /* @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
+    min-height: 170px;
+  } */
 `
 
 const Aligner = styled.span`
@@ -305,22 +311,24 @@ const SwapCurrencyInputPanel = forwardRef<HTMLInputElement, SwapCurrencyInputPan
         )}
 
         <Container hideInput={hideInput}>
-          <Text variant="body3" userSelect="none" color="$neutral2">
-            {label}
-          </Text>
           <InputRow style={hideInput ? { padding: '0', borderRadius: '8px' } : {}}>
             {!hideInput && (
               <div style={{ display: 'flex', flexGrow: 1 }} onClick={handleDisabledNumericalInputClick}>
-                <StyledNumericalInput
-                  className="token-amount-input"
-                  value={value}
-                  onUserInput={onUserInput}
-                  disabled={!chainAllowed || disabled || numericalInputSettings?.disabled}
-                  $loading={loading}
-                  id={id}
-                  ref={ref}
-                  maxDecimals={currency?.decimals}
-                />
+                <AutoColumn gap="12px">
+                  <Text variant="body3" userSelect="none" color="#98A2B3">
+                    {label}
+                  </Text>
+                  <StyledNumericalInput
+                    className="token-amount-input"
+                    value={value}
+                    onUserInput={onUserInput}
+                    disabled={!chainAllowed || disabled || numericalInputSettings?.disabled}
+                    $loading={loading}
+                    id={id}
+                    ref={ref}
+                    maxDecimals={currency?.decimals}
+                  />
+                </AutoColumn>
               </div>
             )}
             <PrefetchBalancesWrapper>
@@ -361,7 +369,7 @@ const SwapCurrencyInputPanel = forwardRef<HTMLInputElement, SwapCurrencyInputPan
                           className="token-symbol-container"
                           active={Boolean(currency && currency.symbol)}
                         >
-                          {currency ? formatCurrencySymbol(currency) : <Trans>Select token</Trans>}
+                          {currency ? formatCurrencySymbol(currency) : <Trans>Select</Trans>}
                         </StyledTokenName>
                       )}
                     </RowFixed>

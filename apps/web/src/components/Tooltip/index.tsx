@@ -38,9 +38,9 @@ const TooltipContainer = styled.div<{ size: TooltipSize }>`
   line-height: 16px;
   word-break: break-word;
 
-  background: ${({ theme }) => theme.surface1};
+  background: ${({ theme }) => theme.black};
   border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.9, theme.shadow1)};
 `
 

@@ -4,12 +4,12 @@ import { ExternalLink, ThemedText } from 'theme/components'
 
 const StyledLink = styled(ExternalLink)`
   font-weight: 535;
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.white};
 `
 
 export default function PrivacyPolicyNotice() {
   return (
-    <ThemedText.BodySmall color="neutral2">
+    <ThemedText.BodySmall color="white">
       <Trans>By connecting a wallet, you agree to Uniswap Labs&apos;</Trans>{' '}
       <StyledLink href="https://uniswap.org/terms-of-service/">
         <Trans>Terms of Service</Trans>{' '}

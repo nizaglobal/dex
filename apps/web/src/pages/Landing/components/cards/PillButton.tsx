@@ -12,7 +12,7 @@ const Button = styled(motion.button)<{ cursor?: string }>`
   align-items: center;
   justify-content: center;
   border: 0;
-  background-color: ${({ theme }) => theme.surface1};
+  background-color: ${({ theme }) => theme.background};
   overflow: hidden;
   cursor: ${({ cursor }) => cursor ?? 'pointer'};
   flex: none;

@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 // Ordering is intentional and must be preserved: styling, polyfilling, tracing, and then functionality.
-import '@reach/dialog/styles.css'
-import 'inter-ui'
-import 'polyfills'
-import 'tracing'
-import 'connection/eagerlyConnect'
+import "@reach/dialog/styles.css";
+import "inter-ui";
+import "polyfills";
+import "tracing";
+import "connection/eagerlyConnect";
 /* eslint-enable prettier/prettier */
 
 import { ApolloProvider } from '@apollo/client'
@@ -36,7 +36,7 @@ import App from './pages/App'
 import store from './state'
 import ApplicationUpdater from './state/application/updater'
 import ListsUpdater from './state/lists/updater'
-import LogsUpdater from './state/logs/updater'
+// import LogsUpdater from './state/logs/updater'
 import { ThemeProvider, ThemedGlobalStyle } from './theme'
 import RadialGradientByChainUpdater from './theme/components/RadialGradientByChainUpdater'
 
@@ -59,7 +59,7 @@ function Updaters() {
       <ApplicationUpdater />
       <ActivityStateUpdater />
       <MulticallUpdater />
-      <LogsUpdater />
+      {/* <LogsUpdater /> */}
     </>
   )
 }

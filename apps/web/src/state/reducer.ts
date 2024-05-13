@@ -8,7 +8,6 @@ import application from './application/reducer'
 import burn from './burn/reducer'
 import burnV3 from './burn/v3/reducer'
 import lists from './lists/reducer'
-import logs from './logs/slice'
 import { customCreateMigrate, migrations } from './migrations'
 import mint from './mint/reducer'
 import mintV3 from './mint/v3/reducer'
@@ -34,7 +33,6 @@ const appReducer = combineReducers({
   burn,
   burnV3,
   multicall: multicall.reducer,
-  logs,
   [routingApi.reducerPath]: routingApi.reducer,
   [quickRouteApi.reducerPath]: quickRouteApi.reducer,
   ...persistedReducers,

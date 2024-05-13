@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { subheadSmall } from 'nft/css/common.css'
+import { darkTheme } from 'theme/colors'
 
 import { breakpoints, sprinkles, vars } from '../../nft/css/sprinkles.css'
 
@@ -15,9 +16,9 @@ const baseSearchStyle = style([
     width: { sm: 'viewWidth' },
     borderStyle: 'solid',
     borderWidth: '1px',
-    borderColor: 'surface3',
   }),
   {
+    background: darkTheme.surface1,
     backdropFilter: 'blur(60px)',
     '@media': {
       [`screen and (min-width: ${breakpoints.sm}px)`]: {
@@ -61,7 +62,8 @@ export const searchBarContainerNft = style([
   }),
   {
     backdropFilter: 'blur(60px)',
-    borderRadius: '16px',
+    borderRadius: '8px',
+    borderColor: darkTheme.border1,
   },
 ])
 
@@ -111,6 +113,7 @@ export const searchBarDropdownNft = style([
   }),
   {
     backdropFilter: 'blur(60px)',
+    borderColor: '#344054',
     borderTop: 'none',
   },
 ])

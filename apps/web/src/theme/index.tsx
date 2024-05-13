@@ -1,7 +1,6 @@
 import { rootCssString } from 'nft/css/cssStringFromTheme'
 import { PropsWithChildren, useMemo } from 'react'
 import { createGlobalStyle, css, ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { useIsDarkMode } from 'theme/components/ThemeToggle'
 import { getAccent2, getNeutralContrast } from 'theme/utils'
 
 import { navDimensions } from '../nft/css/sprinkles.css'
@@ -17,9 +16,9 @@ export const MEDIA_WIDTHS = {
 
 const MAX_CONTENT_WIDTH = '1200px'
 
-const deprecated_mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(
-  MEDIA_WIDTHS
-).reduce((acc, size) => {
+const deprecated_mediaWidthTemplates: {
+  [width in keyof typeof MEDIA_WIDTHS]: typeof css
+} = Object.keys(MEDIA_WIDTHS).reduce((acc, size) => {
   acc[size] = (a: any, b: any, c: any) => css`
     @media (max-width: ${(MEDIA_WIDTHS as any)[size]}px) {
       ${css(a, b, c)}
@@ -114,7 +113,11 @@ export function getTheme(darkMode: boolean, overriddenColors?: Partial<ThemeColo
   const [colors, deprecatedColors] = darkMode ? [darkTheme, darkDeprecatedTheme] : [lightTheme, lightDeprecatedTheme]
   const colorsWithOverrides = applyOverriddenColors(colors, overriddenColors)
 
-  return { ...colorsWithOverrides, ...deprecatedColors, ...getSettings(darkMode) }
+  return {
+    ...colorsWithOverrides,
+    ...deprecatedColors,
+    ...getSettings(darkMode),
+  }
 }
 
 function applyOverriddenColors(defaultColors: ThemeColors, overriddenColors?: Partial<ThemeColors>) {
@@ -142,9 +145,12 @@ function applyOverriddenColors(defaultColors: ThemeColors, overriddenColors?: Pa
 }
 
 export function ThemeProvider({ children, ...overriddenColors }: PropsWithChildren<Partial<ThemeColors>>) {
-  const darkMode = useIsDarkMode()
+  const darkMode = true
+  // const darkMode = useIsDarkMode();
   // eslint-disable-next-line react-hooks/exhaustive-deps -- only update when darkMode or overriddenColors' entries change
   const themeObject = useMemo(() => getTheme(darkMode, overriddenColors), [darkMode, JSON.stringify(overriddenColors)])
+
+  console.log(themeObject)
 
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }

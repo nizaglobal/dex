@@ -34,8 +34,9 @@ const BodyWrapper = styled.div<{ bannerIsVisible?: boolean }>`
   flex-direction: column;
   position: relative;
   width: 100%;
+  background-color: ${({ theme }) => theme.background};
   min-height: calc(100vh - ${({ bannerIsVisible }) => (bannerIsVisible ? UK_BANNER_HEIGHT : 0)}px);
-  padding: ${({ theme }) => theme.navHeight}px 0px 5rem 0px;
+  padding: ${({ theme }) => theme.navHeight}px 0px 0rem 0px;
   align-items: center;
   flex: 1;
 
@@ -69,9 +70,13 @@ const MobileBottomBar = styled.div`
   }
 `
 
-const HeaderWrapper = styled.div<{ transparent?: boolean; bannerIsVisible?: boolean; scrollY: number }>`
+const HeaderWrapper = styled.div<{
+  transparent?: boolean
+  bannerIsVisible?: boolean
+  scrollY: number
+}>`
   ${flexRowNoWrap};
-  background-color: ${({ theme, transparent }) => !transparent && theme.surface1};
+  background-color: ${({ theme, transparent }) => !transparent && theme.background2};
   border-bottom: ${({ theme, transparent }) => !transparent && `1px solid ${theme.surface3}`};
   width: 100%;
   justify-content: space-between;
@@ -263,7 +268,10 @@ function UserPropertyUpdater() {
     const sendWebVital =
       (metric: string) =>
       ({ delta }: Metric) =>
-        sendAnalyticsEvent(SharedEventName.WEB_VITALS, { ...pageLoadProperties, [metric]: delta })
+        sendAnalyticsEvent(SharedEventName.WEB_VITALS, {
+          ...pageLoadProperties,
+          [metric]: delta,
+        })
     getCLS(sendWebVital('cumulative_layout_shift'))
     getFCP(sendWebVital('first_contentful_paint_ms'))
     getFID(sendWebVital('first_input_delay_ms'))

@@ -10,7 +10,9 @@ export const MODAL_TRANSITION_DURATION = 200
 
 const AnimatedDialogOverlay = animated(DialogOverlay)
 
-const StyledDialogOverlay = styled(AnimatedDialogOverlay)<{ $scrollOverlay?: boolean }>`
+const StyledDialogOverlay = styled(AnimatedDialogOverlay)<{
+  $scrollOverlay?: boolean
+}>`
   will-change: transform, opacity;
   &[data-reach-dialog-overlay] {
     z-index: ${Z_INDEX.modalBackdrop};
@@ -114,13 +116,19 @@ export default function Modal({
   })
 
   const slideTransition = useTransition(isOpen, {
-    config: { duration: MODAL_TRANSITION_DURATION, easing: easings.easeInOutCubic },
+    config: {
+      duration: MODAL_TRANSITION_DURATION,
+      easing: easings.easeInOutCubic,
+    },
     from: { transform: 'translateY(40px)' },
     enter: { transform: 'translateY(0px)' },
     leave: { transform: 'translateY(40px)' },
   })
 
-  const [{ y }, set] = useSpring(() => ({ y: 0, config: { mass: 1, tension: 210, friction: 20 } }))
+  const [{ y }, set] = useSpring(() => ({
+    y: 0,
+    config: { mass: 1, tension: 210, friction: 20 },
+  }))
   const bind = useGesture({
     onDrag: (state) => {
       set({
@@ -138,7 +146,9 @@ export default function Modal({
         ({ opacity }, item) =>
           item && (
             <StyledDialogOverlay
-              style={{ opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }) }}
+              style={{
+                opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
+              }}
               onDismiss={onDismiss}
               initialFocusRef={initialFocusRef}
               unstable_lockFocusAcrossFrames={false}
@@ -151,7 +161,9 @@ export default function Modal({
                       {...(isMobile
                         ? {
                             ...bind(),
-                            style: { transform: y.interpolate((y) => `translateY(${(y as number) > 0 ? y : 0}px)`) },
+                            style: {
+                              transform: y.interpolate((y) => `translateY(${(y as number) > 0 ? y : 0}px)`),
+                            },
                           }
                         : slideIn
                         ? { style: styles }

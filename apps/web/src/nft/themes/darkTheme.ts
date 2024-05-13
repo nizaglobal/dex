@@ -5,6 +5,7 @@ export const darkTheme: Theme = {
     neutral1: vars.color.neutral1_dark,
     neutral2: vars.color.neutral2_dark,
     neutral3: vars.color.neutral3_dark,
+    border1: vars.color.border1,
     surface1: vars.color.surface1_dark,
     surface2: vars.color.surface2_dark,
     surface3: vars.color.surface3_dark,

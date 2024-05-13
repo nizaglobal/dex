@@ -5,6 +5,7 @@ export const lightTheme: Theme = {
     neutral1: vars.color.neutral1_light,
     neutral2: vars.color.neutral2_light,
     neutral3: vars.color.neutral3_light,
+    border1: vars.color.border1,
     surface1: vars.color.surface1_light,
     surface2: vars.color.surface2_light,
     surface3: vars.color.surface3_light,
