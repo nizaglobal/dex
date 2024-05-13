@@ -33,8 +33,8 @@ const TooltipContainer = styled.div<{ size: TooltipSize }>`
   pointer-events: auto;
 
   color: ${({ theme }) => theme.neutral1};
-  font-weight: 485;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 16px;
   word-break: break-word;
 

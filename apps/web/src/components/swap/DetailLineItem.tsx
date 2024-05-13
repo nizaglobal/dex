@@ -45,9 +45,9 @@ function ValueWrapper({ children, lineItem, labelHovered, syncing }: ValueWrappe
       forceShow={labelHovered} // displays tooltip when hovering either both label or value
       size={tooltipSize}
       text={
-        <ThemedText.Caption color="neutral2">
-          <TooltipBody />
-        </ThemedText.Caption>
+        // <ThemedText.Caption color="neutral2">
+        <TooltipBody />
+        // </ThemedText.Caption>
       }
     >
       <DetailRowValue>{children}</DetailRowValue>

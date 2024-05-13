@@ -386,7 +386,7 @@ export const MediumOnly = styled.span`
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.surface3};
+  background-color: ${({ theme }) => theme.border2};
 `
 
 export const CautionTriangle = styled(AlertTriangle)`

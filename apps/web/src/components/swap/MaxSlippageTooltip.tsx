@@ -23,10 +23,12 @@ const ExactOutMessage = ({ amount }: { amount: string }) => (
 function SlippageHeader({ amount, isExactIn }: { amount: string; isExactIn: boolean }) {
   return (
     <RowBetween>
-      <ThemedText.Caption color="neutral1">
-        {isExactIn ? <Trans>Receive at least</Trans> : <Trans>Pay at most</Trans>}
-      </ThemedText.Caption>
-      <ThemedText.Caption color="neutral1">{amount}</ThemedText.Caption>
+      {/* <ThemedText.Caption color="neutral1"> */}
+      {isExactIn ? <Trans>Receive at least</Trans> : <Trans>Pay at most</Trans>}
+      {/* </ThemedText.Caption> */}
+      {/* <ThemedText.Caption color="neutral1"> */}
+      <div>{amount}</div>
+      {/* </ThemedText.Caption> */}
     </RowBetween>
   )
 }
@@ -35,19 +37,22 @@ export function MaxSlippageTooltip({ trade, allowedSlippage }: { trade: Interfac
   const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
   const amount = isExactIn ? trade.minimumAmountOut(allowedSlippage) : trade.maximumAmountIn(allowedSlippage)
 
-  const formattedAmount = useFormatter().formatCurrencyAmount({ amount, type: NumberType.SwapDetailsAmount })
+  const formattedAmount = useFormatter().formatCurrencyAmount({
+    amount,
+    type: NumberType.SwapDetailsAmount,
+  })
   const displayAmount = `${formattedAmount} ${amount.currency.symbol}`
 
   return (
     <Column gap="xs">
       <SlippageHeader amount={displayAmount} isExactIn={isExactIn} />
       <Separator />
-      <div>
+      <ThemedText.BodySmall color="neutral2">
         {isExactIn ? <ExactInMessage amount={displayAmount} /> : <ExactOutMessage amount={displayAmount} />}{' '}
         <ExternalLink href="https://support.uniswap.org/hc/en-us/articles/8643879653261-What-is-Price-Slippage-">
           Learn more
         </ExternalLink>
-      </div>
+      </ThemedText.BodySmall>
     </Column>
   )
 }

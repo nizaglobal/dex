@@ -36,7 +36,10 @@ export default function TradePrice({ price }: TradePriceProps) {
 
   const formattedPrice = useMemo(() => {
     try {
-      return formatPrice({ price: showInverted ? price : price.invert(), type: NumberType.TokenTx })
+      return formatPrice({
+        price: showInverted ? price : price.invert(),
+        type: NumberType.TokenTx,
+      })
     } catch {
       return '0'
     }
@@ -47,6 +50,13 @@ export default function TradePrice({ price }: TradePriceProps) {
   const flipPrice = useCallback(() => setShowInverted(!showInverted), [setShowInverted, showInverted])
 
   const text = `${'1 ' + labelInverted + ' = ' + formattedPrice ?? '-'} ${label}`
+
+  console.log(
+    formatNumber({
+      input: usdPrice,
+      type: NumberType.FiatTokenPrice,
+    })
+  )
 
   return (
     <StyledPriceContainer

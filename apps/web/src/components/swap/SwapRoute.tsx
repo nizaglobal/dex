@@ -68,14 +68,14 @@ export function SwapRoute({ trade }: { trade: ClassicTrade }) {
   return useAutoRouterSupported() ? (
     <Column gap="md">
       <RoutingDiagram routes={routes} currencyIn={inputAmount.currency} currencyOut={outputAmount.currency} />
-      <ThemedText.Caption color="neutral2">
+      <ThemedText.BodySmall color="neutral2">
         {Boolean(gasPrice) && <Trans>Best price route costs ~{{ gasPrice }} in gas. </Trans>}
         {Boolean(gasPrice) && ' '}
         <Trans>
           This route optimizes your total output by considering split routes, multiple hops, and the gas cost of each
           step.
         </Trans>
-      </ThemedText.Caption>
+      </ThemedText.BodySmall>
     </Column>
   ) : (
     <RoutingDiagram routes={routes} currencyIn={inputAmount.currency} currencyOut={outputAmount.currency} />

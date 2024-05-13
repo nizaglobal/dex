@@ -105,9 +105,10 @@ export const colors = {
   networkBlast: '#fcfc03',
   //NEW COLORS FOR SPORE - need to define light/dark here cause they are root colors now (different system)
   neutral1_dark: '#FFFFFF',
-  neutral2_dark: '#9B9B9B',
+  neutral2_dark: '#D0D5DD',
   neutral3_dark: '#5E5E5E',
   border1_dark: '#344054',
+  border2_dark: '#475467',
   surface1_dark: '#1D2939',
   surface2_dark: '#101828',
   surface3_dark: '#FFFFFF12',
@@ -120,6 +121,7 @@ export const colors = {
   neutral2_light: '#7D7D7D',
   neutral3_light: '#CECECE',
   border1_light: '#344054',
+  border2_light: '#475467',
   surface1_light: '#1D2939',
   surface2_light: '#101828',
   surface3_light: '#22222212',
@@ -182,6 +184,7 @@ export const darkTheme = {
   neutralContrast: colors.white,
 
   border1: colors.border1_dark,
+  border2: colors.border2_dark,
 
   surface1: colors.surface1_dark,
   surface2: colors.surface2_dark,
@@ -218,6 +221,7 @@ export const lightTheme: ThemeColors = {
   neutralContrast: colors.white,
 
   border1: colors.border1_dark,
+  border2: colors.border2_dark,
 
   surface1: colors.surface1_dark,
   surface2: colors.surface2_dark,

@@ -100,7 +100,7 @@ export function Hero({ transition }: HeroProps) {
     const position = window.scrollY
     setScrollPosition(position)
   }
-  const initialInputCurrency = useCurrency('Niza')
+  const initialInputCurrency = useCurrency('ETH')
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -116,12 +116,13 @@ export function Hero({ transition }: HeroProps) {
   return (
     <Container
       position="relative"
-      height="100vh"
+      height="120vh"
       justify="center"
       style={{
         transform: `translate(0px, ${translateY}px)`,
         opacity: opacityY,
-        overflow: 'hidden',
+        overflowX: 'hidden',
+        overflowY: 'clip',
       }}
     >
       <LightGradient size="200px" left="15%" top="22%" />

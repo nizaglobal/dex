@@ -5,6 +5,8 @@ import RouterLabel from 'components/RouterLabel'
 import Row from 'components/Row'
 import { TooltipSize } from 'components/Tooltip'
 import { SUPPORTED_GAS_ESTIMATE_CHAIN_IDS } from 'constants/chains'
+import { nativeOnChain } from 'constants/tokens'
+import { chainIdToBackendName } from 'graphql/data/util'
 import { useUSDPrice } from 'hooks/useUSDPrice'
 import { Trans, t } from 'i18n'
 import React, { useEffect, useState } from 'react'
@@ -18,7 +20,7 @@ import { ExternalLink, ThemedText } from 'theme/components'
 import { NumberType, useFormatter } from 'utils/formatNumbers'
 import { getPriceImpactColor } from 'utils/prices'
 import { DetailLineItem, LineItemData } from './DetailLineItem'
-import { GasBreakdownTooltip, UniswapXDescription } from './GasBreakdownTooltip'
+import { UniswapXDescription } from './GasBreakdownTooltip'
 import GasEstimateTooltip from './GasEstimateTooltip'
 import { MaxSlippageTooltip } from './MaxSlippageTooltip'
 import { RoutingTooltip, SwapRoute } from './SwapRoute'
@@ -84,7 +86,33 @@ function SwapFeeTooltipContent({ hasFee }: { hasFee: boolean }) {
     <>
       {message}{' '}
       <ExternalLink href="https://support.uniswap.org/hc/en-us/articles/20131678274957">
-        <Trans>Learn more</Trans>
+        <Trans>
+          <br />
+          Learn more
+        </Trans>
+      </ExternalLink>
+    </>
+  )
+}
+
+function NetworkCostTooltipContent(trade: InterfaceTrade) {
+  const inputCurrency = trade.inputAmount.currency
+  const native = nativeOnChain(inputCurrency.chainId)
+  const chainName = chainIdToBackendName(native.chainId)
+
+  const message = (
+    <Trans>
+      Network cost is paid in {{ sym: native.symbol }} on the {{ chainName }} network in order to transact.
+    </Trans>
+  )
+  return (
+    <>
+      {message}{' '}
+      <ExternalLink href="https://support.uniswap.org/hc/en-us/articles/20131678274957">
+        <Trans>
+          <br />
+          Learn more
+        </Trans>
       </ExternalLink>
     </>
   )
@@ -155,7 +183,8 @@ function useLineItem(props: SwapLineItemProps): LineItemData | undefined {
       if (!SUPPORTED_GAS_ESTIMATE_CHAIN_IDS.includes(chainId)) return
       return {
         Label: () => <Trans>Network cost</Trans>,
-        TooltipBody: () => <GasBreakdownTooltip trade={trade} />,
+        // TooltipBody: () => <GasBreakdownTooltip trade={trade} />,
+        TooltipBody: () => NetworkCostTooltipContent(trade),
         Value: () => {
           if (isPreview) return <Loading />
           return <GasEstimateTooltip trade={trade} loading={!!syncing} />
