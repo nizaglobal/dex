@@ -65,6 +65,8 @@ const StyledMenuIcon = styled(MenuIcon)`
 
 const ActionButton = styled(Row)`
   ${ActionButtonStyle}
+  background-color: ${({ theme }) => theme.surface1};
+  border: 1px solid ${({ theme }) => theme.border1};
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     color: unset;

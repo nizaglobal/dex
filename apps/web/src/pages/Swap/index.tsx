@@ -19,7 +19,6 @@ import { isPreviewTrade } from 'state/routing/utils'
 import { SwapAndLimitContextProvider, SwapContextProvider } from 'state/swap/SwapContext'
 import { queryParametersToCurrencyState } from 'state/swap/hooks'
 import { CurrencyState, SwapAndLimitContext } from 'state/swap/types'
-import { useIsDarkMode } from '../../theme/components/ThemeToggle'
 import { LimitFormWrapper } from './Limit/LimitForm'
 import { SwapForm } from './SwapForm'
 
@@ -117,6 +116,7 @@ export function Swap({
   disableTokenInputs = false,
   compact = false,
   syncTabToUrl,
+  swapHeaderWithoutOptions = false,
 }: {
   className?: string
   chainId?: ChainId
@@ -126,8 +126,9 @@ export function Swap({
   initialOutputCurrency?: Currency
   compact?: boolean
   syncTabToUrl: boolean
+  swapHeaderWithoutOptions?: boolean
 }) {
-  const isDark = useIsDarkMode()
+  const isDark = true
   const screenSize = useScreenSize()
 
   return (
@@ -147,6 +148,7 @@ export function Swap({
                   onCurrencyChange={onCurrencyChange}
                   disableTokenInputs={disableTokenInputs}
                   syncTabToUrl={!syncTabToUrl}
+                  swapHeaderWithoutOptions={swapHeaderWithoutOptions}
                 />
               )}
               {currentTab === SwapTab.Limit && <LimitFormWrapper onCurrencyChange={onCurrencyChange} />}

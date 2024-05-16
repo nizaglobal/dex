@@ -83,9 +83,10 @@ interface SwapFormProps {
   disableTokenInputs?: boolean
   onCurrencyChange?: (selected: CurrencyState) => void
   syncTabToUrl: boolean
+  swapHeaderWithoutOptions: boolean
 }
 
-export function SwapForm({ disableTokenInputs = false, onCurrencyChange, syncTabToUrl }: SwapFormProps) {
+export function SwapForm({ disableTokenInputs = false, onCurrencyChange, swapHeaderWithoutOptions }: SwapFormProps) {
   const connectionReady = useConnectionReady()
   const { account, chainId: connectedChainId, connector } = useWeb3React()
   const trace = useTrace()
@@ -499,7 +500,7 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange, syncTab
   return (
     <>
       {openOptions ? <OptionModal setOpenOptions={setOpenOptions} /> : null}
-      {syncTabToUrl ? (
+      {swapHeaderWithoutOptions ? (
         <Box paddingX="24" paddingY="12">
           <AutoRow justify="space-between">
             <Body1>Swap</Body1>

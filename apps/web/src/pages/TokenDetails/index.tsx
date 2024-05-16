@@ -136,9 +136,10 @@ function useCreateTDPContext(): PendingTDPContext | LoadedTDPContext {
 export default function TokenDetailsPage() {
   const pageChainId = useWeb3React().chainId ?? ChainId.MAINNET
   const contextValue = useCreateTDPContext()
+  console.log(contextValue)
 
   return (
-    <ThemeProvider accent1={contextValue.tokenColor ?? undefined}>
+    <ThemeProvider>
       <Helmet>
         <title>{getTokenPageTitle(contextValue?.currency)}</title>
       </Helmet>
