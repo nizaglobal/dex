@@ -45,16 +45,15 @@ export const TableHead = styled.div<{ $isSticky?: boolean }>`
   flex-direction: column;
   justify-content: flex-end;
   // Solid background that matches surface, in order to hide rows as they scroll behind header
-  background: ${({ theme }) => theme.surface1};
 `
 export const TableBodyContainer = styled(Column)`
   width: 100%;
   position: relative;
   overflow-x: auto;
   overscroll-behavior-x: none;
-  border-right: 1px solid ${({ theme }) => theme.surface3};
-  border-bottom: 1px solid ${({ theme }) => theme.surface3};
-  border-left: 1px solid ${({ theme }) => theme.surface3};
+  border-right: 1px solid ${({ theme }) => theme.border1};
+  border-bottom: 1px solid ${({ theme }) => theme.border1};
+  border-left: 1px solid ${({ theme }) => theme.border1};
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   ${HideScrollBarStyles}
@@ -116,13 +115,13 @@ export const NoDataFoundTableRow = styled(TableRow)`
 `
 
 export const HeaderRow = styled(TableRow)<{ $dimmed?: boolean }>`
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   overflow: auto;
   width: unset;
   min-height: 52px;
-  background: ${({ theme }) => theme.surface2};
+  background: ${({ theme }) => theme.surface1};
   ${HideScrollBarStyles}
   overscroll-behavior: none;
 

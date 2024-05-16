@@ -65,16 +65,17 @@ export const table = style([
     borderSpacing: '0px 40px',
   },
   sprinkles({
-    background: 'surface1',
+    background: 'background',
     width: 'full',
     borderRadius: '12',
-    borderStyle: 'none',
+    borderColor: 'border1',
   }),
 ])
 
 export const thead = sprinkles({
+  borderRadius: '12',
   marginRight: '12',
-  borderColor: 'surface3',
+  borderColor: 'border1',
   borderWidth: '1px',
   borderBottomStyle: 'solid',
 })
@@ -84,7 +85,11 @@ export const th = style([
   {
     selectors: {
       '&:nth-last-child(1)': {
+        borderTopRightRadius: '12px',
         paddingRight: '20px',
+      },
+      '&:nth-child(1)': {
+        borderTopLeftRadius: '12px',
       },
     },
   },
@@ -92,6 +97,7 @@ export const th = style([
     color: { default: 'neutral2' },
     paddingTop: '12',
     paddingBottom: '12',
+    background: 'surface1',
   }),
 ])
 

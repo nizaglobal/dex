@@ -6,7 +6,7 @@ import { NetworkAlert } from 'components/NetworkAlert/NetworkAlert'
 import { SwitchLocaleLink } from 'components/SwitchLocaleLink'
 import SwapHeader from 'components/swap/SwapHeader'
 import { SwapTab } from 'components/swap/constants'
-import { PageWrapper, SwapWrapper } from 'components/swap/styled'
+import { SwapWrapper } from 'components/swap/styled'
 import { asSupportedChain } from 'constants/chains'
 import { useCurrency } from 'hooks/Tokens'
 import useParsedQueryString from 'hooks/useParsedQueryString'
@@ -23,6 +23,27 @@ import { useIsDarkMode } from '../../theme/components/ThemeToggle'
 import { LimitFormWrapper } from './Limit/LimitForm'
 import { SwapForm } from './SwapForm'
 
+import { Box } from 'pages/Landing/components/Generics'
+import styled from 'styled-components'
+
+const Container = styled(Box)`
+  background: rgb(14, 20, 28);
+  background: linear-gradient(180deg, rgba(14, 20, 28, 1) 0%, rgba(14, 28, 36, 1) 100%);
+  min-width: 100%;
+  padding-top: 72px;
+`
+
+const SwapWrapperContainer = styled(Box)`
+  width: 480px;
+  padding: 8px;
+  border-radius: 24px;
+  background: ${({ theme }) => theme.surface1};
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
+`
+
 export function getIsReviewableQuote(
   trade: InterfaceTrade | undefined,
   tradeState: TradeState,
@@ -34,6 +55,8 @@ export function getIsReviewableQuote(
 
   return Boolean(trade && tradeState === TradeState.VALID)
 }
+
+// * Swap page
 
 export default function SwapPage({ className }: { className?: string }) {
   const location = useLocation()
@@ -52,17 +75,27 @@ export default function SwapPage({ className }: { className?: string }) {
 
   return (
     <Trace page={InterfacePageName.SWAP_PAGE} shouldLogImpression>
-      <PageWrapper>
-        <Swap
-          className={className}
-          chainId={chainId}
-          disableTokenInputs={supportedChainId === undefined}
-          initialInputCurrency={initialInputCurrency}
-          initialOutputCurrency={initialOutputCurrency}
-          syncTabToUrl={true}
-        />
+      <Container
+        position="relative"
+        height="92.2vh"
+        justify="center"
+        style={{
+          overflowX: 'hidden',
+          overflowY: 'clip',
+        }}
+      >
+        <SwapWrapperContainer>
+          <Swap
+            className={className}
+            chainId={chainId}
+            disableTokenInputs={supportedChainId === undefined}
+            initialInputCurrency={initialInputCurrency}
+            initialOutputCurrency={initialOutputCurrency}
+            syncTabToUrl={true}
+          />
+        </SwapWrapperContainer>
         <NetworkAlert />
-      </PageWrapper>
+      </Container>
       {location.pathname === '/swap' && <SwitchLocaleLink />}
     </Trace>
   )
@@ -110,7 +143,11 @@ export function Swap({
             <SwapWrapper isDark={isDark} className={className} id="swap-page">
               <SwapHeader compact={compact || !screenSize.sm} syncTabToUrl={syncTabToUrl} />
               {currentTab === SwapTab.Swap && (
-                <SwapForm onCurrencyChange={onCurrencyChange} disableTokenInputs={disableTokenInputs} />
+                <SwapForm
+                  onCurrencyChange={onCurrencyChange}
+                  disableTokenInputs={disableTokenInputs}
+                  syncTabToUrl={!syncTabToUrl}
+                />
               )}
               {currentTab === SwapTab.Limit && <LimitFormWrapper onCurrencyChange={onCurrencyChange} />}
               {currentTab === SwapTab.Send && (

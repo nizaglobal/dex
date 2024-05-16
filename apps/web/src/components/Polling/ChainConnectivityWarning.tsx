@@ -15,7 +15,7 @@ const BodyRow = styled.div`
   line-height: 20px;
 `
 const CautionTriangle = styled(AlertTriangle)`
-  color: ${({ theme }) => theme.deprecated_accentWarning};
+  color: ${({ theme }) => theme.accent1};
 `
 const Link = styled(ExternalLink)`
   color: ${({ theme }) => theme.black};
@@ -35,9 +35,9 @@ const TitleText = styled.div`
   margin: 0px 12px;
 `
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.surface1};
+  background-color: ${({ theme }) => theme.black};
   border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   bottom: 60px;
   z-index: 2;
   display: none;

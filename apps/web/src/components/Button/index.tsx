@@ -72,13 +72,14 @@ export const ButtonPrimary = styled(BaseButton)`
   font-size: 20px;
   font-weight: 535;
   padding: 16px;
-  color: ${({ theme }) => theme.neutralContrast};
+  color: ${({ theme }) => theme.black};
+  transition: all 0.3s ease;
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.accent1)};
     background-color: ${({ theme }) => darken(0.05, theme.accent1)};
   }
   &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.accent1)};
+    background-color: ${({ theme }) => darken(0.15, theme.accent1)};
   }
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.accent1)};
@@ -155,10 +156,10 @@ export const ButtonGray = styled(BaseButton)`
   font-weight: 535;
 
   &:hover {
-    background-color: ${({ theme, disabled }) => !disabled && darken(0.05, theme.surface2)};
+    background-color: ${({ theme, disabled }) => !disabled && theme.surface2}aa;
   }
   &:active {
-    background-color: ${({ theme, disabled }) => !disabled && darken(0.1, theme.surface2)};
+    background-color: ${({ theme, disabled }) => !disabled && theme.surface2}bb;
   }
 `
 
@@ -217,7 +218,7 @@ export const ButtonEmpty = styled(BaseButton)`
   align-items: center;
 
   &:focus {
-    text-decoration: underline;
+    text-decoration: none;
   }
   &:hover {
     text-decoration: none;

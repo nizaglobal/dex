@@ -1,7 +1,6 @@
 import { Currency, CurrencyAmount, Percent, TradeType } from '@uniswap/sdk-core'
 import { formatTimestamp } from 'components/AccountDrawer/MiniPortfolio/formatTimestamp'
 import { LoadingRow } from 'components/Loader/styled'
-import RouterLabel from 'components/RouterLabel'
 import Row from 'components/Row'
 import { TooltipSize } from 'components/Tooltip'
 import { SUPPORTED_GAS_ESTIMATE_CHAIN_IDS } from 'constants/chains'
@@ -75,11 +74,11 @@ export function FOTTooltipContent() {
 function SwapFeeTooltipContent({ hasFee }: { hasFee: boolean }) {
   const message = hasFee ? (
     <Trans>
-      Fees are applied to ensure the best experience with Uniswap, and have already been factored into this quote.
+      Fees are applied to ensure the best experience with Nizaswap, and have already been factored into this quote.
     </Trans>
   ) : (
     <Trans>
-      Fees are applied to ensure the best experience with Uniswap. There is no fee associated with this swap.
+      Fees are applied to ensure the best experience with Nizaswap, and have already been factored into this quote.
     </Trans>
   )
   return (
@@ -259,7 +258,8 @@ function useLineItem(props: SwapLineItemProps): LineItemData | undefined {
           return <SwapRoute data-testid="swap-route-info" trade={trade} />
         },
         tooltipSize: isUniswapX ? TooltipSize.Small : TooltipSize.Large,
-        Value: () => <RouterLabel trade={trade} />,
+        // Value: () => <RouterLabel trade={trade} />,
+        Value: () => <ThemedText.BodySmall>API</ThemedText.BodySmall>,
       }
     case SwapLineItemType.INPUT_TOKEN_FEE_ON_TRANSFER:
     case SwapLineItemType.OUTPUT_TOKEN_FEE_ON_TRANSFER:

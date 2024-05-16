@@ -188,7 +188,7 @@ function SendFormInner({ disableTokenInputs = false, onCurrencyChange }: SendFor
 
   return (
     <>
-      <Column gap="xs">
+      <Column gap="md">
         <SendCurrencyInputForm disabled={disableTokenInputs} onCurrencyChange={onCurrencyChange} />
         <SendRecipientForm disabled={disableTokenInputs} />
         {connectionReady && !account ? (

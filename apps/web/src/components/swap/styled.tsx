@@ -7,26 +7,13 @@ import { Z_INDEX } from 'theme/zIndex'
 import { ButtonText } from 'theme/components'
 import { AutoColumn } from '../Column'
 
-export const PageWrapper = styled.div`
-  padding: 68px 8px 0px;
-  max-width: 480px;
-  width: 100%;
-
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
-    padding-top: 48px;
-  }
-
-  @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.sm}px`}) {
-    padding-top: 20px;
-  }
-`
-
 // Mostly copied from `AppBody` but it was getting too hard to maintain backwards compatibility.
 export const SwapWrapperOuter = styled.main<{ isDark?: boolean }>`
   position: relative;
   z-index: ${Z_INDEX.default};
   transition: transform 250ms ease;
   border-radius: 24px;
+  width: 100%;
 `
 
 export const SwapWrapper = (props: React.ComponentProps<typeof SwapWrapperOuter>) => {
@@ -180,10 +167,10 @@ export const ArrowContainer = styled.div`
 `
 
 export const SwapHeaderTabButton = styled(ButtonText)<{ $isActive: boolean }>`
-  color: ${({ theme, $isActive }) => ($isActive ? theme.neutral1 : theme.neutral2)};
-  background-color: ${({ theme, $isActive }) => $isActive && theme.surface3};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.black : theme.neutral2)};
+  background-color: ${({ theme, $isActive }) => $isActive && theme.accent1};
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 6px;
   gap: 4px;
   font-weight: 485;
   &:focus {
@@ -192,4 +179,8 @@ export const SwapHeaderTabButton = styled(ButtonText)<{ $isActive: boolean }>`
   &:active {
     text-decoration: none;
   }
+  /* &:hover {
+    background-color: ${({ theme }) => theme.accent1};
+    color: ${({ theme }) => theme.black};
+  } */
 `

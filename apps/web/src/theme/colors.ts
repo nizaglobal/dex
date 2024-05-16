@@ -109,6 +109,7 @@ export const colors = {
   neutral3_dark: '#5E5E5E',
   border1_dark: '#344054',
   border2_dark: '#475467',
+  borderaccent: '#F2F2301A',
   surface1_dark: '#1D2939',
   surface2_dark: '#101828',
   surface3_dark: '#FFFFFF12',
@@ -116,7 +117,7 @@ export const colors = {
   surface5_dark: '#00000004',
   accent1_dark: '#f2f230',
   accent2_dark: '#31311c',
-  accent3_dark: '#4C82FB',
+  accent3_dark: '#F2F23080',
   neutral1_light: '#222222',
   neutral2_light: '#7D7D7D',
   neutral3_light: '#CECECE',
@@ -129,7 +130,7 @@ export const colors = {
   surface5_light: '#00000004',
   accent1_light: '#f2f230',
   accent2_light: '#FFEFFF',
-  accent3_light: '#4C82FB',
+  accent3_light: '#F2F23080',
   success: '#40B66B',
   critical: '#FF5F52',
   critical2_dark: '#2E0805',
@@ -185,6 +186,7 @@ export const darkTheme = {
 
   border1: colors.border1_dark,
   border2: colors.border2_dark,
+  borderaccent: colors.borderaccent,
 
   surface1: colors.surface1_dark,
   surface2: colors.surface2_dark,
@@ -222,6 +224,7 @@ export const lightTheme: ThemeColors = {
 
   border1: colors.border1_dark,
   border2: colors.border2_dark,
+  borderaccent: colors.borderaccent,
 
   surface1: colors.surface1_dark,
   surface2: colors.surface2_dark,

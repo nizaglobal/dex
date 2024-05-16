@@ -52,7 +52,7 @@ const FiltersRow = styled.div`
 
 const Filter = styled.div`
   display: flex;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   border-radius: 16px;
   padding: 4px;
 `
@@ -60,14 +60,14 @@ const Filter = styled.div`
 const Selector = styled.div<{ active: boolean }>`
   padding: 8px 12px;
   border-radius: 12px;
-  background: ${({ active, theme }) => (active ? theme.surface3 : 'none')};
+  background: ${({ active, theme }) => (active ? theme.accent1 : 'none')};
   cursor: pointer;
 
   ${OpacityHoverState}
 `
 
 const StyledSelectorText = styled(ThemedText.SubHeader)<{ active: boolean }>`
-  color: ${({ theme, active }) => (active ? theme.neutral1 : theme.neutral2)};
+  color: ${({ theme, active }) => (active ? theme.black : theme.neutral2)};
 `
 
 function convertTimePeriodToHistoryDuration(timePeriod: TimePeriod): HistoryDuration {

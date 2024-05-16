@@ -20,8 +20,8 @@ export const ToggleElement = styled.span<{ isActive?: boolean; fontSize?: string
   border-radius: 6px;
   justify-content: center;
   height: 100%;
-  background: ${({ theme, isActive }) => (isActive ? theme.surface1 : 'none')};
-  color: ${({ theme, isActive }) => (isActive ? theme.neutral1 : theme.neutral3)};
+  background: ${({ theme, isActive }) => (isActive ? theme.accent1 : 'none')};
+  color: ${({ theme, isActive }) => (isActive ? theme.black : theme.neutral3)};
   font-size: ${({ fontSize }) => fontSize ?? '1rem'};
   font-weight: 535;
   white-space: nowrap;

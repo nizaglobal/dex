@@ -10,7 +10,6 @@ import { Separator, ThemedText } from 'theme/components'
 import { NumberType, useFormatter } from 'utils/formatNumbers'
 import getRoutingDiagramEntries from 'utils/getRoutingDiagramEntries'
 
-import RouterLabel from '../RouterLabel'
 import { UniswapXDescription } from './GasBreakdownTooltip'
 
 // TODO(WEB-2022)
@@ -22,11 +21,12 @@ function useGasPrice({ gasUseEstimateUSD, inputAmount }: ClassicTrade) {
   return gasUseEstimateUSD === 0 ? '<$0.01' : formatNumber({ input: gasUseEstimateUSD, type: NumberType.FiatGasPrice })
 }
 
-function RouteLabel({ trade }: { trade: SubmittableTrade }) {
+function RouteLabel() {
   return (
     <RowBetween>
       <ThemedText.BodySmall color="neutral2">Order Routing</ThemedText.BodySmall>
-      <RouterLabel trade={trade} color="neutral1" />
+      {/* <RouterLabel trade={trade} color="neutral1" /> */}
+      API
     </RowBetween>
   )
 }
@@ -48,12 +48,12 @@ export function RoutingTooltip({ trade }: { trade: SubmittableTrade }) {
     <Column gap="md">
       <PriceImpactRow trade={trade} />
       <Separator />
-      <RouteLabel trade={trade} />
+      <RouteLabel />
       <SwapRoute trade={trade} />
     </Column>
   ) : (
     <Column gap="md">
-      <RouteLabel trade={trade} />
+      <RouteLabel />
       <Separator />
       <UniswapXDescription />
     </Column>

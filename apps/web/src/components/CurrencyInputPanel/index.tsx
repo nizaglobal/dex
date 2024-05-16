@@ -30,7 +30,8 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${flexColumnNoWrap};
   position: relative;
   border-radius: ${({ hideInput }) => (hideInput ? '16px' : '20px')};
-  background-color: ${({ theme, hideInput }) => (hideInput ? 'transparent' : theme.surface2)};
+  /* background-color: ${({ theme, hideInput }) => (hideInput ? 'transparent' : theme.surface2)}; */
+  /* border: 1px solid ${({ theme }) => theme.border1}; */
 
   z-index: 1;
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
@@ -40,18 +41,17 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
 
 const Container = styled.div<{ hideInput: boolean; disabled: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '16px' : '20px')};
-  border: 1px solid ${({ theme }) => theme.surface3};
-  background-color: ${({ theme }) => theme.surface2};
+  /* background-color: ${({ theme }) => theme.surface2}; */
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
-  ${({ theme, hideInput, disabled }) =>
+  ${({ disabled }) =>
     !disabled &&
     `
     :focus,
-    :hover {
-      border: 1px solid ${hideInput ? ' transparent' : theme.surface2};
-    }
-  `}
+    `}
 `
+// :hover {
+//   border: 1px solid ${hideInput ? ' transparent' : theme.surface2};
+// }
 
 const CurrencySelect = styled(ButtonGray)<{
   visible: boolean
@@ -61,15 +61,15 @@ const CurrencySelect = styled(ButtonGray)<{
   pointerEvents?: string
 }>`
   align-items: center;
-  background-color: ${({ selected, theme }) => (selected ? theme.surface1 : theme.accent1)};
+  background-color: ${({ selected, theme }) => (selected ? theme.surface1 : theme.accent3)};
   opacity: ${({ disabled }) => (!disabled ? 1 : 0.4)};
   box-shadow: ${({ theme }) => theme.deprecated_shallowShadow};
   color: ${({ selected, theme }) => (selected ? theme.neutral1 : theme.white)};
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 12px;
   outline: none;
   user-select: none;
-  border: none;
+  border: 1px solid ${({ theme }) => theme.border1};
   font-size: 24px;
   font-weight: 535;
   height: ${({ hideInput }) => (hideInput ? '2.8rem' : '2.4rem')};
@@ -79,7 +79,7 @@ const CurrencySelect = styled(ButtonGray)<{
   margin-left: ${({ hideInput }) => (hideInput ? '0' : '12px')};
   :focus,
   :hover {
-    background-color: ${({ selected, theme }) => (selected ? theme.surface2 : darken(0.05, theme.accent1))};
+    background-color: ${({ selected, theme }) => (selected ? theme.surface3 : darken(0.25, theme.accent1))};
   }
   visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
   ${({ pointerEvents }) => pointerEvents && `pointer-events: none`}

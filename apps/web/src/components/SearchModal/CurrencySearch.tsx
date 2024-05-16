@@ -35,7 +35,7 @@ const ContentWrapper = styled(Column)`
 `
 
 const ChainSelectorWrapper = styled.div`
-  background-color: ${({ theme }) => theme.surface2};
+  /* background-color: ${({ theme }) => theme.surface2}; */
   border-radius: 12px;
 `
 

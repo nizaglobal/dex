@@ -84,6 +84,7 @@ const StyledNumericalInput = styled(NumericalInput)<{ $width?: number }>`
 
   ::placeholder {
     opacity: 1;
+    color: ${({ theme }) => theme.placeholder};
   }
 `
 
@@ -101,14 +102,14 @@ const NumericalInputSymbolContainer = styled.span<{ showPlaceholder: boolean }>`
   ${({ showPlaceholder }) =>
     showPlaceholder &&
     css`
-      color: ${({ theme }) => theme.neutral3};
+      color: ${({ theme }) => theme.placeholder};
     `}
 `
 
 const StyledUpAndDownArrowIcon = styled(ReverseArrow)`
   width: 16px;
   height: 16px;
-  fill: ${({ theme }) => theme.neutral3};
+  fill: ${({ theme }) => theme.placeholder};
   transform: rotate(90deg);
 `
 
@@ -186,7 +187,7 @@ const AlternateCurrencyDisplay = ({ disabled, onToggle }: { disabled: boolean; o
         $disabled={disabled}
         onClick={disabled ? undefined : onToggle}
       >
-        <ThemedText.BodySecondary fontSize="16px" lineHeight="24px" color="neutral3">
+        <ThemedText.BodySecondary fontSize="16px" lineHeight="24px" color="placeholder">
           {formattedAlternateCurrency}
         </ThemedText.BodySecondary>
         <StyledUpAndDownArrowIcon />
@@ -274,7 +275,10 @@ export default function SendCurrencyInputForm({
 
   const handleSelectCurrency = useCallback(
     (currency: Currency) => {
-      onCurrencyChange?.({ inputCurrency: currency, outputCurrency: undefined })
+      onCurrencyChange?.({
+        inputCurrency: currency,
+        outputCurrency: undefined,
+      })
 
       if (fiatCurrency.equals(currency)) {
         setSendState((prev) => ({
@@ -344,6 +348,7 @@ export default function SendCurrencyInputForm({
             <NumericalInputSymbolContainer showPlaceholder={!displayValue}>{fiatSymbol}</NumericalInputSymbolContainer>
           )}
           <StyledNumericalInput
+            color="placeholder"
             value={postWidthAdjustedDisplayValue}
             disabled={disabled}
             onUserInput={handleUserInput}

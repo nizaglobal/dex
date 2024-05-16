@@ -1,4 +1,3 @@
-import { styled as tamaguiStyled } from '@tamagui/core'
 import { FeeAmount } from '@uniswap/v3-sdk'
 import { ButtonGray } from 'components/Button'
 import { OutlineCard } from 'components/Card'
@@ -47,6 +46,10 @@ const StyledInput = styled(NumericalInput)<{ usePercent?: boolean }>`
   text-align: left;
   width: 100%;
 
+  &::placeholder {
+    color: ${({ theme }) => theme.placeholder} !important;
+  }
+
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
     font-size: 16px;
   `};
@@ -56,11 +59,17 @@ const InputColumn = styled(AutoColumn)`
   width: 100%;
 `
 
-const InputTitle = tamaguiStyled(Text, {
-  fontSize: 12,
-  fontWeight: '$medium',
-  color: '$neutral2',
-})
+const InputTitle = styled(Text)`
+  font-size: 12px;
+  font-family: 500;
+  color: ${({ theme }) => theme.placeholder} !important;
+`
+
+// const InputTitle = tamaguiStyled(Text, {
+//   fontSize: 12,
+//   fontWeight: '$medium',
+//   color: '$neutral2',
+// })
 
 const ButtonLabel = styled(ThemedText.DeprecatedWhite)<{ disabled: boolean }>`
   color: ${({ theme, disabled }) => (disabled ? theme.neutral2 : theme.neutral1)} !important;

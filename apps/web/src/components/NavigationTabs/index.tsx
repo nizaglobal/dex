@@ -1,7 +1,9 @@
 import { Percent } from '@uniswap/sdk-core'
-import { useWeb3React } from '@web3-react/core'
-import SettingsTab from 'components/Settings'
+import { useState } from 'react'
+// import { useWeb3React } from "@web3-react/core";
+// import SettingsTab from "components/Settings";
 import { Trans } from 'i18n'
+import OptionModal from 'pages/Swap/Options'
 import { ReactNode } from 'react'
 import { ArrowLeft } from 'react-feather'
 import { Link, useNavigate } from 'react-router-dom'
@@ -12,8 +14,9 @@ import { resetMintState as resetMintV3State } from 'state/mint/v3/actions'
 import styled, { useTheme } from 'styled-components'
 import { ThemedText } from 'theme/components'
 import { flexRowNoWrap } from 'theme/styles'
-
 import { RowBetween } from '../Row'
+
+import OptionsImage from '../../assets/images/options.png'
 
 const Tabs = styled.div`
   ${flexRowNoWrap};
@@ -67,7 +70,6 @@ const AddRemoveTitleText = styled(ThemedText.H1Small)<{ $center: boolean }>`
 export function AddRemoveTabs({
   adding,
   creating,
-  autoSlippage,
   children,
 }: {
   adding: boolean
@@ -76,43 +78,48 @@ export function AddRemoveTabs({
   showBackLink?: boolean
   children?: ReactNode
 }) {
-  const { chainId } = useWeb3React()
+  const [openOptions, setOpenOptions] = useState<boolean>(false)
+  // const { chainId } = useWeb3React();
   const theme = useTheme()
   // reset states on back
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   return (
-    <Tabs>
-      <RowBetween style={{ padding: '1rem 1rem 0 1rem' }} align="center">
-        <StyledLink
-          to=".."
-          onClick={(e) => {
-            e.preventDefault()
-            navigate(-1)
+    <>
+      {openOptions ? <OptionModal setOpenOptions={setOpenOptions} /> : null}
+      <Tabs>
+        <RowBetween style={{ padding: '1rem 1rem 0 1rem' }} align="center">
+          <StyledLink
+            to=".."
+            onClick={(e) => {
+              e.preventDefault()
+              navigate(-1)
 
-            if (adding) {
-              // not 100% sure both of these are needed
-              dispatch(resetMintState())
-              dispatch(resetMintV3State())
-            }
-          }}
-          flex={children ? '1' : undefined}
-        >
-          <StyledArrowLeft stroke={theme.neutral2} />
-        </StyledLink>
-        <AddRemoveTitleText $center={!children}>
-          {creating ? (
-            <Trans>Create a pair</Trans>
-          ) : adding ? (
-            <Trans>Add liquidity</Trans>
-          ) : (
-            <Trans>Remove liquidity</Trans>
-          )}
-        </AddRemoveTitleText>
-        {children && <Box style={{ marginRight: '.5rem' }}>{children}</Box>}
-        <SettingsTab autoSlippage={autoSlippage} chainId={chainId} hideRoutingSettings />
-      </RowBetween>
-    </Tabs>
+              if (adding) {
+                // not 100% sure both of these are needed
+                dispatch(resetMintState())
+                dispatch(resetMintV3State())
+              }
+            }}
+            flex={children ? '1' : undefined}
+          >
+            <StyledArrowLeft stroke={theme.neutral2} />
+          </StyledLink>
+          <AddRemoveTitleText $center={!children}>
+            {creating ? (
+              <Trans>Create a pair</Trans>
+            ) : adding ? (
+              <Trans>Add liquidity</Trans>
+            ) : (
+              <Trans>Remove liquidity</Trans>
+            )}
+          </AddRemoveTitleText>
+          {children && <Box style={{ marginRight: '.5rem' }}>{children}</Box>}
+          <img src={OptionsImage} alt="options" style={{ cursor: 'pointer' }} onClick={() => setOpenOptions(true)} />
+          {/* <SettingsTab autoSlippage={autoSlippage} chainId={chainId} hideRoutingSettings /> */}
+        </RowBetween>
+      </Tabs>
+    </>
   )
 }

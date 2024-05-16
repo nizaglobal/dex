@@ -34,7 +34,7 @@ import { OutOfSyncWarning } from 'components/addLiquidity/OutOfSyncWarning'
 import { useIsPoolOutOfSync } from 'hooks/useIsPoolOutOfSync'
 import { atomWithStorage, useAtomValue, useUpdateAtom } from 'jotai/utils'
 import { BlastRebasingAlert, BlastRebasingModal } from 'pages/AddLiquidity/blastAlerts'
-import { ButtonError, ButtonLight, ButtonPrimary, ButtonText } from '../../components/Button'
+import { ButtonError, ButtonLight, ButtonPrimary } from '../../components/Button'
 import { BlueCard, OutlineCard, YellowCard } from '../../components/Card'
 import { AutoColumn } from '../../components/Column'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -46,7 +46,7 @@ import { PositionPreview } from '../../components/PositionPreview'
 import RangeSelector from '../../components/RangeSelector'
 import PresetsButtons from '../../components/RangeSelector/PresetsButtons'
 import RateToggle from '../../components/RateToggle'
-import Row, { RowBetween, RowFixed } from '../../components/Row'
+import { RowBetween, RowFixed } from '../../components/Row'
 import { SwitchLocaleLink } from '../../components/SwitchLocaleLink'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import { ZERO_PERCENT } from '../../constants/misc'
@@ -70,7 +70,7 @@ import { currencyId } from '../../utils/currencyId'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { Dots } from '../Pool/styled'
 import { Review } from './Review'
-import { DynamicSection, MediumOnly, ResponsiveTwoColumns, ScrollablePage, StyledInput, Wrapper } from './styled'
+import { DynamicSection, ResponsiveTwoColumns, ScrollablePage, StyledInput, Wrapper } from './styled'
 
 export const DEFAULT_ADD_IN_RANGE_SLIPPAGE_TOLERANCE = new Percent(50, 10_000)
 const blastRebasingAlertAtom = atomWithStorage<boolean>('shouldShowBlastRebasingAlert', true)
@@ -416,13 +416,13 @@ function AddLiquidity() {
 
   const addIsUnsupported = useIsSwapUnsupported(currencies?.CURRENCY_A, currencies?.CURRENCY_B)
 
-  const clearAll = useCallback(() => {
-    onFieldAInput('')
-    onFieldBInput('')
-    onLeftRangeInput('')
-    onRightRangeInput('')
-    navigate(`/add`)
-  }, [navigate, onFieldAInput, onFieldBInput, onLeftRangeInput, onRightRangeInput])
+  // const clearAll = useCallback(() => {
+  //   onFieldAInput('')
+  //   onFieldBInput('')
+  //   onLeftRangeInput('')
+  //   onRightRangeInput('')
+  //   navigate(`/add`)
+  // }, [navigate, onFieldAInput, onFieldBInput, onLeftRangeInput, onRightRangeInput])
 
   // get value and prices at ticks
   const { [Bound.LOWER]: tickLower, [Bound.UPPER]: tickUpper } = ticks
@@ -638,19 +638,7 @@ function AddLiquidity() {
             adding={true}
             autoSlippage={DEFAULT_ADD_IN_RANGE_SLIPPAGE_TOLERANCE}
             showBackLink={!hasExistingPosition}
-          >
-            {!hasExistingPosition && (
-              <Row justify="flex-end" style={{ width: 'fit-content', minWidth: 'fit-content' }}>
-                <MediumOnly>
-                  <ButtonText onClick={clearAll}>
-                    <ThemedText.DeprecatedBlue fontSize="12px">
-                      <Trans>Clear all</Trans>
-                    </ThemedText.DeprecatedBlue>
-                  </ButtonText>
-                </MediumOnly>
-              </Row>
-            )}
-          </AddRemoveTabs>
+          />
           <Wrapper>
             <ResponsiveTwoColumns wide={!hasExistingPosition}>
               <AutoColumn gap="lg">
@@ -725,7 +713,7 @@ function AddLiquidity() {
                       </ThemedText.DeprecatedLabel>
 
                       {Boolean(baseCurrency && quoteCurrency) && (
-                        <RowFixed gap="8px">
+                        <RowFixed>
                           <PresetsButtons onSetFullRange={handleSetFullRange} />
                           <RateToggle
                             currencyA={baseCurrency as Currency}
@@ -797,14 +785,14 @@ function AddLiquidity() {
                       <>
                         {Boolean(price && baseCurrency && quoteCurrency && !noLiquidity) && (
                           <AutoColumn gap="2px" style={{ marginTop: '0.5rem' }}>
-                            <ThemedText.DeprecatedMain fontWeight={535} fontSize={12} color="text1">
+                            <ThemedText.DeprecatedMain fontWeight={535} fontSize={12} color="placeholder">
                               <Trans>Current price:</Trans>
                             </ThemedText.DeprecatedMain>
                             <ThemedText.DeprecatedBody fontWeight={535} fontSize={20} color="text1">
                               {price && <HoverInlineText maxCharacters={20} text={formattedPrice} />}
                             </ThemedText.DeprecatedBody>
                             {baseCurrency && (
-                              <ThemedText.DeprecatedBody color="text2" fontSize={12}>
+                              <ThemedText.DeprecatedBody color="placeholder" fontSize={12}>
                                 {quoteCurrency?.symbol} <Trans>per</Trans> {baseCurrency.symbol}
                               </ThemedText.DeprecatedBody>
                             )}

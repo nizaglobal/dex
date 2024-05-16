@@ -51,9 +51,3 @@ export const ResponsiveTwoColumns = styled.div<{ wide: boolean }>`
     margin-top: 0;
   `};
 `
-
-export const MediumOnly = styled.div`
-  ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
-    display: none;
-  `};
-`

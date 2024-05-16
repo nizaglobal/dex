@@ -1,4 +1,5 @@
 import { useScreenSize } from 'hooks/useScreenSize'
+import { useWindowSize } from 'hooks/useWindowSize'
 import { Trans } from 'i18n'
 import { Link } from 'react-router-dom'
 import { useTogglePrivacyPolicy } from 'state/application/hooks'
@@ -106,8 +107,10 @@ export function Footer() {
   const screenIsLarge = useScreenSize()['lg']
   const togglePrivacyPolicy = useTogglePrivacyPolicy()
 
+  const { width } = useWindowSize()
+
   return (
-    <FooterBox as="footer" direction="column" align="center" padding={screenIsLarge ? '80px 40px' : '40px 48px'}>
+    <FooterBox as="footer" direction="column" align="center" padding={screenIsLarge ? '80px 40px' : '60px 48px'}>
       <Box direction="row" maxWidth="1280px" gap="24px">
         <RowToCol direction="row" justify-content="space-between" gap="32px">
           <Box direction="column" height="100%" gap="64px">
@@ -121,6 +124,19 @@ export function Footer() {
           </Box>
           <RowToCol direction="row" height="100%" gap="16px">
             <Box direction="row" gap="16px">
+              {width && width > 700 ? (
+                <Box direction="column" gap="10px">
+                  {/* <Body1>
+                    <Trans>Protocol</Trans>
+                  </Body1>
+                  <StyledExternalLink href="https://uniswap.org/governance">
+                    <Trans>Governance</Trans>
+                  </StyledExternalLink>
+                  <StyledExternalLink href="https://uniswap.org/developers">
+                    <Trans>Developers</Trans>
+                  </StyledExternalLink> */}
+                </Box>
+              ) : null}
               <Box direction="column" gap="10px">
                 <Body1>App</Body1>
                 <StyledInternalLink to="/swap">
@@ -135,17 +151,6 @@ export function Footer() {
                 <StyledInternalLink to="/pool">
                   <Trans>Pool</Trans>
                 </StyledInternalLink>
-              </Box>
-              <Box direction="column" gap="10px">
-                <Body1>
-                  <Trans>Protocol</Trans>
-                </Body1>
-                <StyledExternalLink href="https://uniswap.org/governance">
-                  <Trans>Governance</Trans>
-                </StyledExternalLink>
-                <StyledExternalLink href="https://uniswap.org/developers">
-                  <Trans>Developers</Trans>
-                </StyledExternalLink>
               </Box>
             </Box>
             <Box direction="row" gap="16px">

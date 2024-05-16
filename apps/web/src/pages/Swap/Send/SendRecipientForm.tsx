@@ -59,7 +59,7 @@ const StyledRecipientInput = styled.input`
   line-height: 24px;
 
   ::placeholder {
-    color: ${({ theme }) => theme.neutral3};
+    color: ${({ theme }) => theme.placeholder};
   }
 `
 

@@ -38,7 +38,7 @@ function pickBackgroundColor(variant: BadgeVariant | undefined, theme: DefaultTh
     case BadgeVariant.WARNING_OUTLINE:
       return 'transparent'
     default:
-      return theme.surface2
+      return theme.surface3
   }
 }
 
@@ -47,7 +47,7 @@ function pickBorder(variant: BadgeVariant | undefined, theme: DefaultTheme): str
     case BadgeVariant.WARNING_OUTLINE:
       return `1px solid ${theme.deprecated_accentWarning}`
     default:
-      return 'unset'
+      return `1px solid ${theme.border1}`
   }
 }
 

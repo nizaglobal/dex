@@ -101,8 +101,16 @@ const Chevron = styled.span<{ open: boolean }>`
   rotate: ${({ open }) => (open ? '180deg' : '0deg')};
   transition: rotate ${({ theme }) => `${theme.transition.duration.fast} ${theme.transition.timing.inOut}`};
 `
+
+// const StyledNetworkButton = styled(FilterButton)<{ buttonCss?: string }>`
+//   ${({ buttonCss }) => buttonCss}
+//   background-color: transparent;
+// `;
+
 const StyledFilterButton = styled(FilterButton)<{ buttonCss?: string }>`
   ${({ buttonCss }) => buttonCss}
+  background-color: transparent;
+  border: none;
 `
 
 interface DropdownSelectorProps {

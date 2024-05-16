@@ -15,10 +15,10 @@ import { sendAnalyticsEvent } from 'analytics'
 import { useCurrentPriceAdjustment } from 'components/CurrencyInputPanel/LimitPriceInputPanel/useCurrentPriceAdjustment'
 import CurrencySearchModal from 'components/SearchModal/CurrencySearchModal'
 import { PrefetchBalancesWrapper } from 'graphql/data/apollo/TokenBalancesProvider'
-import { ReversedArrowsIcon } from 'nft/components/icons'
 import { LIMIT_FORM_CURRENCY_SEARCH_FILTERS } from 'pages/Swap/Limit/LimitForm'
 import { useSwapAndLimitContext } from 'state/swap/hooks'
 import { CurrencyState } from 'state/swap/types'
+import ChangePlaceSVG from '../../../assets/svg/change_place.svg'
 import { formatCurrencySymbol } from '../utils'
 import { LimitCustomMarketPriceButton, LimitPresetPriceButton } from './LimitPriceButton'
 import { LimitPriceInputLabel } from './LimitPriceInputLabel'
@@ -183,7 +183,9 @@ export function LimitPriceInputPanel({ onCurrencySelect }: LimitPriceInputPanelP
             sendAnalyticsEvent('Limit Price Reversed')
           }}
         >
-          <ReversedArrowsIcon size="16px" />
+          <img src={ChangePlaceSVG} alt="Change Place" width={16} style={{ cursor: 'pointer' }} />
+
+          {/* <ReversedArrowsIcon size="16px" /> */}
         </ReverseIconContainer>
       </Row>
       <TextInputRow>

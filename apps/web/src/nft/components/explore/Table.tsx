@@ -147,7 +147,7 @@ export function Table<D extends Record<string, unknown>>({
 
   return (
     <table {...getTableProps()} className={styles.table}>
-      <thead className={styles.thead}>
+      <thead className={styles.thead} style={{ borderRadius: '12px !important' }}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
             {headerGroup.headers.map((column, index) => {

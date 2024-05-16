@@ -54,7 +54,7 @@ const TabBar = styled(AutoRow)`
 `
 const TabItem = styled(ThemedText.HeadlineMedium)<{ active?: boolean }>`
   align-items: center;
-  color: ${({ theme, active }) => (active ? theme.neutral1 : theme.neutral2)};
+  color: ${({ theme, active }) => (active ? theme.neutral1 : theme.placeholder)};
   cursor: pointer;
   transition: ${({ theme }) => `${theme.transition.duration.medium} ${theme.transition.timing.ease} color`};
 

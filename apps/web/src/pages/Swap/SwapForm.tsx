@@ -82,9 +82,10 @@ const SWAP_FORM_CURRENCY_SEARCH_FILTERS = {
 interface SwapFormProps {
   disableTokenInputs?: boolean
   onCurrencyChange?: (selected: CurrencyState) => void
+  syncTabToUrl: boolean
 }
 
-export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapFormProps) {
+export function SwapForm({ disableTokenInputs = false, onCurrencyChange, syncTabToUrl }: SwapFormProps) {
   const connectionReady = useConnectionReady()
   const { account, chainId: connectedChainId, connector } = useWeb3React()
   const trace = useTrace()
@@ -498,12 +499,16 @@ export function SwapForm({ disableTokenInputs = false, onCurrencyChange }: SwapF
   return (
     <>
       {openOptions ? <OptionModal setOpenOptions={setOpenOptions} /> : null}
-      <Box paddingX="24" paddingY="12">
-        <AutoRow justify="space-between">
-          <Body1>Swap</Body1>
-          <img src={OptionsImage} alt="options" style={{ cursor: 'pointer' }} onClick={() => setOpenOptions(true)} />
-        </AutoRow>
-      </Box>
+      {syncTabToUrl ? (
+        <Box paddingX="24" paddingY="12">
+          <AutoRow justify="space-between">
+            <Body1>Swap</Body1>
+            <img src={OptionsImage} alt="options" style={{ cursor: 'pointer' }} onClick={() => setOpenOptions(true)} />
+          </AutoRow>
+        </Box>
+      ) : (
+        false
+      )}
       <TokenSafetyModal
         isOpen={urlTokensNotInDefault.length > 0 && !dismissTokenWarning}
         tokenAddress={urlTokensNotInDefault[0]?.address}

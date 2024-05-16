@@ -25,7 +25,6 @@ import { SwapResult, useSwapCallback } from 'hooks/useSwapCallback'
 import { useUSDPrice } from 'hooks/useUSDPrice'
 import { Trans } from 'i18n'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { ArrowDown } from 'react-feather'
 import { Text } from 'rebass'
 import { LimitContextProvider, useLimitContext } from 'state/limit/LimitContext'
 import { LimitState } from 'state/limit/types'
@@ -45,10 +44,11 @@ import Row from 'components/Row'
 import { CurrencySearchFilters } from 'components/SearchModal/CurrencySearch'
 import { useAtom } from 'jotai'
 import { LimitPriceError } from 'pages/Swap/Limit/LimitPriceError'
+import { AlertTriangle } from 'react-feather'
 import { getDefaultPriceInverted } from 'state/limit/hooks'
 import { CurrencyState } from 'state/swap/types'
 import { ExternalLink, ThemedText } from 'theme/components'
-import { AlertTriangle } from 'ui/src/components/icons'
+import ChangePlaceSVG from '../../../assets/svg/change_place.svg'
 import { LimitExpirySection } from './LimitExpirySection'
 
 const CustomHeightSwapSection = styled(SwapSection)`
@@ -64,7 +64,8 @@ const StyledAlertIcon = styled(AlertTriangle)`
   align-self: flex-start;
   flex-shrink: 0;
   margin-right: 12px;
-  fill: ${({ theme }) => theme.neutral2};
+  width: 20px;
+  /* fill: ${({ theme }) => theme.neutral2}; */
 `
 
 const LimitDisclaimerContainer = styled(Row)`
@@ -72,6 +73,8 @@ const LimitDisclaimerContainer = styled(Row)`
   border-radius: 12px;
   padding: 12px;
   margin-top: 12px;
+  display: flex;
+  align-items: center;
 `
 
 const DisclaimerText = styled(ThemedText.LabelSmall)`
@@ -155,8 +158,14 @@ function LimitForm({ onCurrencyChange }: LimitFormProps) {
   )
 
   const switchTokens = useCallback(() => {
-    onSwitchTokens({ newOutputHasTax: false, previouslyEstimatedOutput: limitState.outputAmount })
-    setLimitState((prev) => ({ ...prev, limitPriceInverted: getDefaultPriceInverted(outputCurrency, inputCurrency) }))
+    onSwitchTokens({
+      newOutputHasTax: false,
+      previouslyEstimatedOutput: limitState.outputAmount,
+    })
+    setLimitState((prev) => ({
+      ...prev,
+      limitPriceInverted: getDefaultPriceInverted(outputCurrency, inputCurrency),
+    }))
   }, [inputCurrency, limitState.outputAmount, onSwitchTokens, outputCurrency, setLimitState])
 
   const onSelectCurrency = useCallback(
@@ -270,7 +279,10 @@ function LimitForm({ onCurrencyChange }: LimitFormProps) {
   ])
 
   const fiatValues = useMemo(() => {
-    return { amountIn: fiatValueTradeInput.data, amountOut: fiatValueTradeOutput.data }
+    return {
+      amountIn: fiatValueTradeInput.data,
+      amountOut: fiatValueTradeOutput.data,
+    }
   }, [fiatValueTradeInput.data, fiatValueTradeOutput.data])
 
   const swapCallback = useSwapCallback(
@@ -320,7 +332,7 @@ function LimitForm({ onCurrencyChange }: LimitFormProps) {
           element={InterfaceElementName.SWAP_TOKENS_REVERSE_ARROW_BUTTON}
         >
           <ArrowContainer data-testid="swap-currency-button" onClick={switchTokens} color={theme.neutral1}>
-            <ArrowDown size="16" color={theme.neutral1} />
+            <img src={ChangePlaceSVG} alt="Change Place" width={16} style={{ cursor: 'pointer' }} />
           </ArrowContainer>
         </TraceEvent>
       </ShortArrowWrapper>
@@ -368,7 +380,9 @@ function LimitForm({ onCurrencyChange }: LimitFormProps) {
         />
       )}
       <LimitDisclaimerContainer>
-        <StyledAlertIcon size={20} color={theme.neutral2} />
+        <div>
+          <StyledAlertIcon size={20} color={theme.neutral2} />
+        </div>
         <DisclaimerText>
           <Trans>
             Limits may not execute exactly when tokens reach the specified price.{' '}
