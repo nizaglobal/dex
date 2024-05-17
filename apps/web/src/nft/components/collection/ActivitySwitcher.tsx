@@ -8,8 +8,8 @@ import styled from 'styled-components'
 import * as styles from './ActivitySwitcher.css'
 
 const BaseActivityContainer = styled(Row)`
-  border-bottom: 1px solid;
-  border-color: ${({ theme }) => theme.surface3};
+  /* border-bottom: 1px solid; */
+  /* border-color: ${({ theme }) => theme.surface3}; */
   margin-right: 12px;
 `
 

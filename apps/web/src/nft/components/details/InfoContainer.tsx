@@ -1,3 +1,4 @@
+import { darken } from 'polished'
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import styled, { css } from 'styled-components'
@@ -9,17 +10,17 @@ const Header = styled.div<{ isOpen: boolean }>`
   background-color: ${({ theme }) => theme.surface1};
   padding: 14px 20px;
   cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   margin-top: 28px;
   width: 100%;
   align-items: center;
 
   &:hover {
-    background-color: ${({ theme }) => theme.deprecated_stateOverlayHover};
+    background-color: ${({ theme }) => darken(0.025, theme.surface1)};
   }
 
   &:active {
-    background-color: ${({ theme }) => theme.deprecated_stateOverlayPressed};
+    background-color: ${({ theme }) => darken(0.04, theme.surface1)}};
   }
 
   transition: ${({
@@ -54,7 +55,7 @@ const SecondaryHeaderContainer = styled.span`
 
 const ContentContainer = styled.div`
   padding: 20px;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
   border-top: none;
   border-radius: 0px 0px 16px 16px;
   background-color: ${({ theme }) => theme.surface1};

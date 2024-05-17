@@ -132,14 +132,15 @@ export const buyCell = style([
     selectors: {
       '&:enabled': {
         cursor: 'pointer',
-        color: vars.color.accent1,
+        color: vars.color.black,
+        background: vars.color.accent1,
       },
       '&:disabled': {
         color: themeVars.colors.neutral3,
       },
       '&:hover&:enabled': {
-        background: vars.color.accent1,
-        color: themeVars.colors.white,
+        background: `${vars.color.accent2}`,
+        color: vars.color.black,
       },
     },
   },

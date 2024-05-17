@@ -49,7 +49,7 @@ export const collectionImage = style([
 export const statsLabel = style([
   subheadSmall,
   sprinkles({
-    color: 'neutral2',
+    color: 'placeholder',
     whiteSpace: 'nowrap',
   }),
   {

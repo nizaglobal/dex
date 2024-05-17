@@ -155,6 +155,7 @@ export const vars = createGlobalTheme(':root', {
     ...themeVars.colors,
     fallbackGradient: 'linear-gradient(270deg, #D1D5DB 0%, #F6F6F6 100%)',
     background: '#0E141C',
+    placeholder: '#98A2B3',
     loadingBackground: '#24272e',
     cardDropShadow: 'rgba(0, 0, 0, 10%) 0px 4px 12px',
     green: '#209853',
