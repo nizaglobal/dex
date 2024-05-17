@@ -418,8 +418,8 @@
           "marketCap": "Marktkapitalisatie",
           "priceDecrease": "Prijsdaling (24H)",
           "priceIncrease": "Prijsverhoging (24H)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "Uniswap-volume (24 uur)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "Niza DEX-volume (24 uur)"
         }
       },
       "top": {

@@ -418,8 +418,8 @@
           "marketCap": "มูลค่าตลาด",
           "priceDecrease": "ลดราคา (24H)",
           "priceIncrease": "ราคาเพิ่มขึ้น (24H)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "ปริมาณ Uniswap (24H)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "ปริมาณ Niza DEX (24H)"
         }
       },
       "top": {

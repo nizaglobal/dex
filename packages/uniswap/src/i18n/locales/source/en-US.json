@@ -420,8 +420,8 @@
           "marketCap": "Market cap",
           "priceDecrease": "Price decrease (24H)",
           "priceIncrease": "Price increase (24H)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "Uniswap volume (24H)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "Niza DEX volume (24H)"
         }
       },
       "top": {

@@ -418,8 +418,8 @@
           "marketCap": "Vốn hóa thị trường",
           "priceDecrease": "Giảm giá (24H)",
           "priceIncrease": "Tăng giá (24H)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "Khối lượng Uniswap (24H)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "Khối lượng Niza DEX (24H)"
         }
       },
       "top": {

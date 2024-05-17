@@ -418,8 +418,8 @@
           "marketCap": "Ринкова капіталізація",
           "priceDecrease": "Зниження ціни (24H)",
           "priceIncrease": "Підвищення ціни (24H)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "Обсяг Uniswap (24 години)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "Обсяг Niza DEX (24 години)"
         }
       },
       "top": {

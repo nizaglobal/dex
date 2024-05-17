@@ -344,6 +344,7 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'Wrapped AVAX'
   ),
   [ChainId.BLAST]: new Token(ChainId.BLAST, '0x4300000000000000000000000000000000000004', 18, 'WETH', 'Wrapped Ether'),
+  [ChainId.NIZA]: new Token(ChainId.NIZA, '0xF8003dac552b56050531cDFF25CCd5fCF6A81FCE', 18, 'NIZA', 'Niza Global'),
 }
 
 export function isCelo(chainId: number): chainId is ChainId.CELO | ChainId.CELO_ALFAJORES {
@@ -510,6 +511,7 @@ const STABLECOINS: { [chainId in ChainId]: Token[] } = {
   [ChainId.ZORA]: [],
   [ChainId.ROOTSTOCK]: [],
   [ChainId.BLAST]: [USDB_BLAST],
+  [ChainId.NIZA]: [],
 }
 
 export function isStablecoin(currency?: Currency): boolean {

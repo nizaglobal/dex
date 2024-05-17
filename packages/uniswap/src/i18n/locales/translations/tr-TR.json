@@ -418,8 +418,8 @@
           "marketCap": "Piyasa değeri",
           "priceDecrease": "Fiyat düşüşü (24 saat)",
           "priceIncrease": "Fiyat artışı (24 saat)",
-          "totalValueLocked": "Uniswap TVL",
-          "volume": "Uniswap hacmi (24 saat)"
+          "totalValueLocked": "Niza DEX TVL",
+          "volume": "Niza DEX hacmi (24 saat)"
         }
       },
       "top": {

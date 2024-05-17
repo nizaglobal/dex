@@ -120,7 +120,7 @@ function VolumeChartSection({ chainId }: { chainId: number }) {
   if (isSmallScreen) {
     return (
       <MinimalStatDisplay
-        title={<Trans>Uniswap volume</Trans>}
+        title={<Trans>Niza DEX volume</Trans>}
         value={cumulativeVolume}
         time={<Trans>Past month</Trans>}
       />
@@ -131,7 +131,7 @@ function VolumeChartSection({ chainId }: { chainId: number }) {
     <SectionContainer>
       <RowBetween>
         <SectionTitle>
-          <Trans>Uniswap volume</Trans>
+          <Trans>Niza DEX volume</Trans>
         </SectionTitle>
         <div style={{ position: 'absolute', right: 0 }}>
           <StyledTimePeriodSelector
@@ -183,13 +183,13 @@ function TVLChartSection({ chainId }: { chainId: number }) {
   const isSmallScreen = !useScreenSize()['sm']
   if (isSmallScreen) {
     const currentTVL = lastEntry?.values.reduce((acc, curr) => acc + curr, 0)
-    return <MinimalStatDisplay title={<Trans>Uniswap TVL</Trans>} value={currentTVL} />
+    return <MinimalStatDisplay title={<Trans>Niza DEX TVL</Trans>} value={currentTVL} />
   }
 
   return (
     <SectionContainer>
       <SectionTitle>
-        <Trans>Uniswap TVL</Trans>
+        <Trans>Niza DEX TVL</Trans>
       </SectionTitle>
       {(() => {
         if (dataQuality === DataQuality.INVALID) {
