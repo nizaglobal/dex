@@ -1,4 +1,4 @@
-// import { Currency } from '@uniswap/sdk-core'
+// import { Currency } from '@nizaglobal/sdk-core'
 // import { AutoColumn } from 'components/Column'
 // import UniswapXRouterLabel from 'components/RouterLabel/UniswapXRouterLabel'
 // import Row from 'components/Row'

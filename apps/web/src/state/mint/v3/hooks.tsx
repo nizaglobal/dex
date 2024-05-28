@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Price, Rounding, Token } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Price, Rounding, Token } from '@nizaglobal/sdk-core'
 import {
   FeeAmount,
   Pool,
@@ -9,7 +9,7 @@ import {
   nearestUsableTick,
   priceToClosestTick,
   tickToPrice,
-} from '@uniswap/v3-sdk'
+} from '@nizaglobal/v3-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { usePool } from 'hooks/usePools'
 import { Trans } from 'i18n'

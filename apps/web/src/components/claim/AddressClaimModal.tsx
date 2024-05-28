@@ -1,5 +1,5 @@
 import { isAddress } from '@ethersproject/address'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token } from '@nizaglobal/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { Trans } from 'i18n'
 import { useState } from 'react'

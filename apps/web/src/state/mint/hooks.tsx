@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent, Price, Token } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
+import { Currency, CurrencyAmount, Percent, Price, Token } from '@nizaglobal/sdk-core'
+import { Pair } from '@nizaglobal/v2-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { Trans } from 'i18n'
 import JSBI from 'jsbi'

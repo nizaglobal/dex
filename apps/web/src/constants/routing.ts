@@ -1,5 +1,5 @@
 // a list of tokens by chain
-import { ChainId, Currency, Token, WETH9 } from '@uniswap/sdk-core'
+import { ChainId, Currency, Token, WETH9 } from '@nizaglobal/sdk-core'
 
 import { getNativeLogoURI, getTokenLogoURI } from 'lib/hooks/useCurrencyLogoURIs'
 import { SafetyLevel } from 'uniswap/src/data/graphql/uniswap-data-api/__generated__/types-and-hooks'

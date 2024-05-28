@@ -1,5 +1,5 @@
 import { SwapEventName } from '@uniswap/analytics-events'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
 import { PropsWithChildren, ReactNode, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Flex, Icons, Separator, Text, TouchableArea, useSporeColors } from 'ui/src'

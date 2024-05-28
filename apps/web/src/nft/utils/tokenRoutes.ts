@@ -1,7 +1,7 @@
-import { IRoute, Protocol } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { Pair } from '@uniswap/v2-sdk'
-import { Pool } from '@uniswap/v3-sdk'
+import { IRoute, Protocol } from '@nizaglobal/router-sdk'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
+import { Pair } from '@nizaglobal/v2-sdk'
+import { Pool } from '@nizaglobal/v3-sdk'
 import { ClassicTrade } from 'state/routing/types'
 import {
   TokenAmountInput,

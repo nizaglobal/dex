@@ -1,4 +1,4 @@
-import { ChainId, TradeType } from '@uniswap/sdk-core'
+import { ChainId, TradeType } from '@nizaglobal/sdk-core'
 import { SupportedInterfaceChain, asSupportedChain } from 'constants/chains'
 import { RPC_PROVIDERS } from 'constants/providers'
 import { useAssetActivitySubscription } from 'graphql/data/apollo/AssetActivityProvider'

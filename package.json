@@ -7,6 +7,7 @@
     "@crowdin/cli": "3.14.0",
     "@ethersproject/keccak256": "5.7.0",
     "@manypkg/cli": "^0.19.2",
+    "@nizaglobal/router-sdk": "1.0.0",
     "danger": "11.2.6",
     "depcheck": "1.4.7",
     "dotenv-cli": "^7.0.0",
@@ -27,7 +28,7 @@
       "INTERNAL_MISMATCH"
     ]
   },
-  "packageManager": "yarn@3.2.3",
+  "packageManager": "yarn@4.2.2",
   "private": true,
   "resolutionsComments": {
     "immer": "this fixes yarn typecheck in mobile app, see https://github.com/reduxjs/redux-toolkit/issues/1806"
@@ -36,9 +37,9 @@
     "cypress": "12.12.0",
     "@babel/preset-env": "7.23.3",
     "immer": "9.0.21",
-    "@uniswap/v2-sdk": "4.3.1-beta.2",
+    "@nizaglobal/v2-sdk": "1.0.1",
     "@apollo/client": "3.9.6",
-    "@uniswap/sdk-core": "4.2.1-beta.1",
+    "@nizaglobal/sdk-core": "1.0.1",
     "@react-navigation/routers": "6.1.9",
     "@react-navigation/core": "6.2.2",
     "@sideway/formula": "3.0.1",

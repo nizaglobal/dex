@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Percent, Price, Token } from '@uniswap/sdk-core'
-import { Position } from '@uniswap/v3-sdk'
+import { Percent, Price, Token } from '@nizaglobal/sdk-core'
+import { Position } from '@nizaglobal/v3-sdk'
 import RangeBadge from 'components/Badge/RangeBadge'
 import HoverInlineText from 'components/HoverInlineText'
 import Loader from 'components/Icons/LoadingSpinner'

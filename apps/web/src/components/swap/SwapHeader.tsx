@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@nizaglobal/sdk-core'
 import { Trans } from 'i18n'
 import { useState } from 'react'
 import { useSwapAndLimitContext } from 'state/swap/hooks'

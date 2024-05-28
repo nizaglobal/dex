@@ -1,5 +1,5 @@
-import { ChainId, CurrencyAmount, Token } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { ChainId, CurrencyAmount, Token } from '@nizaglobal/sdk-core'
+import { FeeAmount } from '@nizaglobal/v3-sdk'
 import { ChartHeader } from 'components/Charts/ChartHeader'
 import { Chart } from 'components/Charts/ChartModel'
 import { LiquidityBarChartModel, useLiquidityBarData } from 'components/Charts/LiquidityChart'

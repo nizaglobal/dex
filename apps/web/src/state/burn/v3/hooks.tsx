@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, Percent } from '@uniswap/sdk-core'
-import { Position } from '@uniswap/v3-sdk'
+import { Currency, CurrencyAmount, Percent } from '@nizaglobal/sdk-core'
+import { Position } from '@nizaglobal/v3-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { useToken } from 'hooks/Tokens'
 import { usePool } from 'hooks/usePools'

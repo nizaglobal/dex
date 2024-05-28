@@ -1,5 +1,5 @@
-import { Token } from '@uniswap/sdk-core'
-import { tickToPrice } from '@uniswap/v3-sdk'
+import { Token } from '@nizaglobal/sdk-core'
+import { tickToPrice } from '@nizaglobal/v3-sdk'
 import { TickProcessed } from 'hooks/usePoolTickData'
 import JSBI from 'jsbi'
 

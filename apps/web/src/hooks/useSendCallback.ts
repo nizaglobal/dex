@@ -1,5 +1,5 @@
 import { TransactionRequest } from '@ethersproject/abstract-provider'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { GasFeeResult } from 'hooks/useTransactionGasFee'
 import { useCallback } from 'react'

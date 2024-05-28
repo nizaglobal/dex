@@ -4,9 +4,9 @@ import {
   MaxUint160,
   PERMIT2_ADDRESS,
   PermitSingle,
-} from '@uniswap/permit2-sdk'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk'
+} from '@nizaglobal/permit2-sdk'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
+import { UNIVERSAL_ROUTER_ADDRESS } from '@nizaglobal/universal-router-sdk'
 import dayjs from 'dayjs'
 import { BigNumber, TypedDataField, providers } from 'ethers'
 import { useCallback } from 'react'

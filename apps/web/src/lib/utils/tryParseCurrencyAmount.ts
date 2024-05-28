@@ -1,5 +1,5 @@
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
 import JSBI from 'jsbi'
 
 function truncateValue(value: string, decimals: number): string {

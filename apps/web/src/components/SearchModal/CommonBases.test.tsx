@@ -1,6 +1,6 @@
 import 'test-utils/tokens/mocks'
 
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@nizaglobal/sdk-core'
 import { render } from 'test-utils/render'
 
 import CommonBases from './CommonBases'

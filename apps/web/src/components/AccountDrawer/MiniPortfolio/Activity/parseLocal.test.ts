@@ -1,7 +1,7 @@
 import 'test-utils/tokens/mocks'
 
-import { ChainId, TradeType as MockTradeType, Token } from '@uniswap/sdk-core'
-import { PERMIT2_ADDRESS } from '@uniswap/universal-router-sdk'
+import { ChainId, TradeType as MockTradeType, Token } from '@nizaglobal/sdk-core'
+import { PERMIT2_ADDRESS } from '@nizaglobal/universal-router-sdk'
 import { DAI as MockDAI, USDC_MAINNET as MockUSDC_MAINNET, USDT as MockUSDT, nativeOnChain } from 'constants/tokens'
 import { SignatureDetails, SignatureType } from 'state/signatures/types'
 import {

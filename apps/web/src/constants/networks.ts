@@ -1,4 +1,4 @@
-import { ChainId } from '@uniswap/sdk-core'
+import { ChainId } from '@nizaglobal/sdk-core'
 import { SupportedInterfaceChain } from 'constants/chains'
 
 const INFURA_KEY = process.env.REACT_APP_INFURA_KEY

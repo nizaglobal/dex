@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@nizaglobal/sdk-core'
 import { AutoColumn } from 'components/Column'
 import Modal from 'components/Modal'
 import { AutoRow } from 'components/Row'

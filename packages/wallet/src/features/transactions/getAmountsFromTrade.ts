@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@nizaglobal/sdk-core'
 import {
   ConfirmedSwapTransactionInfo,
   ExactInputSwapTransactionInfo,

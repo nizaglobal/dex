@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { ChainId, Currency, CurrencyAmount, TradeType } from '@nizaglobal/sdk-core'
 import {
   CancelLimitsDialog,
   CancellationState,

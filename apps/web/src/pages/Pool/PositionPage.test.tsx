@@ -1,8 +1,8 @@
 import 'test-utils/tokens/mocks'
 
 import { BigNumber } from '@ethersproject/bignumber'
-import { CurrencyAmount, WETH9 } from '@uniswap/sdk-core'
-import { FeeAmount, Pool } from '@uniswap/v3-sdk'
+import { CurrencyAmount, WETH9 } from '@nizaglobal/sdk-core'
+import { FeeAmount, Pool } from '@nizaglobal/v3-sdk'
 import { USDC_MAINNET } from 'constants/tokens'
 import { PoolState, usePool } from 'hooks/usePools'
 import { useV3PositionFees } from 'hooks/useV3PositionFees'

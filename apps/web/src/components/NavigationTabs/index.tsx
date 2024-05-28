@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@nizaglobal/sdk-core'
 import { useState } from 'react'
 // import { useWeb3React } from "@web3-react/core";
 // import SettingsTab from "components/Settings";

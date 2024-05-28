@@ -1,6 +1,6 @@
 import { SkipToken, skipToken } from '@reduxjs/toolkit/query/react'
-import { Protocol } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { Protocol } from '@nizaglobal/router-sdk'
+import { Currency, CurrencyAmount, TradeType } from '@nizaglobal/sdk-core'
 import { useMemo } from 'react'
 import { GetQuoteArgs, INTERNAL_ROUTER_PREFERENCE_PRICE, RouterPreference } from 'state/routing/types'
 import { currencyAddressForSwapQuote } from 'state/routing/utils'

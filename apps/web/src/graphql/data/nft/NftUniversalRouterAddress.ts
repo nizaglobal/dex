@@ -1,5 +1,5 @@
-import { ChainId } from '@uniswap/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@uniswap/universal-router-sdk'
+import { ChainId } from '@nizaglobal/sdk-core'
+import { UNIVERSAL_ROUTER_ADDRESS } from '@nizaglobal/universal-router-sdk'
 import { isSupportedChain } from 'constants/chains'
 import { useNftUniversalRouterAddressQuery } from 'uniswap/src/data/graphql/uniswap-data-api/__generated__/types-and-hooks'
 

@@ -1,5 +1,5 @@
-import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
-import { Route } from '@uniswap/v3-sdk'
+import { Currency, CurrencyAmount, TradeType } from '@nizaglobal/sdk-core'
+import { Route } from '@nizaglobal/v3-sdk'
 import { ChainId } from 'wallet/src/constants/chains'
 import { UNI, WBTC, wrappedNativeCurrency } from 'wallet/src/constants/tokens'
 import { NativeCurrency } from 'wallet/src/features/tokens/NativeCurrency'

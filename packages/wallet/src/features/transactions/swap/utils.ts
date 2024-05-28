@@ -1,11 +1,11 @@
-import { Protocol } from '@uniswap/router-sdk'
-import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
+import { Protocol } from '@nizaglobal/router-sdk'
+import { Currency, Percent, TradeType } from '@nizaglobal/sdk-core'
 import {
   FlatFeeOptions,
   SwapOptions as UniversalRouterSwapOptions,
   SwapRouter as UniversalSwapRouter,
-} from '@uniswap/universal-router-sdk'
-import { FeeOptions } from '@uniswap/v3-sdk'
+} from '@nizaglobal/universal-router-sdk'
+import { FeeOptions } from '@nizaglobal/v3-sdk'
 import { BigNumber } from 'ethers'
 import { AppTFunction } from 'ui/src/i18n/types'
 import { CurrencyId } from 'uniswap/src/types/currency'

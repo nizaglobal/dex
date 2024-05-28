@@ -1,4 +1,4 @@
-import { TradeType } from '@uniswap/sdk-core'
+import { TradeType } from '@nizaglobal/sdk-core'
 import { asSupportedChain } from 'constants/chains'
 import { parseUnits } from 'ethers/lib/utils'
 import { gqlToCurrency, logSentryErrorForUnsupportedChain, supportedChainIdFromGQLChain } from 'graphql/data/util'

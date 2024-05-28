@@ -1,5 +1,5 @@
-import { Currency, Price, Token } from '@uniswap/sdk-core'
-import { FeeAmount } from '@uniswap/v3-sdk'
+import { Currency, Price, Token } from '@nizaglobal/sdk-core'
+import { FeeAmount } from '@nizaglobal/v3-sdk'
 import { AutoColumn, ColumnCenter } from 'components/Column'
 import Loader from 'components/Icons/LoadingSpinner'
 import { useColor } from 'hooks/useColor'

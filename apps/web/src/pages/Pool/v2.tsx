@@ -1,5 +1,5 @@
 import { InterfacePageName } from '@uniswap/analytics-events'
-import { Pair } from '@uniswap/v2-sdk'
+import { Pair } from '@nizaglobal/v2-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { Trace } from 'analytics'
 import { V2Unsupported } from 'components/V2Unsupported'

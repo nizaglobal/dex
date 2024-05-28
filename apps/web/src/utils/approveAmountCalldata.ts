@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core'
-import { toHex } from '@uniswap/v3-sdk'
+import { Currency, CurrencyAmount } from '@nizaglobal/sdk-core'
+import { toHex } from '@nizaglobal/v3-sdk'
 import { Erc20Interface } from 'uniswap/src/abis/types/Erc20'
 
 const ERC20_INTERFACE = new Interface([
