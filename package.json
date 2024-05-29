@@ -7,7 +7,7 @@
     "@crowdin/cli": "3.14.0",
     "@ethersproject/keccak256": "5.7.0",
     "@manypkg/cli": "^0.19.2",
-    "@nizaglobal/router-sdk": "1.0.0",
+    "@nizaglobal/router-sdk": "1.0.1",
     "danger": "11.2.6",
     "depcheck": "1.4.7",
     "dotenv-cli": "^7.0.0",
