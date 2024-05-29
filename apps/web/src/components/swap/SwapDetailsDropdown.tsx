@@ -73,7 +73,7 @@ export default function SwapDetailsDropdown(props: SwapDetailsProps) {
           <RowFixed>
             {trade ? (
               <LoadingOpacityContainer $loading={syncing} data-testid="trade-price-container">
-                <TradePrice price={trade.executionPrice} />
+                <TradePrice price={(trade as any).executionPrice} />
               </LoadingOpacityContainer>
             ) : loading || syncing ? (
               <ThemedText.DeprecatedMain fontSize={14}>

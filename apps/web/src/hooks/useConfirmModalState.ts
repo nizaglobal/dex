@@ -231,7 +231,7 @@ export function useConfirmModalState({
   const [priceUpdate, setPriceUpdate] = useState<number>()
   useEffect(() => {
     if (lastExecutionPrice && !trade.executionPrice.equalTo(lastExecutionPrice)) {
-      setPriceUpdate(getPriceUpdateBasisPoints(lastExecutionPrice, trade.executionPrice))
+      setPriceUpdate(getPriceUpdateBasisPoints(lastExecutionPrice as any, (trade as any).executionPrice))
       setLastExecutionPrice(trade.executionPrice)
     }
   }, [lastExecutionPrice, setLastExecutionPrice, trade])

@@ -33,7 +33,7 @@ export function getRouter(chainId: ChainId): AlphaRouter {
   const supportedChainId = asSupportedChain(chainId)
   if (supportedChainId && CLIENT_SIDE_ROUTING_ALLOW_LIST.includes(chainId)) {
     const provider = RPC_PROVIDERS[supportedChainId]
-    const router = new AlphaRouter({ chainId, provider })
+    const router = new AlphaRouter({ chainId: chainId as any, provider })
     routers.set(chainId, router)
     return router
   }

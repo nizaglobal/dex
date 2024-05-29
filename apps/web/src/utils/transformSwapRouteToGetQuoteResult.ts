@@ -75,8 +75,8 @@ export function transformSwapRouteToGetQuoteResult(
           amountOut: edgeAmountOut,
         })
       } else {
-        const reserve0 = (nextPool as V2Pair).reserve0
-        const reserve1 = (nextPool as V2Pair).reserve1
+        const reserve0 = (nextPool as any).reserve0
+        const reserve1 = (nextPool as any).reserve1
 
         curRoute.push({
           type: 'v2-pool',

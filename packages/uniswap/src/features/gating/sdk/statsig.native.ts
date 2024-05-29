@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
 import { Statsig, StatsigContext } from 'statsig-react-native'
 const statsig = Statsig
-const statsigContext = StatsigContext
+const statsigContext: typeof StatsigContext = StatsigContext
 
 // eslint-disable-next-line no-restricted-imports
 export {
