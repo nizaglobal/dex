@@ -87,7 +87,8 @@ export const TESTNET_CHAIN_IDS = [
   ChainId.ARBITRUM_GOERLI,
   ChainId.OPTIMISM_GOERLI,
   ChainId.CELO_ALFAJORES,
-  ChainId.NIZA,
+  // TODO: Check if we want to include NIZA in the testnet list
+  // ChainId.NIZA,
 ] as const
 
 /**
