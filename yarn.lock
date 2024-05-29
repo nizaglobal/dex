@@ -3388,7 +3388,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ethersproject/abi@npm:5.7.0, @ethersproject/abi@npm:^5.0.12, @ethersproject/abi@npm:^5.1.2, @ethersproject/abi@npm:^5.5.0, @ethersproject/abi@npm:^5.7.0":
+"@ethersproject/abi@npm:5.7.0, @ethersproject/abi@npm:^5.1.2, @ethersproject/abi@npm:^5.5.0, @ethersproject/abi@npm:^5.7.0":
   version: 5.7.0
   resolution: "@ethersproject/abi@npm:5.7.0"
   dependencies:
@@ -14055,7 +14055,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uniswap/permit2-sdk@npm:1.2.1-beta.1, @uniswap/permit2-sdk@npm:^1.2.1-beta.1":
+"@uniswap/permit2-sdk@npm:1.2.1-beta.1":
   version: 1.2.1-beta.1
   resolution: "@uniswap/permit2-sdk@npm:1.2.1-beta.1"
   dependencies:
@@ -14065,13 +14065,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/permit2-sdk@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@uniswap/permit2-sdk@npm:1.2.0"
+"@uniswap/permit2-sdk@patch:@uniswap/permit2-sdk@npm%3A1.2.1-beta.1#./.yarn/patches/@uniswap-permit2-sdk-npm-1.2.1-beta.1-facee60d80.patch::locator=universe%40workspace%3A.":
+  version: 1.2.1-beta.1
+  resolution: "@uniswap/permit2-sdk@patch:@uniswap/permit2-sdk@npm%3A1.2.1-beta.1#./.yarn/patches/@uniswap-permit2-sdk-npm-1.2.1-beta.1-facee60d80.patch::version=1.2.1-beta.1&hash=466e8d&locator=universe%40workspace%3A."
   dependencies:
-    ethers: ^5.3.1
-    tiny-invariant: ^1.3.1
-  checksum: 524519c4f5492a721de9215f4c74c18af4a8a4f676273ccc9c01512fe36c8e8ac51dd3474b19021522b76ef2edd25d9c871b0eb051e22b6564e37cd2b9422920
+    ethers: ^5.7.0
+    tiny-invariant: ^1.1.0
+  checksum: 3c8ab3641266328146cf92a4768ffb2f765d60c4b288ab89fc31e141b6d075fa0109f48e0f321026e0bf2d9acf60e4db2f144a6b08a0f6192c0aea4f95ade0bd
   languageName: node
   linkType: hard
 
@@ -14102,7 +14102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/router-sdk@npm:^1.6.0, @uniswap/router-sdk@npm:^1.9.0":
+"@uniswap/router-sdk@npm:^1.6.0":
   version: 1.9.0
   resolution: "@uniswap/router-sdk@npm:1.9.0"
   dependencies:
@@ -14126,6 +14126,20 @@ __metadata:
     tiny-invariant: ^1.1.0
     toformat: ^2.0.0
   checksum: c345a14fd0f69030849771394179593bb002bd2ddaa08cc5fcb88a684b47f94a8089c5d38f09454c7441bff6566c42c3c18172f57ea0476c4ea58cc719a3d84e
+  languageName: node
+  linkType: hard
+
+"@uniswap/sdk-core@patch:@uniswap/sdk-core@npm%3A4.2.1-beta.1#./.yarn/patches/@uniswap-sdk-core-npm-4.2.1-beta.1-7ab1db6548.patch::locator=universe%40workspace%3A.":
+  version: 4.2.1-beta.1
+  resolution: "@uniswap/sdk-core@patch:@uniswap/sdk-core@npm%3A4.2.1-beta.1#./.yarn/patches/@uniswap-sdk-core-npm-4.2.1-beta.1-7ab1db6548.patch::version=4.2.1-beta.1&hash=497f63&locator=universe%40workspace%3A."
+  dependencies:
+    "@ethersproject/address": ^5.0.2
+    big.js: ^5.2.2
+    decimal.js-light: ^2.5.0
+    jsbi: ^3.1.4
+    tiny-invariant: ^1.1.0
+    toformat: ^2.0.0
+  checksum: c98eea286c622ea969ab0cbc615c69e54f62219889663f8fd2e90346c6071ac7705f24a5bfe75b907b5dfdc72285b803b084a8d496bdf5e9bbceb29fa415c04e
   languageName: node
   linkType: hard
 
@@ -14161,7 +14175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/swap-router-contracts@npm:^1.1.0, @uniswap/swap-router-contracts@npm:^1.2.1, @uniswap/swap-router-contracts@npm:^1.3.0":
+"@uniswap/swap-router-contracts@npm:^1.1.0, @uniswap/swap-router-contracts@npm:^1.3.0":
   version: 1.3.1
   resolution: "@uniswap/swap-router-contracts@npm:1.3.1"
   dependencies:
@@ -14211,19 +14225,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/universal-router-sdk@npm:^1.5.4, @uniswap/universal-router-sdk@npm:^1.5.8":
-  version: 1.8.2
-  resolution: "@uniswap/universal-router-sdk@npm:1.8.2"
+"@uniswap/universal-router-sdk@patch:@uniswap/universal-router-sdk@npm%3A2.0.4-beta.3#./.yarn/patches/@uniswap-universal-router-sdk-npm-2.0.4-beta.3-e577f2fa0c.patch::locator=universe%40workspace%3A.":
+  version: 2.0.4-beta.3
+  resolution: "@uniswap/universal-router-sdk@patch:@uniswap/universal-router-sdk@npm%3A2.0.4-beta.3#./.yarn/patches/@uniswap-universal-router-sdk-npm-2.0.4-beta.3-e577f2fa0c.patch::version=2.0.4-beta.3&hash=1a84b7&locator=universe%40workspace%3A."
   dependencies:
-    "@uniswap/permit2-sdk": ^1.2.0
-    "@uniswap/router-sdk": ^1.9.0
-    "@uniswap/sdk-core": ^4.2.0
+    "@uniswap/permit2-sdk": ^1.2.1-beta.1
+    "@uniswap/router-sdk": ^1.9.1-beta.2
+    "@uniswap/sdk-core": ^4.2.1-beta.1
     "@uniswap/universal-router": 1.6.0
-    "@uniswap/v2-sdk": ^4.2.0
-    "@uniswap/v3-sdk": ^3.11.0
+    "@uniswap/v2-sdk": ^4.3.1-beta.2
+    "@uniswap/v3-sdk": ^3.11.1-beta.2
     bignumber.js: ^9.0.2
-    ethers: ^5.3.1
-  checksum: 87f7d9781ff22e71ecb38efb9cdf39408fed719c7fd6c301d33db0282b0f579b159fcd1b033bc3fb2aba92a551bafb33df2ae8aec7515524b8979c50b5d42b02
+    ethers: ^5.7.0
+  checksum: c1f74ed78732b51557649e50b6dacbbd127c6352aa3a85615126c4936d93491c847dbbfbc25d73e7001cbfd8c345536c0182e3b6cdbc79c87292ad29eaeb8a97
   languageName: node
   linkType: hard
 
@@ -14302,7 +14316,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/v3-sdk@npm:3.11.1-beta.2, @uniswap/v3-sdk@npm:^3.11.1-beta.2":
+"@uniswap/v3-sdk@npm:3.11.1-beta.2":
   version: 3.11.1-beta.2
   resolution: "@uniswap/v3-sdk@npm:3.11.1-beta.2"
   dependencies:
@@ -14318,19 +14332,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uniswap/v3-sdk@npm:^3.10.0, @uniswap/v3-sdk@npm:^3.11.0":
-  version: 3.11.0
-  resolution: "@uniswap/v3-sdk@npm:3.11.0"
+"@uniswap/v3-sdk@patch:@uniswap/v3-sdk@npm%3A3.11.1-beta.2#./.yarn/patches/@uniswap-v3-sdk-npm-3.11.1-beta.2-8576cf85ce.patch::locator=universe%40workspace%3A.":
+  version: 3.11.1-beta.2
+  resolution: "@uniswap/v3-sdk@patch:@uniswap/v3-sdk@npm%3A3.11.1-beta.2#./.yarn/patches/@uniswap-v3-sdk-npm-3.11.1-beta.2-8576cf85ce.patch::version=3.11.1-beta.2&hash=2e5de8&locator=universe%40workspace%3A."
   dependencies:
-    "@ethersproject/abi": ^5.0.12
+    "@ethersproject/abi": ^5.5.0
     "@ethersproject/solidity": ^5.0.9
-    "@uniswap/sdk-core": ^4.2.0
-    "@uniswap/swap-router-contracts": ^1.2.1
+    "@uniswap/sdk-core": ^4.2.1-beta.1
+    "@uniswap/swap-router-contracts": ^1.3.0
     "@uniswap/v3-periphery": ^1.1.1
     "@uniswap/v3-staker": 1.0.0
     tiny-invariant: ^1.1.0
     tiny-warning: ^1.0.3
-  checksum: 35850a2f171ece5de27ab5066f983fdbc806b08b7a0db03c27b1fe4502176ab44136427f7b2a41c7476ec2b80398a9d74b5397f5d7bc35d174f888458e491a57
+  checksum: 61f66edc0275a0ae1373d6497b8af737e4ecc37480d747fbbde2153db41ec582bad4bc2552ab88c2e41093d4019e5458b0c84d46f98f5790ae210c51a35eda7a
   languageName: node
   linkType: hard
 
@@ -23678,7 +23692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ethers@npm:5.7.2, ethers@npm:^5.3.1, ethers@npm:^5.5.2, ethers@npm:^5.6.7, ethers@npm:^5.7.0, ethers@npm:^5.7.1, ethers@npm:^5.7.2":
+"ethers@npm:5.7.2, ethers@npm:^5.5.2, ethers@npm:^5.6.7, ethers@npm:^5.7.0, ethers@npm:^5.7.1, ethers@npm:^5.7.2":
   version: 5.7.2
   resolution: "ethers@npm:5.7.2"
   dependencies:
@@ -42870,7 +42884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:1.3.1, tiny-invariant@npm:^1.1.0, tiny-invariant@npm:^1.3.1":
+"tiny-invariant@npm:1.3.1, tiny-invariant@npm:^1.1.0":
   version: 1.3.1
   resolution: "tiny-invariant@npm:1.3.1"
   checksum: 872dbd1ff20a21303a2fd20ce3a15602cfa7fcf9b228bd694a52e2938224313b5385a1078cb667ed7375d1612194feaca81c4ecbe93121ca1baebe344de4f84c

