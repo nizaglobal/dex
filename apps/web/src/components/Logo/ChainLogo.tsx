@@ -16,6 +16,8 @@ import { ReactComponent as celoLight } from './ChainSymbols/celo_light.svg'
 import { ReactComponent as ethereum } from './ChainSymbols/ethereum.svg'
 import { ReactComponent as optimism } from './ChainSymbols/optimism.svg'
 import { ReactComponent as polygon } from './ChainSymbols/polygon.svg'
+import { ReactComponent as nizaLight } from './ChainSymbols/niza_light.svg'
+import { ReactComponent as nizaDark } from './ChainSymbols/niza_dark.svg'
 
 type SVG = FunctionComponent<React.SVGProps<SVGSVGElement>>
 type ChainUI = { Symbol: SVG; bgColor: string; textColor: string }
@@ -92,6 +94,20 @@ export function getChainUI(chainId: ChainId, darkMode: boolean): ChainUI | undef
           }
         : {
             Symbol: blastLight,
+            bgColor: 'rgba(252, 252, 3, 0.16)',
+            textColor: 'rgba(17, 20, 12, 1)',
+          }
+    case ChainId.NIZA:
+      return darkMode
+      ? {
+          // TODO: Change to nizaDark when it's ready
+          // Symbol: nizaDark,
+          Symbol: nizaLight,
+          bgColor: 'rgba(252, 252, 3, 0.12)',
+          textColor: 'rgba(252, 252, 3, 1) ',
+        }
+        : {
+          Symbol: nizaLight,
             bgColor: 'rgba(252, 252, 3, 0.16)',
             textColor: 'rgba(17, 20, 12, 1)',
           }
