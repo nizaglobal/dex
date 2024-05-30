@@ -1,13 +1,13 @@
-import { ChainId } from '@nizaglobal/sdk-core'
-import { SmallButtonPrimary } from 'components/Button'
+import { ChainId } from '@uniswap/sdk-core'
 import Column from 'components/Column'
 import { QUICK_ROUTE_CONFIG_KEY, useQuickRouteChains } from 'featureFlags/dynamicConfig/quickRouteChains'
-import { PropsWithChildren, ReactNode } from 'react'
-import { X } from 'react-feather'
+import { PropsWithChildren, ReactNode, useState } from 'react'
+import { ChevronDown, X } from 'react-feather'
 import { useModalIsOpen, useToggleFeatureFlags } from 'state/application/hooks'
 import { ApplicationModal } from 'state/application/reducer'
 import styled from 'styled-components'
 import { BREAKPOINTS } from 'theme'
+import { ThemedText } from 'theme/components'
 import { Z_INDEX } from 'theme/zIndex'
 import { DynamicConfigs, getConfigName } from 'uniswap/src/features/gating/configs'
 import { FeatureFlags, getFeatureFlagName } from 'uniswap/src/features/gating/flags'
@@ -25,13 +25,14 @@ const StyledModal = styled.div`
   color: ${({ theme }) => theme.neutral1};
   font-size: 18px;
   padding: 20px 0px;
-  background-color: ${({ theme }) => theme.surface2};
+  padding-top: 14px;
+  background-color: ${({ theme }) => theme.background};
   border-radius: 12px;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  /* border: 1px solid ${({ theme }) => theme.border1}; */
   z-index: ${Z_INDEX.modal};
   flex-direction: column;
   gap: 8px;
-  border: 1px solid ${({ theme }) => theme.surface3};
+  border: 1px solid ${({ theme }) => theme.border1};
 
   @media screen and (max-width: ${BREAKPOINTS.sm}px) {
     max-height: 80vh;
@@ -64,15 +65,22 @@ const CloseButton = styled.button`
   background: transparent;
   border: none;
   color: ${({ theme }) => theme.neutral1};
+  margin-top: 4px;
 `
 
 const Header = styled(Row)`
   padding: 0px 16px 8px;
   font-weight: 535;
   font-size: 16px;
-  border-bottom: 1px solid ${({ theme }) => theme.surface3};
+  border-bottom: 1px solid ${({ theme }) => theme.border1};
   justify-content: space-between;
 `
+
+const ActionHeader = styled(Row)`
+  align-items: center;
+  gap: 8px;
+`
+
 const FlagName = styled.span`
   font-size: 16px;
   line-height: 20px;
@@ -87,7 +95,7 @@ const FlagGroupName = styled.span`
 const FlagDescription = styled.span`
   font-size: 12px;
   line-height: 16px;
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.placeholder};
   display: flex;
   align-items: center;
 `
@@ -130,25 +138,90 @@ function FeatureFlagGroup({ name, children }: PropsWithChildren<{ name: string }
   )
 }
 
-const FlagVariantSelection = styled.select`
+const FlagVariantSelection = styled.div`
+  position: relative;
   border-radius: 12px;
   padding: 8px;
-  background: ${({ theme }) => theme.surface3};
+  background: ${({ theme }) => theme.surface1};
   font-weight: 535;
-  font-size: 16px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: none;
   color: ${({ theme }) => theme.neutral1};
+  min-width: 100px;
+  min-height: 35px;
   cursor: pointer;
   :hover {
-    background: ${({ theme }) => theme.surface3};
+    background: ${({ theme }) => theme.surface1};
   }
 `
 
-function Variant({ option }: { option: string }) {
-  return <option value={option}>{option}</option>
+const TextButton = styled(ThemedText.BodySmall)`
+  color: ${({ theme }) => theme.accent1};
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.accent3};
+  }
+`
+
+const SaveButtonReload = styled(SaveButton)`
+  background-color: ${({ theme }) => theme.accent1} !important;
+  color: ${({ theme }) => theme.black};
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.accent3} !important;
+  }
+`
+
+const OptionsWrapper = styled.div`
+  position: absolute;
+  top: 100%;
+  padding: 8px 0;
+  border-radius: 12px;
+  z-index: 5;
+  left: 0;
+  background-color: ${({ theme }) => theme.surface1};
+  border: 1px solid ${({ theme }) => theme.border1};
+  width: 100%;
+  -webkit-box-shadow: 0px 48px 111px -30px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 48px 111px -30px rgba(0, 0, 0, 0.58);
+  box-shadow: 0px 48px 111px -30px rgba(0, 0, 0, 0.58);
+`
+
+const Option = styled.div`
+  font-size: 14px;
+  padding: 8px;
+  &:hover {
+    background-color: ${({ theme }) => theme.surface3};
+  }
+`
+
+const Chevron = styled.span<{ open: boolean }>`
+  display: flex;
+  color: ${({ open, theme }) => (open ? theme.neutral1 : theme.neutral2)};
+  rotate: ${({ open }) => (open ? '180deg' : '0deg')};
+  transition: rotate ${({ theme }) => `${theme.transition.duration.fast} ${theme.transition.timing.inOut}`};
+`
+
+function Variant({ options, onInput }: { options: string[]; onInput: (value: string) => void }) {
+  return (
+    <OptionsWrapper>
+      {options.map((option: string, index: number) => (
+        <Option key={index} onClick={() => onInput(option)}>
+          {option}
+        </Option>
+      ))}
+    </OptionsWrapper>
+  )
+  // return <option value={option}>{option}</option>;
 }
 
 function FeatureFlagOption({ flag, label }: FeatureFlagProps) {
+  const [selectOpen, setSelectOpen] = useState(false)
   const enabled = useFeatureFlagWithExposureLoggingDisabled(flag)
   const name = getFeatureFlagName(flag)
   return (
@@ -157,16 +230,20 @@ function FeatureFlagOption({ flag, label }: FeatureFlagProps) {
         <FlagName>{name}</FlagName>
         <FlagDescription>{label}</FlagDescription>
       </FlagInfo>
-      <FlagVariantSelection
-        id={name}
-        onChange={(e) => {
-          Statsig.overrideGate(name, e.target.value === 'Enabled' ? true : false)
-        }}
-        value={enabled ? 'Enabled' : 'Disabled'}
-      >
-        {['Enabled', 'Disabled'].map((variant) => (
-          <Variant key={variant} option={variant} />
-        ))}
+
+      <FlagVariantSelection onClick={() => setSelectOpen(!selectOpen)}>
+        {enabled ? 'Enabled' : 'Disabled'}
+        <Chevron open={selectOpen}>
+          <ChevronDown width={20} height={20} />
+        </Chevron>
+        {selectOpen ? (
+          <Variant
+            options={['Enabled', 'Disabled']}
+            onInput={(value: string) => {
+              Statsig.overrideGate(name, value === 'Enabled' ? true : false)
+            }}
+          />
+        ) : null}
       </FlagVariantSelection>
     </Row>
   )
@@ -184,7 +261,9 @@ function DynamicConfigDropdown({ config, label, options, selected, parser }: Dyn
   const configName = getConfigName(config)
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValues = Array.from(e.target.selectedOptions, (opt) => parser(opt.value))
-    Statsig.overrideConfig(configName, { [QUICK_ROUTE_CONFIG_KEY]: selectedValues })
+    Statsig.overrideConfig(configName, {
+      [QUICK_ROUTE_CONFIG_KEY]: selectedValues,
+    })
   }
   return (
     <Row key={configName}>
@@ -211,17 +290,19 @@ export default function FeatureFlagModal() {
     <Modal open={open}>
       <Header>
         <span>Feature Flag Settings</span>
-        <SmallButtonPrimary
-          onClick={() => {
-            Statsig.removeGateOverride()
-            Statsig.removeConfigOverride()
-          }}
-        >
-          Clear Overrides
-        </SmallButtonPrimary>
-        <CloseButton onClick={toggleModal}>
-          <X size={24} />
-        </CloseButton>
+        <ActionHeader>
+          <TextButton
+            onClick={() => {
+              Statsig.removeGateOverride()
+              Statsig.removeConfigOverride()
+            }}
+          >
+            Clear Overrides
+          </TextButton>
+          <CloseButton onClick={toggleModal}>
+            <X size={24} />
+          </CloseButton>
+        </ActionHeader>
       </Header>
       <FlagsColumn>
         <FeatureFlagOption flag={FeatureFlags.SendEnabled} label="Send on swap component" />
@@ -248,10 +329,16 @@ export default function FeatureFlagModal() {
             label="Enable quick routes for these chains"
           />
         </FeatureFlagGroup>
-        <FeatureFlagGroup name="UniswapX Flags">
-          <FeatureFlagOption flag={FeatureFlags.UniswapXSyntheticQuote} label="Force synthetic quotes for UniswapX" />
-          <FeatureFlagOption flag={FeatureFlags.UniswapXv2} label="UniswapX v2" />
-        </FeatureFlagGroup>
+        {/* <FeatureFlagGroup name="UniswapX Flags">
+          <FeatureFlagOption
+            flag={FeatureFlags.UniswapXSyntheticQuote}
+            label="Force synthetic quotes for UniswapX"
+          />
+          <FeatureFlagOption
+            flag={FeatureFlags.UniswapXv2}
+            label="UniswapX v2"
+          />
+        </FeatureFlagGroup> */}
         <FeatureFlagGroup name="Extension">
           <FeatureFlagOption flag={FeatureFlags.ExtensionBetaLaunch} label="Beta phase of go-to-market campaign" />
           <FeatureFlagOption
@@ -268,7 +355,7 @@ export default function FeatureFlagModal() {
           <FeatureFlagOption flag={FeatureFlags.TraceJsonRpc} label="Enables JSON-RPC tracing" />
         </FeatureFlagGroup>
       </FlagsColumn>
-      <SaveButton onClick={() => window.location.reload()}>Reload</SaveButton>
+      <SaveButtonReload onClick={() => window.location.reload()}>Reload</SaveButtonReload>
     </Modal>
   )
 }

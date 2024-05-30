@@ -136,10 +136,8 @@ const SweepButton = styled.div<{ toggled: boolean; disabled?: boolean }>`
   border-radius: 12px;
   padding: 12px 18px 12px 12px;
   cursor: ${({ disabled }) => (disabled ? 'auto' : 'pointer')};
-  color: ${({ toggled, disabled, theme }) =>
-    toggled && !disabled ? theme.deprecated_accentTextLightPrimary : theme.neutral1};
-  background: ${({ theme, toggled, disabled }) =>
-    !disabled && toggled ? 'radial-gradient(101.8% 4091.31% at 0% 0%, #4673FA 0%, #9646FA 100%)' : theme.surface3};
+  color: ${({ toggled, disabled, theme }) => (toggled && !disabled ? theme.black : theme.neutral1)};
+  background: ${({ theme, toggled, disabled }) => (!disabled && toggled ? theme.accent1 : theme.surface3)};
   opacity: ${({ disabled }) => (disabled ? 0.4 : 1)};
   :hover {
     background-color: ${({ theme }) => theme.surface3};
@@ -485,7 +483,7 @@ export const CollectionNfts = ({ contractAddress, collectionStats, rarityVerifie
   return (
     <>
       <AnimatedBox
-        backgroundColor="surface1"
+        backgroundColor="background"
         position="sticky"
         top="72"
         width="full"

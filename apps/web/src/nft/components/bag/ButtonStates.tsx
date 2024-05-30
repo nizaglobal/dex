@@ -50,7 +50,7 @@ export function getBuyButtonStateData(
     helperText: undefined,
     helperTextColor: theme.neutral2,
     buttonColor: theme.accent1,
-    buttonTextColor: theme.deprecated_accentTextLightPrimary,
+    buttonTextColor: theme.black,
   }
 
   const buyButtonStateData: Record<BuyButtonStates, BuyButtonStateData> = {

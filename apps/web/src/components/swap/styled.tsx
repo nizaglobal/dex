@@ -168,7 +168,7 @@ export const ArrowContainer = styled.div`
 
 export const SwapHeaderTabButton = styled(ButtonText)<{ $isActive: boolean }>`
   color: ${({ theme, $isActive }) => ($isActive ? theme.black : theme.neutral2)};
-  background-color: ${({ theme, $isActive }) => $isActive && theme.accent1};
+  background-color: ${({ theme, $isActive }) => $isActive && theme.accent1} !important;
   padding: 8px 16px;
   border-radius: 6px;
   gap: 4px;

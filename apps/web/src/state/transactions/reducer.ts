@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
 import { ChainId } from '@nizaglobal/sdk-core'
+import { createSlice } from '@reduxjs/toolkit'
 
 import { SerializableTransactionReceipt, TransactionDetails, TransactionInfo } from './types'
 

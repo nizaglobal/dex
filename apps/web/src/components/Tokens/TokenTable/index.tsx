@@ -1,5 +1,5 @@
-import { createColumnHelper } from '@tanstack/react-table'
 import { ChainId } from '@nizaglobal/sdk-core'
+import { createColumnHelper } from '@tanstack/react-table'
 import { ParentSize } from '@visx/responsive'
 import QueryTokenLogo from 'components/Logo/QueryTokenLogo'
 import Row from 'components/Row'

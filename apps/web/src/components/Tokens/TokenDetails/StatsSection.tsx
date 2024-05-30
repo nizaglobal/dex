@@ -14,7 +14,7 @@ import { UNSUPPORTED_METADATA_CHAINS } from '../constants'
 import { TokenSortMethod } from '../state'
 
 export const StatWrapper = styled.div`
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.placeholder};
   font-size: 14px;
   min-width: 121px;
   flex: 1;

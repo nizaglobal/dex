@@ -17,7 +17,7 @@ export type LineItemData = {
 
 const LabelText = styled(ThemedText.BodySmall)<{ hasTooltip?: boolean }>`
   cursor: ${({ hasTooltip }) => (hasTooltip ? 'help' : 'auto')};
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.placeholder};
 `
 
 const DetailRowValue = styled(ThemedText.BodySmall)`

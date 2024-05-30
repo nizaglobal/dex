@@ -10,10 +10,10 @@ const OptionsSelector = styled.div`
   position: relative;
   justify-content: flex-end;
   gap: 12px;
-  border: 1px solid ${({ theme }) => theme.surface3};
-  border-radius: 20px;
+  border: 1px solid ${({ theme }) => theme.border1};
+  border-radius: 12px;
   height: 36px;
-  padding: ${togglePadding}px;
+  padding: ${togglePadding}px ${togglePadding - 1}px;
   width: 100%;
 `
 
@@ -21,8 +21,9 @@ const ActivePill = styled.div`
   position: absolute;
   height: 28px;
   top: 3px;
-  background-color: ${({ theme }) => theme.surface3};
-  border-radius: 16px;
+  background-color: ${({ theme }) => theme.accent1};
+  color: ${({ theme }) => theme.black} !important;
+  border-radius: 10px;
   transition: left 0.3s ease, width 0.3s ease;
 `
 const OptionButton = styled.button<{ active: boolean }>`
@@ -34,11 +35,11 @@ const OptionButton = styled.button<{ active: boolean }>`
   font-weight: 535;
   font-size: 16px;
   padding: 8px 12px;
-  border-radius: 15px;
+  border-radius: 12px;
   line-height: 20px;
   border: none;
   cursor: pointer;
-  color: ${({ theme, active }) => (active ? theme.neutral1 : theme.neutral2)};
+  color: ${({ theme, active }) => (active ? theme.black : theme.neutral2)};
   transition-duration: ${({ theme }) => theme.transition.duration.fast};
   z-index: ${Z_INDEX.active};
   :hover {

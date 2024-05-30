@@ -169,7 +169,11 @@ export function Hero({ transition }: HeroProps) {
 
         <RiseIn delay={0.4}>
           <LandingSwapContainer>
-            <LandingSwap syncTabToUrl={false} initialInputCurrency={initialInputCurrency} />
+            <LandingSwap
+              syncTabToUrl={false}
+              initialInputCurrency={initialInputCurrency}
+              swapHeaderWithoutOptions={true}
+            />
           </LandingSwapContainer>
         </RiseIn>
 

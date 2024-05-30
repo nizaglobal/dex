@@ -1,4 +1,3 @@
-import { darken } from 'polished'
 import styled, { css } from 'styled-components'
 import { ClickableStyle } from 'theme/components'
 import { opacify } from 'theme/utils'
@@ -43,14 +42,15 @@ export const NoInfoAvailable = styled.p`
 `
 
 export const TruncateDescriptionButton = styled.div`
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.accent1};
   font-weight: 485;
   font-size: 0.85em;
   padding-top: 0.5em;
+  transition: all 0.1s ease;
 
   &:hover,
   &:focus {
-    color: ${({ theme }) => darken(0.1, theme.neutral2)};
+    color: ${({ theme }) => theme.accent3};
     cursor: pointer;
   }
 `

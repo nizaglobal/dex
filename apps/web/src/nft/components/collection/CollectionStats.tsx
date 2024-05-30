@@ -135,11 +135,31 @@ const MobileSocialsPopover = ({
   )
 }
 
+const SocialIconWrapper = styled(Column)<{ height: string }>`
+  height: ${({ height }) => height};
+  background-color: ${({ theme }) => theme.surface3};
+  border-radius: 100%;
+  padding: 4px;
+  padding-bottom: 0;
+  border: 1px solid ${({ theme }) => theme.border1};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.surface1};
+  }
+`
+
 const SocialsIcon = ({ children, href }: { children: ReactNode; href: string }) => {
   return (
-    <Column as="a" target="_blank" rel="noreferrer" href={href} height="full" justifyContent="center">
+    <SocialIconWrapper
+      as="a"
+      target="_blank"
+      rel="noreferrer"
+      href={href}
+      height="full"
+      // justifyContent="center"
+    >
       {children}
-    </Column>
+    </SocialIconWrapper>
   )
 }
 
@@ -263,7 +283,7 @@ const CollectionDescriptionText = styled.p<{ readMore: boolean }>`
 
 const ReadMore = styled.span`
   vertical-align: top;
-  color: ${({ theme }) => theme.neutral2};
+  color: ${({ theme }) => theme.accent1};
   cursor: pointer;
   margin-left: 4px;
 `
@@ -349,7 +369,10 @@ const StatsRow = ({ stats, isMobile, ...props }: { stats: GenieCollection; isMob
     ? roundWholePercentage(((stats.stats.num_owners ?? 0) / stats.stats.total_supply) * 100)
     : 0
   const totalSupplyStr = stats.stats
-    ? formatNumberOrString({ input: stats.stats.total_supply ?? 0, type: NumberType.NFTCollectionStats })
+    ? formatNumberOrString({
+        input: stats.stats.total_supply ?? 0,
+        type: NumberType.NFTCollectionStats,
+      })
     : 0
   const listedPercentageStr = stats?.stats?.total_supply
     ? roundWholePercentage(((stats.stats.total_listings ?? 0) / stats.stats.total_supply) * 100)

@@ -19,6 +19,7 @@ export const baseActivitySwitcherToggle = style([
 
 export const activitySwitcherToggle = style([
   baseActivitySwitcherToggle,
+
   sprinkles({
     color: 'neutral2',
   }),
@@ -27,19 +28,12 @@ export const activitySwitcherToggle = style([
 export const selectedActivitySwitcherToggle = style([
   baseActivitySwitcherToggle,
   sprinkles({
-    color: 'neutral1',
+    color: 'black',
   }),
   {
-    ':after': {
-      content: '',
-      position: 'absolute',
-      background: vars.color.neutral1,
-      width: '100%',
-      height: '2px',
-      left: '0px',
-      right: '0px',
-      bottom: '-9px',
-    },
+    backgroundColor: vars.color.accent1,
+    padding: '4px 8px',
+    borderRadius: '8px',
   },
 ])
 

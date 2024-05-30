@@ -27,6 +27,7 @@ import { NumberType, useFormatter } from 'utils/formatNumbers'
 import * as styles from './BagRow.css'
 
 export const RemoveButton = styled(ThemeButton)`
+  background-color: ${({ theme }) => theme.critical} !important;
   border-radius: 12px;
   font-size: 14px;
   line-height: 16px;
@@ -101,7 +102,10 @@ export const BagRow = ({ asset, usdPrice, removeAsset, showRemove, grayscale, is
   const showRemoveButton = Boolean(showRemove && cardHovered && !isMobile)
 
   const assetEthPrice = asset.updatedPriceInfo ? asset.updatedPriceInfo.ETHPrice : asset.priceInfo.ETHPrice
-  const assetEthPriceFormatted = formatEther({ input: assetEthPrice, type: NumberType.NFTToken })
+  const assetEthPriceFormatted = formatEther({
+    input: assetEthPrice,
+    type: NumberType.NFTToken,
+  })
   const assetUSDPriceFormatted = formatNumberOrString({
     input: usdPrice ? parseFloat(ethersFormatEther(assetEthPrice)) * usdPrice : usdPrice,
     type: NumberType.FiatNFTToken,

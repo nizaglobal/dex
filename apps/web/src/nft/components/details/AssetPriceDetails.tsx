@@ -105,9 +105,9 @@ const BuyNowButtonContainer = styled.div`
   position: relative;
 `
 
-const Tertiary = styled(ThemedText.BodySecondary)`
-  color: ${({ theme }) => theme.neutral3};
-`
+// const Tertiary = styled(ThemedText.BodySecondary)`
+//   color: ${({ theme }) => theme.neutral3};
+// `
 
 const UploadLink = styled.a`
   color: ${({ theme }) => theme.neutral2};
@@ -387,7 +387,9 @@ export const AssetPriceDetails = ({ asset, collection }: AssetPriceDetailsProps)
             )}
           </PriceRow>
           {expirationDate && expirationDate > new Date() && (
-            <Tertiary fontSize="14px">Sale ends: {timeLeft(expirationDate)}</Tertiary>
+            <ThemedText.BodySecondary color="placeholder" fontSize="14px">
+              Sale ends: {timeLeft(expirationDate)}
+            </ThemedText.BodySecondary>
           )}
           <div>
             <BuyNowButtonContainer>
@@ -402,7 +404,7 @@ export const AssetPriceDetails = ({ asset, collection }: AssetPriceDetailsProps)
                   }
                 }}
               >
-                <ThemedText.SubHeader color="white" lineHeight="20px">
+                <ThemedText.SubHeader color="black" fontWeight="bold" lineHeight="20px">
                   <span data-testid="nft-details-toggle-bag">{assetInBag ? 'Remove' : 'Add to Bag'}</span>
                 </ThemedText.SubHeader>
               </BuyNowButton>

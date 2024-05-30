@@ -1,8 +1,14 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import type { TransactionResponse } from '@ethersproject/providers'
-import { BrowserEvent, InterfaceElementName, InterfaceEventName, LiquidityEventName } from '@uniswap/analytics-events'
-import { ChainId, Currency, CurrencyAmount, NONFUNGIBLE_POSITION_MANAGER_ADDRESSES, Percent } from '@nizaglobal/sdk-core'
+import {
+  ChainId,
+  Currency,
+  CurrencyAmount,
+  NONFUNGIBLE_POSITION_MANAGER_ADDRESSES,
+  Percent,
+} from '@nizaglobal/sdk-core'
 import { FeeAmount, NonfungiblePositionManager } from '@nizaglobal/v3-sdk'
+import { BrowserEvent, InterfaceElementName, InterfaceEventName, LiquidityEventName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { TraceEvent, sendAnalyticsEvent, useTrace } from 'analytics'
 import { useToggleAccountDrawer } from 'components/AccountDrawer/MiniPortfolio/hooks'
