@@ -18,7 +18,7 @@ const FilterDropdown = styled(Column)<{ isSticky?: boolean }>`
   top: ${({ isSticky }) => (isSticky ? 64 : 42)}px;
   padding: 8px;
   border-radius: 12px;
-  background: ${({ theme }) => theme.surface2};
+  background: ${({ theme }) => theme.surface1};
   gap: 8px;
   width: 240px;
   border-radius: 12px;

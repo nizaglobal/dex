@@ -182,8 +182,8 @@ const sporeLight = {
   neutral2: '#7D7D7D',
   neutral3: '#CECECE',
 
-  accent1: '#FC72FF',
-  accent2: '#FFEFFF',
+  accent1: '#f2f230',
+  accent2: '#31311c',
 
   accentSoft: '#FC72FF33', //33 = 20%
 
@@ -209,8 +209,8 @@ const sporeDark = {
   neutral2: '#9B9B9B',
   neutral3: '#5E5E5E',
 
-  accent1: '#FC72FF',
-  accent2: '#311C31',
+  accent1: '#f2f230',
+  accent2: '#31311c',
 
   accentSoft: '#FC72FF33', //33 = 20%
 

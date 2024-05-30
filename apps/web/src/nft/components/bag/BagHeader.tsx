@@ -38,9 +38,9 @@ const CounterDot = styled.div<{ sizing: string }>`
   background-color: ${({ theme }) => theme.accent1};
   border-radius: 100px;
   font-weight: bold;
-  color: ${({ theme }) => theme.deprecated_accentTextLightPrimary};
+  color: ${({ theme }) => theme.black};
   display: flex;
-  font-size: 10px;
+  font-size: 12px;
   justify-content: center;
   min-width: ${({ sizing }) => sizing};
   min-height: ${({ sizing }) => sizing};

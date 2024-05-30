@@ -41,7 +41,7 @@ const StyledActionButton = styled(ThemedText.BodySmall)<{
   bottom: -32px;
   left: 8px;
   right: 8px;
-  color: ${({ theme, isDisabled }) => (isDisabled ? theme.neutral1 : theme.deprecated_accentTextLightPrimary)};
+  color: ${({ theme, isDisabled }) => (isDisabled ? theme.neutral1 : theme.black)};
   background: ${({ theme, selected, isDisabled }) =>
     selected ? theme.critical : isDisabled ? theme.surface3 : theme.accent1};
   transition: ${({ theme }) =>

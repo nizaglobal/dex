@@ -29,6 +29,7 @@ const TokenInfoSection = styled(Column)`
 `
 
 const InfoSectionHeader = styled(ThemedText.HeadlineSmall)`
+  font-weight: 600 !important;
   @media screen and (max-width: ${({ theme }) => theme.breakpoint.lg}px) {
     font-size: 28px !important;
     line-height: 36px !important;
@@ -46,15 +47,16 @@ const TokenButtonRow = styled(TokenNameRow)`
 
 const TokenInfoButton = styled(Row)`
   gap: 8px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 20px;
   color: ${({ theme }) => theme.neutral1};
-  background-color: ${({ theme }) => theme.surface2};
+  background-color: ${({ theme }) => theme.surface1};
   font-size: 14px;
   font-weight: 535;
   line-height: 16px;
   width: max-content;
   ${ClickableStyle}
+  border: 1px solid ${({ theme }) => theme.border1};
 `
 
 const TokenDescriptionContainer = styled(ThemedText.BodyPrimary)`

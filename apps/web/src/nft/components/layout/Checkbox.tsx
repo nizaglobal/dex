@@ -14,6 +14,7 @@ const CheckboxLabel = styled.label`
 const CheckContainer = styled.span<{ checked?: boolean; hovered?: boolean; size?: number }>`
   border-color: ${({ checked, hovered, theme }) => (checked || hovered ? theme.accent1 : theme.neutral3)};
   background: ${({ checked, theme }) => (checked ? theme.accent1 : undefined)};
+  color: black;
   display: inline-block;
   margin-right: 1px;
   border-radius: 4px;
@@ -39,7 +40,7 @@ const StyledCheck = styled(ApprovedCheckmarkIcon)<{ checked?: boolean; size?: nu
   display: ${({ checked }) => (checked ? 'inline-block' : 'none')};
   height: ${({ size }) => (size ? `${size}px` : '24px')};
   width: ${({ size }) => (size ? `${size}px` : '24px')};
-  color: white;
+  color: black;
   position: absolute;
   right: 1px;
 `
@@ -63,7 +64,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ hovered, children, className
         aria-hidden="true"
       />
       <Input {...props} type="checkbox" />
-      <StyledCheck checked={props.checked} size={props.size} />
+      <StyledCheck checked={props.checked} size={props.size} fill="black" />
     </CheckboxLabel>
   )
 }

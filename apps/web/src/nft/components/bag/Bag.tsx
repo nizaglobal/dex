@@ -36,7 +36,7 @@ const BagContainer = styled.div<{ raiseZIndex: boolean; isProfilePage: boolean }
   right: 20px;
   width: ${BAG_WIDTH}px;
   height: calc(100vh - 108px);
-  background: ${({ theme }) => theme.surface1};
+  background: ${({ theme }) => theme.surface2};
   border: 1px solid ${({ theme }) => theme.surface3};
   border-radius: 16px;
   box-shadow: ${({ theme }) => theme.deprecated_shallowShadow};
