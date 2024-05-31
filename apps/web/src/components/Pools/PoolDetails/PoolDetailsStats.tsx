@@ -34,7 +34,7 @@ const StatsWrapper = styled(Column)<{ loaded?: boolean }>`
   gap: 24px;
   padding: 20px;
   border-radius: 20px;
-  background: ${({ theme }) => theme.surface2};
+  background: ${({ theme }) => theme.surface1};
   width: 100%;
   z-index: 1;
   margin-top: ${({ loaded }) => loaded && '-24px'};
@@ -99,7 +99,11 @@ const rightBarChartStyles = css`
   border-left: 1px solid ${({ theme }) => theme.surface2};
 `
 
-const BalanceChartSide = styled.div<{ percent: number; $color: string; isLeft: boolean }>`
+const BalanceChartSide = styled.div<{
+  percent: number
+  $color: string
+  isLeft: boolean
+}>`
   height: 8px;
   width: ${({ percent }) => percent * 100}%;
   background: ${({ $color }) => $color};
@@ -214,9 +218,9 @@ export function PoolDetailsStats({ poolData, isReversed, chainId, loading }: Poo
         <Trans>Stats</Trans>
       </HeaderText>
       <StatItemColumn>
-        <ThemedText.BodySecondary>
+        <SecondaryThemedText>
           <Trans>Pool balances</Trans>
-        </ThemedText.BodySecondary>
+        </SecondaryThemedText>
         <PoolBalanceSymbols>
           <PoolBalanceTokenNames token={token0} chainId={chainId} />
           <PoolBalanceTokenNames token={token1} chainId={chainId} />
@@ -265,12 +269,16 @@ const StatItemText = styled(Text)`
   }
 `
 
+const SecondaryThemedText = styled(ThemedText.BodySecondary)`
+  color: ${({ theme }) => theme.placeholder};
+`
+
 function StatItem({ title, value, delta }: { title: ReactNode; value: number; delta?: number }) {
   const { formatNumber, formatDelta } = useFormatter()
 
   return (
     <StatItemColumn>
-      <ThemedText.BodySecondary>{title}</ThemedText.BodySecondary>
+      <SecondaryThemedText>{title}</SecondaryThemedText>
       <StatsTextContainer>
         <StatItemText>
           {formatNumber({
