@@ -74,11 +74,20 @@ type ChainInfoMap = { readonly [chainId: number]: L1ChainInfo | L2ChainInfo } & 
 } & { readonly [chainId in SupportedL1ChainId]: L1ChainInfo }
 
 const CHAIN_INFO: ChainInfoMap = {
-  [ChainId.NIZA]: {
+  [ChainId.NIZA_TESTNET]: {
     networkType: NetworkType.L1,
-    docs: 'https://docs.waterfall.network/',
-    explorer: 'https://testnet.niza.io/',
-    infoLink: 'https://testnet.niza.io/',
+    docs: 'https://testnet.nizascan.io/',
+    explorer: 'https://testnet.nizascan.io/',
+    infoLink: 'https://testnet.nizascan.io/',
+    label: 'Niza Chain Testnet',
+    color: darkTheme.chain_niza,
+    nativeCurrency: { name: 'Niza Global', symbol: 'NIZA', decimals: 18 },
+  },
+  [ChainId.NIZA_LIVENET]: {
+    networkType: NetworkType.L1,
+    docs: 'https://nizascan.io/',
+    explorer: 'https://nizascan.io/',
+    infoLink: 'https://nizascan.io/',
     label: 'Niza Chain',
     color: darkTheme.chain_niza,
     nativeCurrency: { name: 'Niza Global', symbol: 'NIZA', decimals: 18 },

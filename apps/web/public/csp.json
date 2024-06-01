@@ -128,6 +128,8 @@
     "https://www.gemini.com",
     "https://*.quiknode.pro",
     "https://*.infura.io",
+    "https://*.nizascan.io",
+    "https://*.amazonaws.com",
     "wss://relay.walletconnect.com",
     "wss://relay.walletconnect.org",
     "wss://www.walletlink.org",

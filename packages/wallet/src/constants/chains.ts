@@ -36,6 +36,8 @@ export enum ChainId {
   PolygonMumbai = 80001,
   Blast = 81457,
   Bnb = 56,
+  NizaTestnet = 20073,
+  NizaLivenet = 20041,
 }
 
 export const ALL_SUPPORTED_CHAINS: string[] = Object.values(ChainId).map((c) => c.toString())
@@ -43,6 +45,7 @@ export const ALL_SUPPORTED_CHAINS: string[] = Object.values(ChainId).map((c) => 
 // DON'T CHANGE - order here determines ordering of networks in app
 // TODO: [MOB-250] Add back in testnets once our endpoints support them
 export const ALL_SUPPORTED_CHAIN_IDS: ChainId[] = [
+  ChainId.NizaLivenet,
   ChainId.Mainnet,
   ChainId.Polygon,
   ChainId.ArbitrumOne,
@@ -52,7 +55,7 @@ export const ALL_SUPPORTED_CHAIN_IDS: ChainId[] = [
   ChainId.Blast,
 ]
 
-export const TESTNET_CHAIN_IDS = [ChainId.Goerli, ChainId.PolygonMumbai]
+export const TESTNET_CHAIN_IDS = [ChainId.Goerli, ChainId.PolygonMumbai, ChainId.NizaTestnet]
 
 export const ETHEREUM_CHAIN_IDS = [ChainId.Mainnet, ChainId.Goerli] as const
 

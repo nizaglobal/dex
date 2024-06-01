@@ -249,6 +249,22 @@ export const DAI_AVALANCHE = new Token(
   'Dai.e Token'
 )
 
+export const NIZA_TESTNET = new Token(
+  ChainId.NIZA_TESTNET,
+  '0xF8003dac552b56050531cDFF25CCd5fCF6A81FCE',
+  18,
+  'NIZA',
+  'Niza Global'
+)
+
+export const NIZA_LIVENET = new Token(
+  ChainId.NIZA_LIVENET,
+  '0xCF5c11f4e1e0035fd163A9F2EE02c6D6C65D313D',
+  18,
+  'NIZA',
+  'Niza Global'
+)
+
 export const UNI: { [chainId: number]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESSES[ChainId.MAINNET], 18, 'UNI', 'Uniswap'),
   [ChainId.GOERLI]: new Token(ChainId.GOERLI, UNI_ADDRESSES[ChainId.GOERLI], 18, 'UNI', 'Uniswap'),
@@ -344,7 +360,8 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'Wrapped AVAX'
   ),
   [ChainId.BLAST]: new Token(ChainId.BLAST, '0x4300000000000000000000000000000000000004', 18, 'WETH', 'Wrapped Ether'),
-  [ChainId.NIZA]: new Token(ChainId.NIZA, '0xF8003dac552b56050531cDFF25CCd5fCF6A81FCE', 18, 'NIZA', 'Niza Global'),
+  [ChainId.NIZA_TESTNET]: new Token(ChainId.NIZA_TESTNET, '0xF8003dac552b56050531cDFF25CCd5fCF6A81FCE', 18, 'NIZA', 'Niza Global'),
+  [ChainId.NIZA_LIVENET]: new Token(ChainId.NIZA_LIVENET, '0xCF5c11f4e1e0035fd163A9F2EE02c6D6C65D313D', 18, 'NIZA', 'Niza Global'),
 }
 
 export function isCelo(chainId: number): chainId is ChainId.CELO | ChainId.CELO_ALFAJORES {
@@ -410,6 +427,10 @@ export function isAvalanche(chainId: number): chainId is ChainId.AVALANCHE {
   return chainId === ChainId.AVALANCHE
 }
 
+export function isNiza(chainId: number): chainId is ChainId.NIZA_LIVENET | ChainId.NIZA_TESTNET {
+  return chainId === ChainId.NIZA_LIVENET || chainId === ChainId.NIZA_TESTNET
+}
+
 class AvaxNativeCurrency extends NativeCurrency {
   equals(other: Currency): boolean {
     return other.isNative && other.chainId === this.chainId
@@ -427,6 +448,25 @@ class AvaxNativeCurrency extends NativeCurrency {
     super(chainId, 18, 'AVAX', 'AVAX')
   }
 }
+
+class NizaNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId
+  }
+
+  get wrapped(): Token {
+    if (!isNiza(this.chainId)) throw new Error('Not niza')
+    const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId]
+    invariant(wrapped instanceof Token)
+    return wrapped
+  }
+
+  public constructor(chainId: number) {
+    if (!isNiza(chainId)) throw new Error('Not niza')
+    super(chainId, 18, 'NIZA', 'Niza Global')
+  }
+}
+
 
 class ExtendedEther extends NativeCurrency {
   public get wrapped(): Token {
@@ -462,6 +502,8 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = new BscNativeCurrency(chainId)
   } else if (isAvalanche(chainId)) {
     nativeCurrency = new AvaxNativeCurrency(chainId)
+  }else if (isNiza(chainId)) {
+    nativeCurrency = new NizaNativeCurrency(chainId)
   } else {
     nativeCurrency = ExtendedEther.onChain(chainId)
   }
@@ -511,7 +553,8 @@ const STABLECOINS: { [chainId in ChainId]: Token[] } = {
   [ChainId.ZORA]: [],
   [ChainId.ROOTSTOCK]: [],
   [ChainId.BLAST]: [USDB_BLAST],
-  [ChainId.NIZA]: [],
+  [ChainId.NIZA_TESTNET]: [],
+  [ChainId.NIZA_LIVENET]: [],
 }
 
 export function isStablecoin(currency?: Currency): boolean {

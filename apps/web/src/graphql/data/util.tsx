@@ -106,6 +106,8 @@ export const CHAIN_ID_TO_BACKEND_NAME: { [key: number]: InterfaceGqlChain } = {
   [ChainId.AVALANCHE]: Chain.Avalanche,
   [ChainId.BASE]: Chain.Base,
   [ChainId.BLAST]: Chain.Blast,
+  [ChainId.NIZA_TESTNET]: "NIZA_TESTNET" as any,
+  [ChainId.NIZA_LIVENET]: "NIZA_LIVENET" as any,
 }
 
 export function chainIdToBackendName(chainId: number | undefined) {
@@ -152,6 +154,8 @@ const URL_CHAIN_PARAM_TO_BACKEND: { [key: string]: InterfaceGqlChain } = {
   avalanche: Chain.Avalanche,
   base: Chain.Base,
   blast: Chain.Blast,
+  niza_testnet: 'NIZA_TESTNET' as any,
+  niza_livenet: 'NIZA_LIVENET' as any,
 }
 
 /**
@@ -195,6 +199,8 @@ const CHAIN_NAME_TO_CHAIN_ID: { [key in InterfaceGqlChain]: ChainId } = {
   [Chain.Avalanche]: ChainId.AVALANCHE,
   [Chain.Base]: ChainId.BASE,
   [Chain.Blast]: ChainId.BLAST,
+  ['NIZA_TESTNET' as any]: ChainId.NIZA_TESTNET,
+  ['NIZA_LIVENET' as any]: ChainId.NIZA_LIVENET,
 }
 
 export function isSupportedGQLChain(chain: Chain): chain is InterfaceGqlChain {

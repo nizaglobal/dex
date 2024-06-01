@@ -3,4 +3,4 @@ const COINGECKO_AVAX_LIST = 'https://tokens.coingecko.com/avalanche/all.json'
 const AVALANCHE_LIST = 'https://raw.githubusercontent.com/ava-labs/avalanche-bridge-resources/main/token_list.json'
 const NIZA_LIST = 'https://raw.githubusercontent.com/nizaglobal/assets/main/dex/tokenlist.json'
 
-export const DEFAULT_INACTIVE_LIST_URLS: string[] = [COINGECKO_AVAX_LIST, AVALANCHE_LIST, NIZA_LIST]
+export const DEFAULT_INACTIVE_LIST_URLS: string[] = [/*COINGECKO_AVAX_LIST, AVALANCHE_LIST, */NIZA_LIST]

@@ -7,6 +7,7 @@ import { currencyId } from 'utils/currencyId'
 
 // TODO: remove this function once we have it in the shared package
 export function gqlTokenToCurrencyInfo(token?: GqlToken): CurrencyInfo | undefined {
+  console.log("Gql token info", token)
   if (!token) {
     return undefined
   }
