@@ -1,5 +1,5 @@
-import { createMulticall, ListenerOptions } from '@uniswap/redux-multicall'
 import { ChainId } from '@nizaglobal/sdk-core'
+import { createMulticall, ListenerOptions } from '@uniswap/redux-multicall'
 import { useWeb3React } from '@web3-react/core'
 import { getBlocksPerMainnetEpochForChainId } from 'constants/chainInfo'
 import { useInterfaceMulticall, useMainnetInterfaceMulticall } from 'hooks/useContract'

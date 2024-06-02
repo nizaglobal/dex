@@ -1,5 +1,5 @@
-import { SwapEventName, SwapPriceUpdateUserResponse } from '@uniswap/analytics-events'
 import { Currency, Percent } from '@nizaglobal/sdk-core'
+import { SwapEventName, SwapPriceUpdateUserResponse } from '@uniswap/analytics-events'
 import { sendAnalyticsEvent } from 'analytics'
 import { AutoColumn } from 'components/Column'
 import { MODAL_TRANSITION_DURATION } from 'components/Modal'

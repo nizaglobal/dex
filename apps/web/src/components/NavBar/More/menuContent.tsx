@@ -22,9 +22,9 @@ export const useMenuContent = (): MenuSection[] => {
       items: [
         {
           label: t('Careers'),
-          href: 'https://boards.greenhouse.io/uniswaplabs',
+          href: 'https://www.linkedin.com/company/niza-global-uab/jobs/',
         },
-        { label: t('Blog'), href: 'https://blog.uniswap.org/' },
+        { label: t('Blog'), href: 'https://help.niza.io/hc/en-us' },
       ],
     },
     {
@@ -32,11 +32,11 @@ export const useMenuContent = (): MenuSection[] => {
       items: [
         {
           label: t('Contact us'),
-          href: 'https://support.uniswap.org/hc/en-us/requests/new',
+          href: 'https://www.niza.io/contact',
         },
         {
           label: t('Help Center'),
-          href: 'https://support.uniswap.org/hc/en-us',
+          href: 'https://help.niza.io/hc/en-us',
         },
       ],
     },

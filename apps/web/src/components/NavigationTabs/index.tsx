@@ -94,7 +94,7 @@ export function AddRemoveTabs({
             to=".."
             onClick={(e) => {
               e.preventDefault()
-              navigate(-1)
+              navigate('/pool')
 
               if (adding) {
                 // not 100% sure both of these are needed

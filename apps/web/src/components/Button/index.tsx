@@ -374,7 +374,7 @@ export function ButtonRadioChecked({ active = false, children, ...rest }: { acti
           {children}
           <CheckboxWrapper>
             <Circle>
-              <ResponsiveCheck size={13} stroke={theme.white} />
+              <ResponsiveCheck size={13} stroke={theme.black} />
             </Circle>
           </CheckboxWrapper>
         </RowBetween>

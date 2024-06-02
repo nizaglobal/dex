@@ -1,3 +1,5 @@
+import { Currency, CurrencyAmount, Token } from '@nizaglobal/sdk-core'
+import { UNIVERSAL_ROUTER_ADDRESS } from '@nizaglobal/universal-router-sdk'
 import {
   BrowserEvent,
   InterfaceElementName,
@@ -5,8 +7,6 @@ import {
   SharedEventName,
   SwapEventName,
 } from '@uniswap/analytics-events'
-import { Currency, CurrencyAmount, Token } from '@nizaglobal/sdk-core'
-import { UNIVERSAL_ROUTER_ADDRESS } from '@nizaglobal/universal-router-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { Trace, TraceEvent } from 'analytics'
 import { useOpenAccountDrawer, useToggleAccountDrawer } from 'components/AccountDrawer/MiniPortfolio/hooks'

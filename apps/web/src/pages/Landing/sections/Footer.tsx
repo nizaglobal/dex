@@ -73,9 +73,9 @@ const StyledInternalLink = styled(Link)`
 const StyledExternalLink = styled(ExternalLink)`
   ${MenuItemStyles}
 `
-const DownloadLink = styled.a`
-  ${MenuItemStyles}
-`
+// const DownloadLink = styled.a`
+//   ${MenuItemStyles}
+// `
 const ModalItem = styled.div`
   ${MenuItemStyles}
   cursor: pointer;
@@ -85,17 +85,17 @@ export function Socials({ iconSize }: { iconSize?: string }) {
   return (
     <Box gap="12px">
       <SocialIcon>
-        <StyledExternalLink href="https://github.com/Uniswap">
+        <StyledExternalLink href="https://t.me/nizaio">
           <Telegram size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
       <SocialIcon style={{ paddingTop: '16px' }}>
-        <StyledExternalLink href="https://twitter.com/Uniswap">
+        <StyledExternalLink href="https://x.com/nizacoin?mx=2">
           <Twitter size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
       <SocialIcon style={{ paddingTop: '18px' }}>
-        <StyledExternalLink href="https://discord.com/invite/uniswap">
+        <StyledExternalLink href="https://discord.com/invite/Niza">
           <Discord size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
@@ -158,30 +158,30 @@ export function Footer() {
                 <Body1>
                   <Trans>Company</Trans>
                 </Body1>
-                <StyledExternalLink href="https://boards.greenhouse.io/uniswaplabs">
+                <StyledExternalLink href="https://www.linkedin.com/company/niza-global-uab/jobs/">
                   <Trans>Careers</Trans>
                 </StyledExternalLink>
-                <StyledExternalLink href="https://blog.uniswap.org/">
+                <StyledExternalLink href="https://help.niza.io/hc/en-us">
                   <Trans>Blog</Trans>
                 </StyledExternalLink>
-                <DownloadLink href="https://github.com/Uniswap/brand-assets/raw/main/Uniswap%20Brand%20Assets.zip">
+                {/* <DownloadLink href="https://github.com/Uniswap/brand-assets/raw/main/Uniswap%20Brand%20Assets.zip">
                   <Trans>Brand Assets</Trans>
-                </DownloadLink>
+                </DownloadLink> */}
                 <ModalItem onClick={togglePrivacyPolicy}>
                   <Trans>Terms & Privacy</Trans>
                 </ModalItem>
-                <StyledExternalLink href="https://uniswap.org/trademark">
+                {/* <StyledExternalLink href="https://uniswap.org/trademark">
                   <Trans>Trademark Policy</Trans>
-                </StyledExternalLink>
+                </StyledExternalLink> */}
               </Box>
               <Box direction="column" gap="10px">
                 <Body1>
                   <Trans>Need help?</Trans>
                 </Body1>
-                <StyledExternalLink href="https://support.uniswap.org/hc/en-us/requests/new">
+                <StyledExternalLink href="https://www.niza.io/contact">
                   <Trans>Contact us</Trans>
                 </StyledExternalLink>
-                <StyledExternalLink href="https://support.uniswap.org/hc/en-us">
+                <StyledExternalLink href="https://help.niza.io/hc/en-us">
                   <Trans>Help Center</Trans>
                 </StyledExternalLink>
               </Box>
