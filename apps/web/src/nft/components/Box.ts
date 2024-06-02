@@ -27,7 +27,6 @@ export const Box = React.forwardRef<HTMLElement, Props>(({ as = 'div', className
       nativeProps[key] = props[key as keyof typeof props]
     }
   }
-  console.log(atomProps, nativeProps)
 
   const atomicClasses = atoms({
     reset: typeof as === 'string' ? (as as Atoms['reset']) : 'div',
