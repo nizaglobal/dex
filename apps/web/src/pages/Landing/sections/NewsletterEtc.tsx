@@ -153,7 +153,7 @@ export function NewsletterEtc() {
               backgroundColor="#6F187766"
               initial="initial"
               whileHover="hover"
-              href="https://twitter.com/nizacoin"
+              href="https://x.com/nizacoin"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -163,7 +163,7 @@ export function NewsletterEtc() {
                 label={t`Stay connected`}
               />
               <H4 color={messagePrimary} style={{ fontWeight: '600' }}>
-                <Trans>Follow @Niza on X and Instagram for the latest updates</Trans>
+                <Trans>Follow @NizaCoin on X and Telegram for the latest updates</Trans>
               </H4>
             </RectCard>
           </Layout>
