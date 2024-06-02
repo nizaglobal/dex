@@ -15,6 +15,7 @@ import {
   USDC_ARBITRUM_GOERLI,
   USDC_AVALANCHE,
   USDC_BASE,
+  USDC_BSC,
   USDC_GOERLI,
   USDC_MAINNET,
   USDC_OPTIMISM_GOERLI,
@@ -42,7 +43,8 @@ export const STABLECOIN_AMOUNT_OUT: { [key in SupportedInterfaceChain]: Currency
   [ChainId.POLYGON_MUMBAI]: CurrencyAmount.fromRawAmount(USDC_POLYGON_MUMBAI, 10_000e6),
   [ChainId.CELO_ALFAJORES]: CurrencyAmount.fromRawAmount(CUSD_CELO_ALFAJORES, 10_000e6),
   [ChainId.BLAST]: CurrencyAmount.fromRawAmount(USDB_BLAST, 10_000e18),
-  [ChainId.NIZA]: CurrencyAmount.fromRawAmount(USDC_BASE, 10_000e6),
+  [ChainId.NIZA_TESTNET]: CurrencyAmount.fromRawAmount(USDC_BSC,10_000e18),
+  [ChainId.NIZA_LIVENET]: CurrencyAmount.fromRawAmount(USDC_BSC,10_000e18),
 }
 
 /**

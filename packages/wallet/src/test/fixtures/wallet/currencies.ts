@@ -11,6 +11,7 @@ export const BASE_CURRENCY = NativeCurrency.onChain(ChainId.Base)
 export const ARBITRUM_CURRENCY = NativeCurrency.onChain(ChainId.ArbitrumOne)
 export const OPTIMISM_CURRENCY = NativeCurrency.onChain(ChainId.Optimism)
 export const POLYGON_CURRENCY = NativeCurrency.onChain(ChainId.Polygon)
+export const NIZA_LIVENET_CURRENCY = NativeCurrency.onChain(ChainId.NizaLivenet)
 
 type CurrencyInfoOptions = {
   nativeCurrency: NativeCurrency
@@ -37,6 +38,13 @@ export const uniCurrencyInfo = createFixture<CurrencyInfo>()(() =>
     nativeCurrency: MAINNET_CURRENCY,
     logoUrl:
       'https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/ethereum/assets/0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984/logo.png',
+  })
+)
+export const nizaCurrencyInfo = createFixture<CurrencyInfo>()(() =>
+  currencyInfo({
+    nativeCurrency: NIZA_LIVENET_CURRENCY,
+    logoUrl:
+      'https://raw.githubusercontent.com/nizaglobal/assets/main/niza-coin-logo.png',
   })
 )
 

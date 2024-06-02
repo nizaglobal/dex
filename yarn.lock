@@ -6492,45 +6492,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nizaglobal/permit2-sdk@npm:1.0.1, @nizaglobal/permit2-sdk@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@nizaglobal/permit2-sdk@npm:1.0.1"
+"@nizaglobal/permit2-sdk@npm:1.0.2, @nizaglobal/permit2-sdk@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@nizaglobal/permit2-sdk@npm:1.0.2"
   dependencies:
     ethers: "npm:^5.7.0"
     tiny-invariant: "npm:^1.1.0"
-  checksum: 10c0/ed0751464541736c08f0042e159a2eecede047c36986d58d330a7134dd8fc8fef3b4abe01a5cdafcbeafc6cbf5ddd895516daafee64b9d9fcf4dfcec3e999f5f
+  checksum: 10c0/708124168303a21eee8d8ddba18854a30649af295e041b52bc5f9f38cb845146880e9bb4cf7a50833f1dd6935a9a3517583b558bc3d3483390e76384be54289e
   languageName: node
   linkType: hard
 
-"@nizaglobal/router-sdk@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@nizaglobal/router-sdk@npm:1.0.0"
+"@nizaglobal/router-sdk@npm:1.0.2, @nizaglobal/router-sdk@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@nizaglobal/router-sdk@npm:1.0.2"
   dependencies:
     "@ethersproject/abi": "npm:^5.5.0"
-    "@nizaglobal/sdk-core": "npm:^1.0.1"
-    "@nizaglobal/v3-sdk": "npm:^1.0.3"
-    "@uniswap/swap-router-contracts": "npm:^1.3.0"
-    "@uniswap/v2-sdk": "npm:^4.3.2"
-  checksum: 10c0/8291051a64aa11369d0ebaf5cf43a2ec74ed46b573d2428d67f553b31dd18a145b0e3695a730a5ae18fbdf90361ef545e7352698902b47fd0bb4271c5b70d3bc
-  languageName: node
-  linkType: hard
-
-"@nizaglobal/router-sdk@npm:1.0.1, @nizaglobal/router-sdk@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "@nizaglobal/router-sdk@npm:1.0.1"
-  dependencies:
-    "@ethersproject/abi": "npm:^5.5.0"
-    "@nizaglobal/sdk-core": "npm:^1.0.1"
+    "@nizaglobal/sdk-core": "npm:^1.0.2"
     "@nizaglobal/v2-sdk": "npm:^1.0.1"
-    "@nizaglobal/v3-sdk": "npm:^1.0.3"
+    "@nizaglobal/v3-sdk": "npm:^1.0.5"
     "@uniswap/swap-router-contracts": "npm:^1.3.0"
-  checksum: 10c0/8153c09487d3d7d350da5d645c53cd3eb5a1aaad2af24834f243ba0292db2ff979bfaa6ba9294cc4c71b07be6d290de41ecb7b2d720bcc5e013865a921cd910c
+  checksum: 10c0/95983fd042bd964898058fd98efb37104015f7e02f1e4bbbc2a65b2a837f99725be3eab47e45d4b85f2d095de2fa49d9714dbc1b69cc9556447aaca2f1d6be66
   languageName: node
   linkType: hard
 
-"@nizaglobal/sdk-core@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@nizaglobal/sdk-core@npm:1.0.1"
+"@nizaglobal/sdk-core@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@nizaglobal/sdk-core@npm:1.0.2"
   dependencies:
     "@ethersproject/address": "npm:^5.0.2"
     big.js: "npm:^5.2.2"
@@ -6538,23 +6525,23 @@ __metadata:
     jsbi: "npm:^3.1.4"
     tiny-invariant: "npm:^1.1.0"
     toformat: "npm:^2.0.0"
-  checksum: 10c0/13793868231f1ba9cb8d56ede68c22ca29c7817923de7112bc637d2a4e15d08ebc83d23aedac0808b26a52d4c92fd54f5be5c4c212758652000be5c17d0e0bb3
+  checksum: 10c0/8fd6380249f1ba33e72a9aac4f8f8662bc7aea31a5b09c3089bfd53d78dbb4e912704ba9e49d028086b32f2e1cc35f335a96e26380def39419b049510c770b34
   languageName: node
   linkType: hard
 
-"@nizaglobal/universal-router-sdk@npm:1.0.7":
-  version: 1.0.7
-  resolution: "@nizaglobal/universal-router-sdk@npm:1.0.7"
+"@nizaglobal/universal-router-sdk@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@nizaglobal/universal-router-sdk@npm:1.1.0"
   dependencies:
-    "@nizaglobal/permit2-sdk": "npm:^1.0.1"
-    "@nizaglobal/router-sdk": "npm:^1.0.0"
-    "@nizaglobal/sdk-core": "npm:^1.0.1"
-    "@nizaglobal/v3-sdk": "npm:^1.0.1"
+    "@nizaglobal/permit2-sdk": "npm:^1.0.2"
+    "@nizaglobal/router-sdk": "npm:^1.0.2"
+    "@nizaglobal/sdk-core": "npm:^1.0.2"
+    "@nizaglobal/v2-sdk": "npm:^1.0.1"
+    "@nizaglobal/v3-sdk": "npm:^1.0.5"
     "@uniswap/universal-router": "npm:1.6.0"
-    "@uniswap/v2-sdk": "npm:^4.3.2"
     bignumber.js: "npm:^9.0.2"
     ethers: "npm:^5.7.0"
-  checksum: 10c0/463aa8a120046d8146f9d79c1c99b47928978a6ff30fca264e60587dbd8bf6ab2be5c5aa87e032240912e21427b1477dda83cbe28735acf702d6254bec36844b
+  checksum: 10c0/e7579e19e392bbcf709be0f1753b284fe53169809168f767ee2de56b8d58f98870dd0e2a3357905f3e68f766f6d346717bd862544f003eed0307428b9d24e6a0
   languageName: node
   linkType: hard
 
@@ -6571,35 +6558,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nizaglobal/v3-sdk@npm:1.0.2":
-  version: 1.0.2
-  resolution: "@nizaglobal/v3-sdk@npm:1.0.2"
+"@nizaglobal/v3-sdk@npm:1.0.5, @nizaglobal/v3-sdk@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@nizaglobal/v3-sdk@npm:1.0.5"
   dependencies:
     "@ethersproject/abi": "npm:^5.5.0"
     "@ethersproject/solidity": "npm:^5.0.9"
-    "@nizaglobal/sdk-core": "npm:^1.0.1"
+    "@nizaglobal/sdk-core": "npm:^1.0.2"
     "@uniswap/swap-router-contracts": "npm:^1.3.0"
     "@uniswap/v3-periphery": "npm:^1.1.1"
     "@uniswap/v3-staker": "npm:1.0.0"
     tiny-invariant: "npm:^1.1.0"
     tiny-warning: "npm:^1.0.3"
-  checksum: 10c0/715ecb475f688e36ccd6fa68c01a51da58bd89f7bf38f6be5667306b21ea11904b463ccf3d487a8a97f1c96ca80fd6c5dea4b564af3aa97b71292d15eee1ff73
-  languageName: node
-  linkType: hard
-
-"@nizaglobal/v3-sdk@npm:1.0.3, @nizaglobal/v3-sdk@npm:^1.0.1, @nizaglobal/v3-sdk@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@nizaglobal/v3-sdk@npm:1.0.3"
-  dependencies:
-    "@ethersproject/abi": "npm:^5.5.0"
-    "@ethersproject/solidity": "npm:^5.0.9"
-    "@nizaglobal/sdk-core": "npm:^1.0.1"
-    "@uniswap/swap-router-contracts": "npm:^1.3.0"
-    "@uniswap/v3-periphery": "npm:^1.1.1"
-    "@uniswap/v3-staker": "npm:1.0.0"
-    tiny-invariant: "npm:^1.1.0"
-    tiny-warning: "npm:^1.0.3"
-  checksum: 10c0/85b0732e509c72ab3dbd7ed767af98c83fd328991aa565923deb16d00f30f362c9790d8d7df8cf38a245b716b0c7ed12c12dfe05388c5781d3f499dc13374549
+  checksum: 10c0/c84e70d95d8bedb7a7f4a26825ce10de5c9ed77fa7891beeb41867d2d9b749f30b5c5780c5e83b52fa4b1565ca77e2499343d55446f66980b4b8e4f1e7a9e262
   languageName: node
   linkType: hard
 
@@ -13776,12 +13747,12 @@ __metadata:
     "@graphql-codegen/typescript-resolvers": "npm:^3.2.1"
     "@juggle/resize-observer": "npm:3.4.0"
     "@looksrare/sdk": "npm:0.10.4"
-    "@nizaglobal/permit2-sdk": "npm:1.0.1"
-    "@nizaglobal/router-sdk": "npm:1.0.1"
-    "@nizaglobal/sdk-core": "npm:1.0.1"
-    "@nizaglobal/universal-router-sdk": "npm:1.0.7"
+    "@nizaglobal/permit2-sdk": "npm:1.0.2"
+    "@nizaglobal/router-sdk": "npm:1.0.2"
+    "@nizaglobal/sdk-core": "npm:1.0.2"
+    "@nizaglobal/universal-router-sdk": "npm:1.1.0"
     "@nizaglobal/v2-sdk": "npm:1.0.1"
-    "@nizaglobal/v3-sdk": "npm:1.0.3"
+    "@nizaglobal/v3-sdk": "npm:1.0.5"
     "@opensea/seaport-js": "npm:1.3.0"
     "@popperjs/core": "npm:2.11.8"
     "@reach/dialog": "npm:0.10.5"
@@ -14037,8 +14008,8 @@ __metadata:
     "@formatjs/intl-pluralrules": "npm:4.3.1"
     "@formatjs/intl-relativetimeformat": "npm:11.1.2"
     "@gorhom/bottom-sheet": "npm:4.5.1"
-    "@nizaglobal/sdk-core": "npm:1.0.1"
-    "@nizaglobal/v3-sdk": "npm:1.0.3"
+    "@nizaglobal/sdk-core": "npm:1.0.2"
+    "@nizaglobal/v3-sdk": "npm:1.0.5"
     "@react-native-async-storage/async-storage": "npm:1.17.10"
     "@react-native-community/netinfo": "npm:9.3.0"
     "@react-native-firebase/app": "npm:18.4.0"
@@ -44287,7 +44258,7 @@ __metadata:
     "@graphql-codegen/typescript-operations": "npm:^3.0.2"
     "@graphql-codegen/typescript-react-apollo": "npm:^3.3.7"
     "@graphql-codegen/typescript-resolvers": "npm:^3.2.1"
-    "@nizaglobal/sdk-core": "npm:1.0.1"
+    "@nizaglobal/sdk-core": "npm:1.0.2"
     "@typechain/ethers-v5": "npm:7.2.0"
     "@types/chrome": "npm:0.0.254"
     "@uniswap/eslint-config": "workspace:^"
@@ -44357,7 +44328,7 @@ __metadata:
     "@crowdin/cli": "npm:3.14.0"
     "@ethersproject/keccak256": "npm:5.7.0"
     "@manypkg/cli": "npm:^0.19.2"
-    "@nizaglobal/router-sdk": "npm:1.0.1"
+    "@nizaglobal/router-sdk": "npm:1.0.2"
     danger: "npm:11.2.6"
     depcheck: "npm:1.4.7"
     dotenv-cli: "npm:^7.0.0"
@@ -44817,7 +44788,7 @@ __metadata:
     "@ethersproject/constants": "npm:5.7.0"
     "@ethersproject/contracts": "npm:5.7.0"
     "@ethersproject/providers": "npm:5.7.2"
-    "@nizaglobal/sdk-core": "npm:1.0.1"
+    "@nizaglobal/sdk-core": "npm:1.0.2"
     "@react-navigation/core": "npm:6.2.2"
     "@sentry/react": "npm:7.80.0"
     "@sentry/react-native": "npm:5.5.0"
@@ -45363,11 +45334,11 @@ __metadata:
     "@graphql-tools/load": "npm:8.0.1"
     "@graphql-tools/merge": "npm:9.0.1"
     "@graphql-tools/mock": "npm:9.0.0"
-    "@nizaglobal/permit2-sdk": "npm:1.0.1"
-    "@nizaglobal/router-sdk": "npm:1.0.0"
-    "@nizaglobal/sdk-core": "npm:1.0.1"
-    "@nizaglobal/universal-router-sdk": "npm:1.0.7"
-    "@nizaglobal/v3-sdk": "npm:1.0.2"
+    "@nizaglobal/permit2-sdk": "npm:1.0.2"
+    "@nizaglobal/router-sdk": "npm:1.0.2"
+    "@nizaglobal/sdk-core": "npm:1.0.2"
+    "@nizaglobal/universal-router-sdk": "npm:1.1.0"
+    "@nizaglobal/v3-sdk": "npm:1.0.5"
     "@react-native-community/netinfo": "npm:9.3.0"
     "@react-native-firebase/app-check": "npm:18.4.0"
     "@react-navigation/core": "npm:6.2.2"

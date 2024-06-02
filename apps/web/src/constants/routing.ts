@@ -94,6 +94,12 @@ export const COMMON_BASES: ChainCurrencyList = {
   [ChainId.SEPOLIA]: [nativeOnChain(ChainId.SEPOLIA), WRAPPED_NATIVE_CURRENCY[ChainId.SEPOLIA] as Token].map(
     buildCurrencyInfo
   ),
+  [ChainId.NIZA_TESTNET]: [nativeOnChain(ChainId.NIZA_TESTNET), WRAPPED_NATIVE_CURRENCY[ChainId.NIZA_TESTNET] as Token].map(
+    buildCurrencyInfo
+  ),
+  [ChainId.NIZA_LIVENET]: [nativeOnChain(ChainId.NIZA_LIVENET), WRAPPED_NATIVE_CURRENCY[ChainId.NIZA_LIVENET] as Token].map(
+    buildCurrencyInfo
+  ),
   [ChainId.ARBITRUM_ONE]: [
     nativeOnChain(ChainId.ARBITRUM_ONE),
     ARB,

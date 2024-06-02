@@ -51,6 +51,7 @@ const LOGO_DEFAULT_SIZE = 40
  * Renders an image by prioritizing a list of sources, and then eventually a fallback contract icon
  */
 export function PortfolioLogo(props: PortfolioLogoProps) {
+  console.log("Portfolio logo",props)
   return (
     <LogoContainer style={props.style}>
       {getLogo(props)}
