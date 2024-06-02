@@ -85,17 +85,22 @@ export function Socials({ iconSize }: { iconSize?: string }) {
   return (
     <Box gap="12px">
       <SocialIcon>
-        <StyledExternalLink href="https://github.com/Uniswap">
+        <StyledExternalLink href="https://github.com/nizaglobal">
           <Telegram size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
       <SocialIcon style={{ paddingTop: '16px' }}>
-        <StyledExternalLink href="https://twitter.com/Uniswap">
+        <StyledExternalLink href="https://x.com/nizacoin">
           <Twitter size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
+      <SocialIcon style={{ paddingTop: '16px' }}>
+        <StyledExternalLink href="https://t.me/nizaio">
+          <Telegram size={iconSize} fill="white" />
+        </StyledExternalLink>
+      </SocialIcon>
       <SocialIcon style={{ paddingTop: '18px' }}>
-        <StyledExternalLink href="https://discord.com/invite/uniswap">
+        <StyledExternalLink href="http://discord.gg/Niza">
           <Discord size={iconSize} fill="white" />
         </StyledExternalLink>
       </SocialIcon>
@@ -116,7 +121,7 @@ export function Footer() {
           <Box direction="column" height="100%" gap="64px">
             <Box direction="column" gap="10px">
               <H3>© 2024</H3>
-              <H3>Niza Swap</H3>
+              <H3>Niza Global</H3>
             </Box>
             <HideWhenSmall>
               <Socials />
@@ -158,30 +163,21 @@ export function Footer() {
                 <Body1>
                   <Trans>Company</Trans>
                 </Body1>
-                <StyledExternalLink href="https://boards.greenhouse.io/uniswaplabs">
-                  <Trans>Careers</Trans>
+                <StyledExternalLink href="https://niza.io/terms">
+                  <Trans>Terms</Trans>
                 </StyledExternalLink>
-                <StyledExternalLink href="https://blog.uniswap.org/">
-                  <Trans>Blog</Trans>
-                </StyledExternalLink>
-                <DownloadLink href="https://github.com/Uniswap/brand-assets/raw/main/Uniswap%20Brand%20Assets.zip">
-                  <Trans>Brand Assets</Trans>
-                </DownloadLink>
-                <ModalItem onClick={togglePrivacyPolicy}>
-                  <Trans>Terms & Privacy</Trans>
-                </ModalItem>
-                <StyledExternalLink href="https://uniswap.org/trademark">
-                  <Trans>Trademark Policy</Trans>
+                <StyledExternalLink href="https://niza.io/privacy-policy">
+                  <Trans>Privacy Policy</Trans>
                 </StyledExternalLink>
               </Box>
               <Box direction="column" gap="10px">
                 <Body1>
                   <Trans>Need help?</Trans>
                 </Body1>
-                <StyledExternalLink href="https://support.uniswap.org/hc/en-us/requests/new">
+                <StyledExternalLink href="https://help.niza.io/hc/en-us/requests/new">
                   <Trans>Contact us</Trans>
                 </StyledExternalLink>
-                <StyledExternalLink href="https://support.uniswap.org/hc/en-us">
+                <StyledExternalLink href="https://help.niza.io/hc/en-us">
                   <Trans>Help Center</Trans>
                 </StyledExternalLink>
               </Box>
