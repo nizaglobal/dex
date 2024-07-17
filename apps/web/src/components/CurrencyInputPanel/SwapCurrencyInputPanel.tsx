@@ -1,6 +1,6 @@
-import { BrowserEvent, InterfaceElementName, SwapEventName } from '@uniswap/analytics-events'
 import { Currency, CurrencyAmount, Percent } from '@nizaglobal/sdk-core'
 import { Pair } from '@nizaglobal/v2-sdk'
+import { BrowserEvent, InterfaceElementName, SwapEventName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { TraceEvent } from 'analytics'
 import { AutoColumn } from 'components/Column'

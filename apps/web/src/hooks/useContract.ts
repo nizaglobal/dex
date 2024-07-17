@@ -1,5 +1,4 @@
 import { Contract } from '@ethersproject/contracts'
-import { InterfaceEventName } from '@uniswap/analytics-events'
 import {
   ARGENT_WALLET_DETECTOR_ADDRESS,
   ChainId,
@@ -9,6 +8,7 @@ import {
   V2_ROUTER_ADDRESSES,
   V3_MIGRATOR_ADDRESSES,
 } from '@nizaglobal/sdk-core'
+import { InterfaceEventName } from '@uniswap/analytics-events'
 import IUniswapV2PairJson from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import IUniswapV2Router02Json from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
 import NonfungiblePositionManagerJson from '@uniswap/v3-periphery/artifacts/contracts/NonfungiblePositionManager.sol/NonfungiblePositionManager.json'

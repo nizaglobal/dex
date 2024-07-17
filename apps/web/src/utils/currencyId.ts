@@ -1,7 +1,7 @@
-import { Currency } from '@nizaglobal/sdk-core'
+import { Currency } from "@nizaglobal/sdk-core";
 
 export function currencyId(currency?: Currency): string {
-  if (currency?.isNative) return 'ETH'
-  if (currency?.isToken) return currency.address
-  throw new Error('invalid currency')
+  if (currency?.isNative) return "NIZA";
+  if (currency?.isToken) return currency.address;
+  throw new Error("invalid currency");
 }

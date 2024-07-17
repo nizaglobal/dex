@@ -17,7 +17,7 @@ export const CHAIN_IDS_TO_NAMES = {
   [ChainId.BASE]: 'base',
   [ChainId.BLAST]: 'blast',
   [ChainId.NIZA_TESTNET]: 'niza_testnet',
-  [ChainId.NIZA_LIVENET]: 'niza_livenet'
+  [ChainId.NIZA]: 'niza',
 } as const
 
 // Include ChainIds in this array if they are not supported by the UX yet, but are already in the SDK.
@@ -73,7 +73,7 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   ChainId.BASE,
   ChainId.BLAST,
   ChainId.NIZA_TESTNET,
-  ChainId.NIZA_LIVENET,
+  ChainId.NIZA,
 ] as const
 
 /**
@@ -107,7 +107,7 @@ export const L1_CHAIN_IDS = [
   ChainId.BNB,
   ChainId.AVALANCHE,
   ChainId.NIZA_TESTNET,
-  ChainId.NIZA_LIVENET,
+  ChainId.NIZA,
 ] as const
 
 export type SupportedL1ChainId = (typeof L1_CHAIN_IDS)[number]
@@ -134,7 +134,7 @@ export type SupportedL2ChainId = (typeof L2_CHAIN_IDS)[number]
  */
 export function getChainPriority(chainId: ChainId): number {
   switch (chainId) {
-    case ChainId.NIZA_LIVENET:
+    case ChainId.NIZA:
     case ChainId.NIZA_TESTNET:
     case ChainId.MAINNET:
     case ChainId.GOERLI:

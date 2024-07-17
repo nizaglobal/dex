@@ -1,5 +1,5 @@
 overrideExisting: true
-schema: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3?source=uniswap'
+schema: "http://18.192.62.73:8000/subgraphs/name/dexNiza"
 generates:
   ./src/graphql/thegraph/schema/schema.graphql:
     plugins:

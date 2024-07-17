@@ -1,6 +1,6 @@
-import { skipToken } from '@reduxjs/toolkit/query/react'
 import { Protocol } from '@nizaglobal/router-sdk'
 import { Currency, CurrencyAmount, Percent, TradeType } from '@nizaglobal/sdk-core'
+import { skipToken } from '@reduxjs/toolkit/query/react'
 import { AVERAGE_L1_BLOCK_TIME } from 'constants/chainInfo'
 import useIsWindowVisible from 'hooks/useIsWindowVisible'
 import { useRoutingAPIArguments } from 'lib/hooks/routing/useRoutingAPIArguments'
