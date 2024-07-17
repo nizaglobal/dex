@@ -1,6 +1,6 @@
-import { FeePoolSelectAction, LiquidityEventName } from '@uniswap/analytics-events'
 import { Currency } from '@nizaglobal/sdk-core'
 import { FeeAmount } from '@nizaglobal/v3-sdk'
+import { FeePoolSelectAction, LiquidityEventName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { sendAnalyticsEvent, useTrace } from 'analytics'
 import { ButtonEmpty } from 'components/Button'

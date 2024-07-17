@@ -1,6 +1,6 @@
 import { ApolloError } from '@apollo/client'
-import { createColumnHelper } from '@tanstack/react-table'
 import { ChainId, Token } from '@nizaglobal/sdk-core'
+import { createColumnHelper } from '@tanstack/react-table'
 import Row from 'components/Row'
 import { Table } from 'components/Table'
 import { Cell } from 'components/Table/Cell'

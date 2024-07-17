@@ -1,5 +1,5 @@
-import { BrowserEvent, InterfaceElementName, InterfaceEventName, SharedEventName } from '@uniswap/analytics-events'
 import { CurrencyAmount, Token } from '@nizaglobal/sdk-core'
+import { BrowserEvent, InterfaceElementName, InterfaceEventName, SharedEventName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { TraceEvent, sendAnalyticsEvent } from 'analytics'
 import { ButtonEmphasis, ButtonSize, ThemeButton } from 'components/Button'

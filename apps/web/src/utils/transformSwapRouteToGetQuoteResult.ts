@@ -2,9 +2,8 @@ import { Protocol } from '@nizaglobal/router-sdk'
 import { Currency, CurrencyAmount, TradeType } from '@nizaglobal/sdk-core'
 // This file is lazy-loaded, so the import of smart-order-router is intentional.
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { routeAmountsToString, SwapRoute } from '@uniswap/smart-order-router'
-import { Pair as V2Pair } from '@nizaglobal/v2-sdk'
 import { Pool } from '@nizaglobal/v3-sdk'
+import { routeAmountsToString, SwapRoute } from '@uniswap/smart-order-router'
 import {
   ClassicQuoteData,
   QuoteResult,

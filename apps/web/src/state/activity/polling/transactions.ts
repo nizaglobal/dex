@@ -1,5 +1,5 @@
-import { NEVER_RELOAD } from '@uniswap/redux-multicall'
 import { ChainId } from '@nizaglobal/sdk-core'
+import { NEVER_RELOAD } from '@uniswap/redux-multicall'
 import { useWeb3React } from '@web3-react/core'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import useBlockNumber, { useFastForwardBlockNumber } from 'lib/hooks/useBlockNumber'

@@ -1,7 +1,5 @@
 {
-  "defaultSrc": [
-    "'self'"
-  ],
+  "defaultSrc": ["'self'"],
   "scriptSrc": [
     "'self'",
     "'unsafe-eval'",
@@ -14,11 +12,7 @@
     "https://www.google-analytics.com",
     "https://www.googletagmanager.com"
   ],
-  "styleSrc": [
-    "'self'",
-    "'unsafe-inline'",
-    "'unsafe-eval'"
-  ],
+  "styleSrc": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
   "imgSrc": [
     "*",
     "'self'",
@@ -136,10 +130,8 @@
     "wss://relay.walletconnect.com",
     "wss://relay.walletconnect.org",
     "wss://www.walletlink.org",
-    "wss://ws-us3.pusher.com/"
+    "wss://ws-us3.pusher.com/",
+    "http://18.192.62.73:8000/subgraphs/name/dexNiza"
   ],
-  "workerSrc": [
-    "'self'",
-    "blob:"
-  ]
+  "workerSrc": ["'self'", "blob:"]
 }

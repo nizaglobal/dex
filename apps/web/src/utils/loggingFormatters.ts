@@ -1,5 +1,5 @@
-import { SwapPriceUpdateUserResponse } from '@uniswap/analytics-events'
 import { Percent } from '@nizaglobal/sdk-core'
+import { SwapPriceUpdateUserResponse } from '@uniswap/analytics-events'
 import { SwapResult } from 'hooks/useSwapCallback'
 import {
   formatPercentInBasisPointsNumber,

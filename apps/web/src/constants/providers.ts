@@ -8,7 +8,11 @@ import { APP_RPC_URLS } from './networks'
 function getAppProvider(chainId: SupportedInterfaceChain) {
   return new AppJsonRpcProvider(
     APP_RPC_URLS[chainId].map(
-      (url) => new ConfiguredJsonRpcProvider(url, { chainId, name: CHAIN_IDS_TO_NAMES[chainId] })
+      (url) =>
+        new ConfiguredJsonRpcProvider(url, {
+          chainId,
+          name: CHAIN_IDS_TO_NAMES[chainId],
+        })
     )
   )
 }
@@ -31,5 +35,5 @@ export const RPC_PROVIDERS = {
   [ChainId.BASE]: getAppProvider(ChainId.BASE),
   [ChainId.BLAST]: getAppProvider(ChainId.BLAST),
   [ChainId.NIZA_TESTNET]: getAppProvider(ChainId.NIZA_TESTNET),
-  [ChainId.NIZA_LIVENET]: getAppProvider(ChainId.NIZA_LIVENET),
+  [ChainId.NIZA]: getAppProvider(ChainId.NIZA),
 } satisfies Record<SupportedInterfaceChain, AppJsonRpcProvider>

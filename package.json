@@ -39,7 +39,7 @@
     "immer": "9.0.21",
     "@nizaglobal/v2-sdk": "1.0.1",
     "@apollo/client": "3.9.6",
-    "@nizaglobal/sdk-core": "1.0.2",
+    "@nizaglobal/sdk-core": "1.0.5",
     "@react-navigation/routers": "6.1.9",
     "@react-navigation/core": "6.2.2",
     "@sideway/formula": "3.0.1",

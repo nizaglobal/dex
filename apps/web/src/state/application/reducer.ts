@@ -1,5 +1,5 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit'
 import { ChainId } from '@nizaglobal/sdk-core'
+import { createSlice, nanoid } from '@reduxjs/toolkit'
 import { DEFAULT_TXN_DISMISS_MS } from 'constants/misc'
 
 export enum PopupType {
